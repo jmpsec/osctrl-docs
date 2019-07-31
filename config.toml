@@ -1,0 +1,32 @@
+baseURL = "https://osctrl.net/"
+languageCode = "en-us"
+title = "osctrl: Fast and efficient osquery management"
+
+theme = "hugo-theme-learn"
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[params]
+themeVariant = "osctrl"
+editURL = "https://github.com/jmpsec/osctrl/docs/edit/master/content/"
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> osctrl"
+url = "https://github.com/jmpsec/osctrl"
+weight = 1
+
+[[menu.shortcuts]]
+name = '<br/><img alt="Software License" src="https://img.shields.io/badge/license-GPL3-brightgreen.svg?style=flat-square">'
+url = "https://github.com/jmpsec/osctrl/blob/master/LICENSE.md"
+weight = 2
+
+[[menu.shortcuts]]
+name = '<img alt="Travis" src="https://img.shields.io/travis/jmpsec/osctrl/master.svg?style=flat-square">'
+url = "https://travis-ci.org/jmpsec/osctrl"
+weight = 3
+
+[[menu.shortcuts]]
+name = '<img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/bettercap/bettercap?style=flat-square&fuckgithubcache=1">'
+url = "https://goreportcard.com/report/github.com/bettercap/bettercap"
+weight = 4
