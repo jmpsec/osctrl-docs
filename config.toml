@@ -1,6 +1,7 @@
 baseURL = "https://osctrl.net/"
 languageCode = "en-us"
 title = "osctrl: Fast and efficient osquery management"
+publishDir = "docs"
 
 theme = "hugo-theme-learn"
 # For search functionality

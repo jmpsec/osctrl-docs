@@ -4,9 +4,9 @@ all: docs
 
 # Generate documentation with hugo
 docs:
+	make clean
 	@hugo
-	@mv public docs
 
 # Clean generated documentation
 clean:
-	@rm -rf public docs
+	@rm -rf docs
