@@ -10,7 +10,7 @@ home = [ "HTML", "RSS", "JSON"]
 
 [params]
 themeVariant = "osctrl"
-editURL = "https://github.com/jmpsec/osctrl-docs/docs/edit/master/content/"
+editURL = "https://github.com/jmpsec/osctrl-docs/edit/master/content/"
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-github'></i> osctrl"
