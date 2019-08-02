@@ -28,6 +28,6 @@ url = "https://travis-ci.org/jmpsec/osctrl"
 weight = 3
 
 [[menu.shortcuts]]
-name = '<img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/bettercap/bettercap?style=flat-square&fuckgithubcache=1">'
-url = "https://goreportcard.com/report/github.com/bettercap/bettercap"
+name = '<img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/jmpsec/osctrl?style=flat-square&fuckgithubcache=1">'
+url = "https://goreportcard.com/report/github.com/jmpsec/osctrl"
 weight = 4

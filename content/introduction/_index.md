@@ -4,8 +4,6 @@ date = 2019-07-31T02:29:10-04:00
 weight = 1
 +++
 
-### Chapter X
+### Work in progress
 
-# Some Chapter title
-
-Lorem Ipsum.
+This is not completed yet.

@@ -12,20 +12,20 @@
     <title>Contributing :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1564586331" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1564586331" rel="stylesheet">
-    <link href="/css/hybrid.css?1564586331" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1564586331" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1564586331" rel="stylesheet">
-    <link href="/css/auto-complete.css?1564586331" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1564586331" rel="stylesheet">
-    <link href="/css/theme.css?1564586331" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1564586331" rel="stylesheet">
+    <link href="/css/nucleus.css?1564785835" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1564785835" rel="stylesheet">
+    <link href="/css/hybrid.css?1564785835" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1564785835" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1564785835" rel="stylesheet">
+    <link href="/css/auto-complete.css?1564785835" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1564785835" rel="stylesheet">
+    <link href="/css/theme.css?1564785835" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1564785835" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1564586331" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1564785835" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1564586331"></script>
+    <script src="/js/jquery-3.3.1.min.js?1564785835"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -33,7 +33,18 @@
       }
       
     </style>
-    
+    <style type="css">
+
+@font-face {
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/bai-jamjuree-v3-latin/bai-jamjuree-v3-latin-regular.eot');
+  src: local('Bai Jamjuree Regular'), local('BaiJamjuree-Regular'), url('/fonts/bai-jamjuree-v3-latin/bai-jamjuree-v3-latin/bai-jamjuree-v3-latin-regular.eot?#iefix') format('embedded-opentype'), url('/fonts/bai-jamjuree-v3-latin/bai-jamjuree-v3-latin-regular.woff2') format('woff2'), url('/fonts/bai-jamjuree-v3-latin/bai-jamjuree-v3-latin-regular.woff') format('woff'), url('/fonts/bai-jamjuree-v3-latin/bai-jamjuree-v3-latin/bai-jamjuree-v3-latin-regular.ttf') format('truetype'), url('/fonts/bai-jamjuree-v3-latin/bai-jamjuree-v3-latin-regular.svg#BaiJamjuree') format('svg');
+}
+
+</style>
+
   </head>
   <body class="" data-url="/contributing/">
     <nav id="sidebar" class="">
@@ -44,7 +55,7 @@
     <div id="header">
       <a id="logo" href="/">
   <h1 style="margin:0; padding:0">
-    <img src="/logo.png" style="width: 75%" alt="osctrl"/>
+    <img src="/logo.png" style="width: 65%" alt="osctrl"/>
   </h1>
 
 </a>
@@ -57,14 +68,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1564586331"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1564586331"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1564785835"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1564785835"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1564586331"></script>
+<script type="text/javascript" src="/js/search.js?1564785835"></script>
 
     
   </div>
@@ -184,7 +195,7 @@
               </li>
           
               <li> 
-                  <a class="padding" href="https://goreportcard.com/report/github.com/bettercap/bettercap"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/bettercap/bettercap?style=flat-square&fuckgithubcache=1"></a>
+                  <a class="padding" href="https://goreportcard.com/report/github.com/jmpsec/osctrl"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/jmpsec/osctrl?style=flat-square&fuckgithubcache=1"></a>
               </li>
           
         </ul>
@@ -240,7 +251,7 @@
             
           
           
-            <a href='/'>osctrl: Fast and efficient osquery management</a> > Contributing
+            <a href='/'></a> > Contributing
           
          
           
@@ -255,9 +266,12 @@
 <ul>
 <li>
 <ul>
+<li>
+<ul>
 <li><a href="#reporting-bugs">Reporting Bugs</a></li>
 <li><a href="#improving-the-documentation">Improving the Documentation</a></li>
 <li><a href="#we-pull-requests">We ❤️ Pull Requests</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -289,7 +303,7 @@
 
 <p>Like any other open source projects, there are multiple ways to contribute to osctrl. As a developer, depending on your skills and experience, or as user that enjoy the project and want to help.</p>
 
-<h2 id="reporting-bugs">Reporting Bugs</h2>
+<h3 id="reporting-bugs">Reporting Bugs</h3>
 
 <p>If you found something broken and not working properly, feel free to create an issue in Github with as much information as possible on how to reproduce the issue and logs, if possible. Before opening the issue, make sure that:</p>
 
@@ -299,11 +313,11 @@
 <li>You already searched <a href="https://github.com/jmpsec/osctrl/issues">other issues</a> to see if your problem or request was already reported.</li>
 </ul>
 
-<h2 id="improving-the-documentation">Improving the Documentation</h2>
+<h3 id="improving-the-documentation">Improving the Documentation</h3>
 
 <p>You can improve this documentation by <a href="https://github.com/jmpsec/osctrl-docs">forking its repository</a>, updating the contents and sending a pull request.</p>
 
-<h2 id="we-pull-requests">We ❤️ Pull Requests</h2>
+<h3 id="we-pull-requests">We ❤️ Pull Requests</h3>
 
 <p>A pull request does not need to be a fix for a bug or implementing something new. Software can always be improved, legacy code removed and tests are always welcome!</p>
 
@@ -441,20 +455,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1564586331"></script>
-    <script src="/js/perfect-scrollbar.min.js?1564586331"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1564586331"></script>
-    <script src="/js/jquery.sticky.js?1564586331"></script>
-    <script src="/js/featherlight.min.js?1564586331"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1564586331"></script>
-    <script src="/js/highlight.pack.js?1564586331"></script>
+    <script src="/js/clipboard.min.js?1564785835"></script>
+    <script src="/js/perfect-scrollbar.min.js?1564785835"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1564785835"></script>
+    <script src="/js/jquery.sticky.js?1564785835"></script>
+    <script src="/js/featherlight.min.js?1564785835"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1564785835"></script>
+    <script src="/js/highlight.pack.js?1564785835"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1564586331"></script>
-    <script src="/js/learn.js?1564586331"></script>
-    <script src="/js/hugo-learn.js?1564586331"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1564785835"></script>
+    <script src="/js/learn.js?1564785835"></script>
+    <script src="/js/hugo-learn.js?1564785835"></script>
 
-    <link href="/mermaid/mermaid.css?1564586331" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1564586331"></script>
+    <link href="/mermaid/mermaid.css?1564785835" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1564785835"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

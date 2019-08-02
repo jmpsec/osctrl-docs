@@ -6,7 +6,7 @@ weight = 4
 
 Like any other open source projects, there are multiple ways to contribute to osctrl. As a developer, depending on your skills and experience, or as user that enjoy the project and want to help.
 
-## Reporting Bugs
+### Reporting Bugs
 
 If you found something broken and not working properly, feel free to create an issue in Github with as much information as possible on how to reproduce the issue and logs, if possible. Before opening the issue, make sure that:
 
@@ -14,11 +14,11 @@ If you found something broken and not working properly, feel free to create an i
 * You are using the [latest stable version](https://github.com/jmpsec/osctrl/releases) of osctrl.
 * You already searched [other issues](https://github.com/jmpsec/osctrl/issues) to see if your problem or request was already reported.
 
-## Improving the Documentation
+### Improving the Documentation
 
 You can improve this documentation by [forking its repository](https://github.com/jmpsec/osctrl-docs), updating the contents and sending a pull request.
 
-## We ❤️ Pull Requests
+### We ❤️ Pull Requests
 
 A pull request does not need to be a fix for a bug or implementing something new. Software can always be improved, legacy code removed and tests are always welcome!
 
