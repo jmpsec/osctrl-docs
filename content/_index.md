@@ -1,3 +1,5 @@
+# osctrl
+
 ## What is osctrl?
 
 **osctrl** is a fast and efficient [osquery](https://osquery.io) management solution, implementing its [remote API](https://osquery.readthedocs.io/en/stable/deployment/remote/) as TLS endpoint.
