@@ -6,3 +6,8 @@
 
 With **osctrl** you can monitor all your systems running osquery, distribute its configuration fast, collect all the status and result logs and allow you to run on-demand queries.
 
+<p align="center">
+
+  <img src="/osctrl.png"/>
+
+</p>
