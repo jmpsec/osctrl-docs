@@ -32,7 +32,7 @@
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": " osctrl What is osctrl? osctrl is a fast and efficient osquery management solution, implementing its remote API as TLS endpoint.\nWith osctrl you can monitor all your systems running osquery, distribute its configuration fast, collect all the status and result logs and allow you to run on-demand queries.\n"
+	"content": " osctrl What is osctrl? osctrl is a fast and efficient osquery management solution, implementing its remote API as TLS endpoint.\nWith osctrl you are able to:\n Monitor all your systems running osquery. Distribute its configuration fast. Collect all the status and result logs, whether you want to store them or forward them. Run on-demand queries. Carve files.  "
 },
 {
 	"uri": "https://osctrl.net/categories/",
