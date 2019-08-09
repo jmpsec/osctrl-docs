@@ -9,8 +9,11 @@ theme = "hugo-theme-learn"
 home = [ "HTML", "RSS", "JSON"]
 
 [params]
+author = "Javier Marcos de Prado, JMPSec"
+description = "Documentation for osctrl: Fast and efficient osquery management"
 themeVariant = "osctrl"
 editURL = "https://github.com/jmpsec/osctrl-docs/edit/master/content/"
+showVisitedLinks = true
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-github'></i> osctrl"
