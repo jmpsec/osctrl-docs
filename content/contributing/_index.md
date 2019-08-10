@@ -1,7 +1,8 @@
 +++
 title = "Contributing"
 date = 2019-07-31T02:26:28-04:00
-weight = 4
+weight = 5
+pre = "<b>5. </b>"
 +++
 
 Like any other open source projects, there are multiple ways to contribute to osctrl. As a developer, depending on your skills and experience, or as user that enjoy the project and want to help.

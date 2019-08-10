@@ -3,8 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://osctrl.net/introduction/</loc>
+    <loc>https://osctrl.net/usage/osctrl-tls/</loc>
+    <lastmod>2019-08-10T19:03:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/deployment/vagrant/</loc>
+    <lastmod>2019-08-09T19:23:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/components/tls-service/</loc>
+    <lastmod>2019-08-09T16:56:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/components/</loc>
     <lastmod>2019-07-31T02:29:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/usage/osctrl-admin/</loc>
+    <lastmod>2019-08-10T19:03:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/deployment/docker/</loc>
+    <lastmod>2019-08-09T19:23:53+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/components/admin-service/</loc>
+    <lastmod>2019-08-09T16:56:46+02:00</lastmod>
   </url>
   
   <url>
@@ -13,13 +43,48 @@
   </url>
   
   <url>
+    <loc>https://osctrl.net/usage/osctrl-cli/</loc>
+    <lastmod>2019-08-10T19:03:12+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/deployment/natively/</loc>
+    <lastmod>2019-08-09T19:24:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/components/cli/</loc>
+    <lastmod>2019-08-09T16:56:54+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://osctrl.net/configuration/</loc>
     <lastmod>2019-07-30T21:50:27-04:00</lastmod>
   </url>
   
   <url>
+    <loc>https://osctrl.net/components/nginx/</loc>
+    <lastmod>2019-08-10T12:50:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/usage/</loc>
+    <lastmod>2019-08-09T13:47:42+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/components/backend/</loc>
+    <lastmod>2019-08-10T12:51:06+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://osctrl.net/contributing/</loc>
     <lastmod>2019-07-31T02:26:28-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/components/metrics/</loc>
+    <lastmod>2019-08-10T12:51:10+02:00</lastmod>
   </url>
   
   <url>
