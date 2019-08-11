@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://osctrl.net/configuration/osctrl-services/</loc>
+    <lastmod>2019-08-10T20:28:02+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://osctrl.net/usage/osctrl-tls/</loc>
     <lastmod>2019-08-10T19:03:05+02:00</lastmod>
   </url>
@@ -13,13 +18,18 @@
   </url>
   
   <url>
-    <loc>https://osctrl.net/components/tls-service/</loc>
+    <loc>https://osctrl.net/components/osctrl-tls/</loc>
     <lastmod>2019-08-09T16:56:40+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://osctrl.net/components/</loc>
     <lastmod>2019-07-31T02:29:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/configuration/logging/</loc>
+    <lastmod>2019-08-10T20:29:05+02:00</lastmod>
   </url>
   
   <url>
@@ -33,7 +43,7 @@
   </url>
   
   <url>
-    <loc>https://osctrl.net/components/admin-service/</loc>
+    <loc>https://osctrl.net/components/osctrl-admin/</loc>
     <lastmod>2019-08-09T16:56:46+02:00</lastmod>
   </url>
   
@@ -53,7 +63,7 @@
   </url>
   
   <url>
-    <loc>https://osctrl.net/components/cli/</loc>
+    <loc>https://osctrl.net/components/osctrl-cli/</loc>
     <lastmod>2019-08-09T16:56:54+02:00</lastmod>
   </url>
   

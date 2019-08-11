@@ -2,9 +2,16 @@
 title = "Components"
 date = 2019-07-31T02:29:10-04:00
 weight = 1
+chapter = true
 pre = "<b>1. </b>"
 +++
 
-### Work in progress
+# Components
 
-This is not completed yet.
+Diagram of all the different components that are part of **osctrl**:
+
+<p align="center">
+
+  <img src="/components.png"/>
+
+</p>

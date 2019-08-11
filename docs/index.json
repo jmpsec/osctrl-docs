@@ -1,5 +1,12 @@
 [
 {
+	"uri": "https://osctrl.net/configuration/osctrl-services/",
+	"title": "osctrl Services",
+	"tags": [],
+	"description": "",
+	"content": " Work in progress This is not completed yet.\n"
+},
+{
 	"uri": "https://osctrl.net/usage/osctrl-tls/",
 	"title": "osctrl-tls",
 	"tags": [],
@@ -14,8 +21,8 @@
 	"content": " Work in progress This is not completed yet.\n"
 },
 {
-	"uri": "https://osctrl.net/components/tls-service/",
-	"title": "TLS Service",
+	"uri": "https://osctrl.net/components/osctrl-tls/",
+	"title": "osctrl-tls",
 	"tags": [],
 	"description": "",
 	"content": " Work in progress This is not completed yet.\n"
@@ -23,6 +30,13 @@
 {
 	"uri": "https://osctrl.net/components/",
 	"title": "Components",
+	"tags": [],
+	"description": "",
+	"content": " Components Diagram of all the different components that are part of osctrl:\n"
+},
+{
+	"uri": "https://osctrl.net/configuration/logging/",
+	"title": "Logging",
 	"tags": [],
 	"description": "",
 	"content": " Work in progress This is not completed yet.\n"
@@ -42,8 +56,8 @@
 	"content": " Work in progress This is not completed yet.\n"
 },
 {
-	"uri": "https://osctrl.net/components/admin-service/",
-	"title": "Admin Service",
+	"uri": "https://osctrl.net/components/osctrl-admin/",
+	"title": "osctrl-admin",
 	"tags": [],
 	"description": "",
 	"content": " Work in progress This is not completed yet.\n"
@@ -53,7 +67,7 @@
 	"title": "Deployment",
 	"tags": [],
 	"description": "",
-	"content": " Work in progress This is not completed yet.\n"
+	"content": " Deployment Work in progress. This is not completed yet.\n"
 },
 {
 	"uri": "https://osctrl.net/usage/osctrl-cli/",
@@ -70,8 +84,8 @@
 	"content": " Work in progress This is not completed yet.\n"
 },
 {
-	"uri": "https://osctrl.net/components/cli/",
-	"title": "CLI",
+	"uri": "https://osctrl.net/components/osctrl-cli/",
+	"title": "osctrl-cli",
 	"tags": [],
 	"description": "",
 	"content": " Work in progress This is not completed yet.\n"
@@ -81,7 +95,7 @@
 	"title": "Configuration",
 	"tags": [],
 	"description": "",
-	"content": " Work in progress This is not completed yet.\n"
+	"content": " Configuration Work in progress. This is not completed yet.\n"
 },
 {
 	"uri": "https://osctrl.net/components/nginx/",
@@ -95,7 +109,7 @@
 	"title": "Usage",
 	"tags": [],
 	"description": "",
-	"content": " Work in progress This is not completed yet.\n"
+	"content": " Usage Work in progress. This is not completed yet.\n"
 },
 {
 	"uri": "https://osctrl.net/components/backend/",
