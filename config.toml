@@ -16,7 +16,7 @@ editURL = "https://github.com/jmpsec/osctrl-docs/edit/master/content/"
 showVisitedLinks = true
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-github'></i> osctrl"
+name = "<i class='fab fa-github'></i> Github repo - osctrl"
 url = "https://github.com/jmpsec/osctrl"
 weight = 1
 

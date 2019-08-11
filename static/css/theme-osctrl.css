@@ -16,11 +16,11 @@
   --MENU-HEADER-BORDER-color: #33a1ff;
   /*Color of menu header border */
 
-  --MENU-SEARCH-BG-color: #167ad0;
+  --MENU-SEARCH-BG-color: #c9cdcf;
   /* Search field background color (by default borders + icons) */
-  --MENU-SEARCH-BOX-color: #33a1ff;
+  --MENU-SEARCH-BOX-color: #20272a;
   /* Override search field border color */
-  --MENU-SEARCH-BOX-ICONS-color: #a1d2fd;
+  --MENU-SEARCH-BOX-ICONS-color: #1a2127;
   /* Override search field icons color */
 
   --MENU-SECTIONS-ACTIVE-BG-color: #20272b;
@@ -38,7 +38,7 @@
 
   --MENU-VISITED-color: #33a1ff;
   /* Color of 'page visited' icons in menu */
-  --MENU-SECTION-HR-color: #20272b;
+  --MENU-SECTION-HR-color: #5a5a5a;
   /* Color of <hr> separator in menu */
 
 }
