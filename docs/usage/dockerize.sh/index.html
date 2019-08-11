@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/favicon.png" type="image/png">
 
-    <title>nginx :: osctrl: Fast and efficient osquery management</title>
+    <title>dockerize.sh :: osctrl: Fast and efficient osquery management</title>
 
     
     <link href="/css/nucleus.css?1565560318" rel="stylesheet">
@@ -69,7 +69,7 @@ code {
 </style>
 
   </head>
-  <body class="" data-url="/components/nginx/">
+  <body class="" data-url="/usage/dockerize.sh/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -121,7 +121,7 @@ code {
   
     
     <li data-nav-id="/components/" title="Components" class="dd-item 
-        parent
+        
         
         
         ">
@@ -228,8 +228,8 @@ code {
   
     
     <li data-nav-id="/components/nginx/" title="nginx" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/components/nginx/">
@@ -515,7 +515,7 @@ code {
   
     
     <li data-nav-id="/usage/" title="Usage" class="dd-item 
-        
+        parent
         
         
         ">
@@ -648,8 +648,8 @@ code {
   
     
     <li data-nav-id="/usage/dockerize.sh/" title="dockerize.sh" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/usage/dockerize.sh/">
@@ -769,7 +769,7 @@ code {
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/jmpsec/osctrl-docs/edit/master/content/components/nginx/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/jmpsec/osctrl-docs/edit/master/content/usage/dockerize.sh/_index.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -800,7 +800,7 @@ code {
             
           
           
-            <a href='/'></a> > <a href='/components/'>Components</a> > nginx
+            <a href='/'></a> > <a href='/usage/'>Usage</a> > dockerize.sh
           
          
           
@@ -813,17 +813,7 @@ code {
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#tls-termination-using-nginx">TLS termination using nginx</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+
     </div>
 </div>
 
@@ -839,7 +829,7 @@ code {
           
             <h1>
               
-              nginx
+              dockerize.sh
             </h1>
           
 
@@ -848,11 +838,33 @@ code {
 
 
 
-	
+	<p><a href="https://github.com/jmpsec/osctrl/blob/master/docker/dockerize.sh">dockerize.sh</a> is the provisioning script for <strong>osctrl</strong> in a Docker environment. It needs a <a href="https://github.com/jmpsec/osctrl/blob/master/docker/docker-compose.yml">docker-compose.yml</a> and requires <code>docker-compose</code> to be installed.</p>
 
-<h3 id="tls-termination-using-nginx">TLS termination using nginx</h3>
+<p>It uses several functions from <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh">/deploy/lib.sh</a>.</p>
 
-<p>This is not completed yet.</p>
+<p>Execute <code>./docker/dockerize.sh -h</code> to show the usage of the script:</p>
+
+<pre><code class="language-properties">$ ./docker/dockerize.sh -h
+
+Usage: ./docker/dockerize.sh -h [PARAMETER] [PARAMETER] ...
+
+Parameters:
+  -h	Shows this help message and exit.
+  -b	Builds new docker containers.
+  -u	Run osctrl containers.
+  -c	Generates configuration files.
+  -f	Forces the generation of new certificates and configuration.
+  -m	Uses mkcert (https://github.com/FiloSottile/mkcert) to generate certificate.
+  -d	Takes down running containers.
+  -x	Removes container images.
+
+Examples:
+  Run dockerized osctrl building new containers and forcing to generate new configuration/certs:
+	./docker/dockerize.sh -u -b -f
+  Generate only configuration files:
+	./docker/dockerize.sh -c
+
+</code></pre>
 
 
 
@@ -893,6 +905,8 @@ code {
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -903,25 +917,6 @@ code {
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -960,7 +955,6 @@ code {
             
                 
                     
-                    
                 
                 
 
@@ -977,8 +971,21 @@ code {
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -1131,6 +1138,7 @@ code {
             
                 
                     
+                    
                 
                 
 
@@ -1145,6 +1153,9 @@ code {
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1210,6 +1221,7 @@ code {
             
                 
                     
+                    
                 
                 
 
@@ -1228,6 +1240,9 @@ code {
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1249,10 +1264,10 @@ code {
 	 
 	 
 		
-			<a class="nav nav-prev" href="/components/osctrl-cli/" title="osctrl-cli"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/usage/provision.sh/" title="provision.sh"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/components/backend/" title="Backend" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/contributing/" title="Contributing" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

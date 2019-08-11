@@ -5,6 +5,6 @@ weight = 3
 pre = ""
 +++
 
-### Work in progress
+### CLI for **osctrl**
 
 This is not completed yet.

@@ -5,6 +5,6 @@ weight = 2
 pre = ""
 +++
 
-### Work in progress
+Execute `osquery-admin -h` to show the usage of the binary:
 
 This is not completed yet.

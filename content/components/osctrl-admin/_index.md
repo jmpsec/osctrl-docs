@@ -5,6 +5,6 @@ weight = 2
 pre = ""
 +++
 
-### Work in progress
+### Admin service for **osctrl**
 
 This is not completed yet.

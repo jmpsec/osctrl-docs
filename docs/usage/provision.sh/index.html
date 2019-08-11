@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/favicon.png" type="image/png">
 
-    <title>nginx :: osctrl: Fast and efficient osquery management</title>
+    <title>provision.sh :: osctrl: Fast and efficient osquery management</title>
 
     
     <link href="/css/nucleus.css?1565560318" rel="stylesheet">
@@ -69,7 +69,7 @@ code {
 </style>
 
   </head>
-  <body class="" data-url="/components/nginx/">
+  <body class="" data-url="/usage/provision.sh/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -121,7 +121,7 @@ code {
   
     
     <li data-nav-id="/components/" title="Components" class="dd-item 
-        parent
+        
         
         
         ">
@@ -228,8 +228,8 @@ code {
   
     
     <li data-nav-id="/components/nginx/" title="nginx" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/components/nginx/">
@@ -515,7 +515,7 @@ code {
   
     
     <li data-nav-id="/usage/" title="Usage" class="dd-item 
-        
+        parent
         
         
         ">
@@ -622,8 +622,8 @@ code {
   
     
     <li data-nav-id="/usage/provision.sh/" title="provision.sh" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/usage/provision.sh/">
@@ -769,7 +769,7 @@ code {
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/jmpsec/osctrl-docs/edit/master/content/components/nginx/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/jmpsec/osctrl-docs/edit/master/content/usage/provision.sh/_index.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -800,7 +800,7 @@ code {
             
           
           
-            <a href='/'></a> > <a href='/components/'>Components</a> > nginx
+            <a href='/'></a> > <a href='/usage/'>Usage</a> > provision.sh
           
          
           
@@ -813,17 +813,7 @@ code {
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#tls-termination-using-nginx">TLS termination using nginx</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+
     </div>
 </div>
 
@@ -839,7 +829,7 @@ code {
           
             <h1>
               
-              nginx
+              provision.sh
             </h1>
           
 
@@ -848,11 +838,65 @@ code {
 
 
 
-	
+	<p><a href="https://github.com/jmpsec/osctrl/blob/master/deploy/provision.sh">provision.sh</a> is the provisioning script for <strong>osctrl</strong> in Ubuntu 18.04. It uses several functions from <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh">lib.sh</a>.</p>
 
-<h3 id="tls-termination-using-nginx">TLS termination using nginx</h3>
+<p>Its purpose is to install all necessary components to deploy <strong>osctrl</strong> in an Ubuntu 18.04 system, although it could be easily adapted to work in CentOS 7.</p>
 
-<p>This is not completed yet.</p>
+<p>Execute <code>./deploy/provision.sh [-h|--help]</code> to show the usage of the script:</p>
+
+<pre><code class="language-properties">$ ./deploy/provision.sh -h
+
+Usage: ./deploy/provision.sh [-h|--help] [PARAMETER [ARGUMENT]] [PARAMETER [ARGUMENT]] ...
+
+Parameters:
+  -h, --help 		Shows this help message and exit.
+  -m MODE, --mode MODE 	Mode of operation. Default value is dev
+  -t TYPE, --type TYPE 	Type of certificate to use. Default value is self
+  -p PART, --part PART 	Part of the service. Default is all
+
+Arguments for MODE:
+  dev 		Provision will run in development mode. Certificate will be self-signed.
+  prod 		Provision will run in production mode.
+  update 	Provision will update the service running in the machine.
+
+Arguments for TYPE:
+  self 		Provision will use a self-signed TLS certificate that will be generated.
+  own 		Provision will use the TLS certificate provided by the user.
+  certbot 	Provision will generate a TLS certificate using letsencrypt/certbot. More info here: https://certbot.eff.org/
+
+Arguments for PART:
+  admin 	Provision will deploy only the admin interface.
+  tls 		Provision will deploy only the TLS endpoint.
+  all 		Provision will deploy both the admin and the TLS endpoint.
+
+Optional Parameters:
+  --public-tls-port PORT 	Port for the TLS endpoint service. Default is 443
+  --public-admin-port PORT 	Port for the admin service. Default is 8443
+  --private-tls-port PORT 	Port for the TLS endpoint service. Default is 9000
+  --private-admin-port PORT 	Port for the admin service. Default is 9001
+  --tls-hostname HOSTNAME 	Hostname for the TLS endpoint service. Default is 127.0.0.1
+  --admin-hostname HOSTNAME 	Hostname for the admin service. Default is 127.0.0.1
+  -X PASS     --password 	Force the admin password for the admin interface. Default is random
+  -U          --update 		Pull from master and sync files to the current folder
+  -c PATH     --certfile PATH 	Path to supplied TLS server PEM certificate(s) bundle
+  -d DOMAIN   --domain DOMAIN 	Domain for the TLS certificate to be generated using letsencrypt
+  -e EMAIL    --email EMAIL 	Domain for the TLS certificate to be generated using letsencrypt
+  -s PATH     --source PATH 	Path to code. Default is /vagrant
+  -S PATH     --dest PATH 	Path to binaries. Default is /opt/osctrl
+  -n          --nginx 		Install and configure nginx as TLS termination
+  -P          --postgres 	Install and configure PostgreSQL as backend
+  -M          --metrics 	Install and configure all services for metrics (InfluxDB + Telegraf + Grafana)
+  -E          --enroll  	Enroll the serve into itself using osquery. Default is disabled
+
+Examples:
+  Provision service in development mode, code is in /vagrant and both admin and tls:
+	./deploy/provision.sh -m dev -s /vagrant -p all
+  Provision service in production mode using my own certificate and only with TLS endpoint:
+	./deploy/provision.sh -m prod -t own -k /etc/certs/my.key -c /etc/certs/cert.crt -p tls
+  Update service in development mode and running admin only from /home/foobar/osctrl:
+	./deploy/provision.sh -U -s /home/foobar/osctrl -p admin
+
+</code></pre>
 
 
 
@@ -893,6 +937,8 @@ code {
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -908,9 +954,6 @@ code {
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -954,76 +997,6 @@ code {
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
                     
                         
             
@@ -1123,6 +1096,22 @@ code {
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1173,10 +1162,32 @@ code {
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1209,6 +1220,42 @@ code {
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1249,10 +1296,10 @@ code {
 	 
 	 
 		
-			<a class="nav nav-prev" href="/components/osctrl-cli/" title="osctrl-cli"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/usage/osctrl-cli/" title="osctrl-cli"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/components/backend/" title="Backend" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/usage/dockerize.sh/" title="dockerize.sh" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

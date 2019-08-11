@@ -5,6 +5,6 @@ weight = 1
 pre = ""
 +++
 
-### Work in progress
+### TLS endpoint service
 
 This is not completed yet.

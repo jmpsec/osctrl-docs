@@ -73,6 +73,11 @@
   </url>
   
   <url>
+    <loc>https://osctrl.net/usage/provision.sh/</loc>
+    <lastmod>2019-08-11T13:16:09+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://osctrl.net/components/nginx/</loc>
     <lastmod>2019-08-10T12:50:57+02:00</lastmod>
   </url>
@@ -80,6 +85,11 @@
   <url>
     <loc>https://osctrl.net/usage/</loc>
     <lastmod>2019-08-09T13:47:42+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/usage/dockerize.sh/</loc>
+    <lastmod>2019-08-11T13:16:16+02:00</lastmod>
   </url>
   
   <url>

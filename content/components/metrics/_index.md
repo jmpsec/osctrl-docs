@@ -5,6 +5,6 @@ weight = 6
 pre = ""
 +++
 
-### Work in progress
+### Monitoring and metrics for **osctrl**
 
 This is not completed yet.

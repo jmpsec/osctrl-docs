@@ -5,6 +5,6 @@ weight = 4
 pre = ""
 +++
 
-### Work in progress
+### TLS termination using nginx
 
 This is not completed yet.

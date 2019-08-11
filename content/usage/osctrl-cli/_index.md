@@ -5,6 +5,6 @@ weight = 3
 pre = ""
 +++
 
-### Work in progress
+Execute `osquery-cli -h` to show the usage of the binary.
 
 This is not completed yet.
