@@ -43,6 +43,19 @@
 
 }
 
+code {
+  color: #444;
+  background: #eee;
+  border: 1px solid #ccc;
+}
+
+.copy-to-clipboard {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-left: none;
+  height: 19px !important;
+}
+
 body {
   color: var(--MAIN-TEXT-color) !important;
 }
