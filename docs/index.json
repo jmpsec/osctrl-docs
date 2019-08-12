@@ -1,0 +1,169 @@
+[
+{
+	"uri": "https://osctrl.net/configuration/osctrl-services/",
+	"title": "osctrl Services",
+	"tags": [],
+	"description": "",
+	"content": " Work in progress This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/usage/osctrl-tls/",
+	"title": "osctrl-tls",
+	"tags": [],
+	"description": "",
+	"content": "osctrl-tls is the TLS service for osctrl.\nExecute ./osctrl-tls -h to show the main help of the program:\n$ ./osctrl-tls -h NAME: osctrl-tls - TLS service for osctrl USAGE: osctrl-tls [global options] [arguments...] DESCRIPTION: TLS service for osctrl, a fast and efficient osquery management GLOBAL OPTIONS: -D string DB configuration JSON file to use. (default \u0026quot;config/db.json\u0026quot;) -c string Service configuration JSON file to use. (default \u0026quot;config/tls.json\u0026quot;) -v\tDisplays the binary version.  "
+},
+{
+	"uri": "https://osctrl.net/deployment/vagrant/",
+	"title": "Using Vagrant",
+	"tags": [],
+	"description": "",
+	"content": " Work in progress This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/components/osctrl-tls/",
+	"title": "osctrl-tls",
+	"tags": [],
+	"description": "",
+	"content": " TLS endpoint service This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/components/",
+	"title": "Components",
+	"tags": [],
+	"description": "",
+	"content": " Components Diagram of all the different components that are part of osctrl:\n"
+},
+{
+	"uri": "https://osctrl.net/configuration/logging/",
+	"title": "Logging",
+	"tags": [],
+	"description": "",
+	"content": " Work in progress This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/usage/osctrl-admin/",
+	"title": "osctrl-admin",
+	"tags": [],
+	"description": "",
+	"content": "osctrl-admin is the Admin service for osctrl.\nExecute ./osctrl-admin -h to show the main help of the program:\n$ ./osctrl-admin -h NAME: osctrl-admin - Admin service for osctrl USAGE: osctrl-admin [global options] [arguments...] DESCRIPTION: Admin service for osctrl, a fast and efficient osquery management GLOBAL OPTIONS: -D string DB configuration JSON file to use. (default \u0026quot;config/db.json\u0026quot;) -c string Service configuration JSON file to use. (default \u0026quot;config/admin.json\u0026quot;) -v\tDisplays the binary version.  "
+},
+{
+	"uri": "https://osctrl.net/deployment/docker/",
+	"title": "Using Docker",
+	"tags": [],
+	"description": "",
+	"content": " Work in progress This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/components/osctrl-admin/",
+	"title": "osctrl-admin",
+	"tags": [],
+	"description": "",
+	"content": " Admin service for osctrl This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/deployment/",
+	"title": "Deployment",
+	"tags": [],
+	"description": "",
+	"content": " Deployment Work in progress. This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/usage/osctrl-cli/",
+	"title": "osctrl-cli",
+	"tags": [],
+	"description": "",
+	"content": " osctrl-cli is the CLI for osctrl. Its purpose is to execute actions in osctrl without having to access directly the backend or use the admin interface. It can be very handy to automate actions in scripts or similar.\nExecute ./osctrl-cli -h to show the main help of the program:\n$ ./osctrl-cli -h NAME: osctrl-cli - CLI for osctrl USAGE: osctrl-cli [global options] command [command options] [arguments...] DESCRIPTION: CLI for osctrl, a fast and efficient operative system management COMMANDS: user Commands for users environment, env Commands for TLS environment settings Commands for settings node Commands for nodes query Commands for queries check Checks DB connection help, h Shows a list of commands or help for one command GLOBAL OPTIONS: -D FILE, --db FILE Load DB configuration from FILE (default: \u0026quot;config/db.json\u0026quot;) [$DB_CONFIG] --help, -h show help --version, -v print the version  Each command has its own help and it is displayed appending -h to them. Additionally, each subcommand also has its own help as well.\nUser $ ./osctrl-cli user -h NAME: osctrl-cli user - Commands for users USAGE: osctrl-cli user command [command options] [arguments...] COMMANDS: add, a Add a new user edit, e Edit an existing user delete, d Delete an existing user list, l List all existing users OPTIONS: --help, -h show help  Add user $ ./osctrl-cli user add -h NAME: osctrl-cli user add - Add a new user USAGE: osctrl-cli user add [command options] [arguments...] OPTIONS: --username value, -u value Username for the new user --password value, -p value Password for the new user --admin, -a Make this user an admin --fullname value, -n value Full name for the new user  Edit user $ ./osctrl-cli user edit -h NAME: osctrl-cli user edit - Edit an existing user USAGE: osctrl-cli user edit [command options] [arguments...] OPTIONS: --username value, -u value User to be edited --password value, -p value New password to be used --fullname value, -n value Full name to be used --admin, -a Make this user an admin --non-admin, -d Make this user an non-admin  Delete user $ ./osctrl-cli user delete -h NAME: osctrl-cli user delete - Delete an existing user USAGE: osctrl-cli user delete [command options] [arguments...] OPTIONS: --username value, -u value User to be deleted  List users $ ./osctrl-cli user list -h NAME: osctrl-cli user list - List all existing users USAGE: osctrl-cli user list [arguments...]  Environment $ ./osctrl-cli environment -h NAME: osctrl-cli environment - Commands for TLS environment USAGE: osctrl-cli environment command [command options] [arguments...] COMMANDS: add, a Add a new TLS environment delete, d Delete an existing TLS environment show, s Show a TLS environment show-flags, w Show the flags for a TLS environment list, l List all existing TLS environments quick-add, q Generates one-liner for quick adding nodes to environment flags, f Generates the flags to run nodes in an environment secret, x Output the secret to enroll nodes in an environment OPTIONS: --help, -h show help  Add environment $ ./osctrl-cli environment add -h NAME: osctrl-cli environment add - Add a new TLS environment USAGE: osctrl-cli environment add [command options] [arguments...] OPTIONS: --name value, -n value Environment to be added --hostname value, --host value Environment host to be added --debug, -d Environment debug capability --configuration value, --conf value Configuration file to be read --certificate value, --crt value Certificate file to be read  Delete environment $ ./osctrl-cli environment delete -h NAME: osctrl-cli environment delete - Delete an existing TLS environment USAGE: osctrl-cli environment delete [command options] [arguments...] OPTIONS: --name value, -n value Environment to be deleted  Show environment $ ./osctrl-cli environment show -h NAME: osctrl-cli environment show - Show a TLS environment USAGE: osctrl-cli environment show [command options] [arguments...] OPTIONS: --name value, -n value Environment to be displayed  Show environment flags $ ./osctrl-cli environment show-flags -h NAME: osctrl-cli environment show-flags - Show the flags for a TLS environment USAGE: osctrl-cli environment show-flags [command options] [arguments...] OPTIONS: --name value, -n value Environment to be displayed  List environments $ ./osctrl-cli environment list -h NAME: osctrl-cli environment list - List all existing TLS environments USAGE: osctrl-cli environment list [arguments...]  Quick-add to environment $ ./osctrl-cli environment quick-add -h NAME: osctrl-cli environment quick-add - Generates one-liner for quick adding nodes to environment USAGE: osctrl-cli environment quick-add [command options] [arguments...] OPTIONS: --name value, -n value Environment to be used --target value, -t value Type of one-liner (default: \u0026quot;sh\u0026quot;)  Flags $ ./osctrl-cli environment flags -h NAME: osctrl-cli environment flags - Generates the flags to run nodes in an environment USAGE: osctrl-cli environment flags [command options] [arguments...] OPTIONS: --name value, -n value Environment to be used --certificate value, --crt value Certificate path to be used --secret value, -s value Secret file path to be used  Settings $ ./osctrl-cli settings -h NAME: osctrl-cli settings - Commands for settings USAGE: osctrl-cli settings command [command options] [arguments...] COMMANDS: add, a Add a new settings value update, u Update a configuration value delete, d Delete an existing configuration value show, s Show all configuration values OPTIONS: --help, -h show help  Node $ ./osctrl-cli node -h NAME: osctrl-cli node - Commands for nodes USAGE: osctrl-cli node command [command options] [arguments...] COMMANDS: delete, d Delete and archive an existing node list, l List enrolled nodes OPTIONS: --help, -h show help  Delete node $ ./osctrl-cli node delete -h NAME: osctrl-cli node delete - Delete and archive an existing node USAGE: osctrl-cli node delete [command options] [arguments...] OPTIONS: --uuid value, -u value Node UUID to be deleted  List nodes $ ./osctrl-cli node list -h NAME: osctrl-cli node list - List enrolled nodes USAGE: osctrl-cli node list [command options] [arguments...] OPTIONS: --all, -v Show all nodes --inactive, -i Show inactive nodes  Query $ ./osctrl-cli query -h NAME: osctrl-cli query - Commands for queries USAGE: osctrl-cli query command [command options] [arguments...] COMMANDS: complete, c Mark an on-demand query as completed delete, d Mark an on-demand query as deleted list, l List on-demand queries OPTIONS: --help, -h show help  Complete query $ ./osctrl-cli query complete -h NAME: osctrl-cli query complete - Mark an on-demand query as completed USAGE: osctrl-cli query complete [command options] [arguments...] OPTIONS: --name value, -n value Query name to be completed  Delete query $ ./osctrl-cli query delete -h NAME: osctrl-cli query delete - Mark an on-demand query as deleted USAGE: osctrl-cli query delete [command options] [arguments...] OPTIONS: --name value, -n value Query name to be deleted  List queries $ ./osctrl-cli query list -h NAME: osctrl-cli query list - List on-demand queries USAGE: osctrl-cli query list [command options] [arguments...] OPTIONS: --active, -a Show active queries --completed, -c Show completed queries --deleted, -d Show deleted queries  "
+},
+{
+	"uri": "https://osctrl.net/deployment/natively/",
+	"title": "Using provision.sh",
+	"tags": [],
+	"description": "",
+	"content": " Work in progress This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/components/osctrl-cli/",
+	"title": "osctrl-cli",
+	"tags": [],
+	"description": "",
+	"content": " CLI for osctrl This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/configuration/",
+	"title": "Configuration",
+	"tags": [],
+	"description": "",
+	"content": " Configuration Work in progress. This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/usage/provision.sh/",
+	"title": "provision.sh",
+	"tags": [],
+	"description": "",
+	"content": "provision.sh is the provisioning script for osctrl in Ubuntu 18.04. It uses several functions from lib.sh.\nIts purpose is to install all necessary components to deploy osctrl in an Ubuntu 18.04 system, although it could be easily adapted to work in CentOS 7.\nExecute ./deploy/provision.sh [-h|--help] to show the usage of the script:\n$ ./deploy/provision.sh -h Usage: ./deploy/provision.sh [-h|--help] [PARAMETER [ARGUMENT]] [PARAMETER [ARGUMENT]] ... Parameters: -h, --help Shows this help message and exit. -m MODE, --mode MODE Mode of operation. Default value is dev -t TYPE, --type TYPE Type of certificate to use. Default value is self -p PART, --part PART Part of the service. Default is all Arguments for MODE: dev Provision will run in development mode. Certificate will be self-signed. prod Provision will run in production mode. update Provision will update the service running in the machine. Arguments for TYPE: self Provision will use a self-signed TLS certificate that will be generated. own Provision will use the TLS certificate provided by the user. certbot Provision will generate a TLS certificate using letsencrypt/certbot. More info here: https://certbot.eff.org/ Arguments for PART: admin Provision will deploy only the admin interface. tls Provision will deploy only the TLS endpoint. all Provision will deploy both the admin and the TLS endpoint. Optional Parameters: --public-tls-port PORT Port for the TLS endpoint service. Default is 443 --public-admin-port PORT Port for the admin service. Default is 8443 --private-tls-port PORT Port for the TLS endpoint service. Default is 9000 --private-admin-port PORT Port for the admin service. Default is 9001 --tls-hostname HOSTNAME Hostname for the TLS endpoint service. Default is 127.0.0.1 --admin-hostname HOSTNAME Hostname for the admin service. Default is 127.0.0.1 -X PASS --password Force the admin password for the admin interface. Default is random -U --update Pull from master and sync files to the current folder -c PATH --certfile PATH Path to supplied TLS server PEM certificate(s) bundle -d DOMAIN --domain DOMAIN Domain for the TLS certificate to be generated using letsencrypt -e EMAIL --email EMAIL Domain for the TLS certificate to be generated using letsencrypt -s PATH --source PATH Path to code. Default is /vagrant -S PATH --dest PATH Path to binaries. Default is /opt/osctrl -n --nginx Install and configure nginx as TLS termination -P --postgres Install and configure PostgreSQL as backend -M --metrics Install and configure all services for metrics (InfluxDB + Telegraf + Grafana) -E --enroll Enroll the serve into itself using osquery. Default is disabled Examples: Provision service in development mode, code is in /vagrant and both admin and tls: ./deploy/provision.sh -m dev -s /vagrant -p all Provision service in production mode using my own certificate and only with TLS endpoint: ./deploy/provision.sh -m prod -t own -k /etc/certs/my.key -c /etc/certs/cert.crt -p tls Update service in development mode and running admin only from /home/foobar/osctrl: ./deploy/provision.sh -U -s /home/foobar/osctrl -p admin  "
+},
+{
+	"uri": "https://osctrl.net/components/nginx/",
+	"title": "nginx",
+	"tags": [],
+	"description": "",
+	"content": " TLS termination using nginx This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/usage/",
+	"title": "Usage",
+	"tags": [],
+	"description": "",
+	"content": " Usage Work in progress. This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/usage/dockerize.sh/",
+	"title": "dockerize.sh",
+	"tags": [],
+	"description": "",
+	"content": "dockerize.sh is the provisioning script for osctrl in a Docker environment. It needs a docker-compose.yml and requires docker-compose to be installed.\nIt uses several functions from /deploy/lib.sh.\nExecute ./docker/dockerize.sh -h to show the usage of the script:\n$ ./docker/dockerize.sh -h Usage: ./docker/dockerize.sh -h [PARAMETER] [PARAMETER] ... Parameters: -h\tShows this help message and exit. -b\tBuilds new docker containers. -u\tRun osctrl containers. -c\tGenerates configuration files. -f\tForces the generation of new certificates and configuration. -m\tUses mkcert (https://github.com/FiloSottile/mkcert) to generate certificate. -d\tTakes down running containers. -x\tRemoves container images. Examples: Run dockerized osctrl building new containers and forcing to generate new configuration/certs: ./docker/dockerize.sh -u -b -f Generate only configuration files: ./docker/dockerize.sh -c  There are good examples of the usage of dockerize.sh in the Makefile\n"
+},
+{
+	"uri": "https://osctrl.net/components/backend/",
+	"title": "Backend",
+	"tags": [],
+	"description": "",
+	"content": " Backend service to store osctrl data This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/contributing/",
+	"title": "Contributing",
+	"tags": [],
+	"description": "",
+	"content": " Like any other open source projects, there are multiple ways to contribute to osctrl. As a developer, depending on your skills and experience, or as user that enjoy the project and want to help.\nReporting Bugs If you found something broken and not working properly, feel free to create an issue in Github with as much information as possible on how to reproduce the issue and logs, if possible. Before opening the issue, make sure that:\n You have read this documentation. You are using the latest stable version of osctrl. You already searched other issues to see if your problem or request was already reported.  Improving the Documentation You can improve this documentation by forking its repository, updating the contents and sending a pull request.\nWe ❤️ Pull Requests A pull request does not need to be a fix for a bug or implementing something new. Software can always be improved, legacy code removed and tests are always welcome!\nPlease do not be afraid of contributing code, making sure it follows the following rules:\n Your code compiles, does not break any of the existing code in the master branch and does not cause conflicts. The code is readable and has comments, that aren\u0026rsquo;t superfluous or unnecessary. An overview or context is provided as body of the Pull Request. It does not need to be too extensive.  Extra points if your code comes with tests!\n"
+},
+{
+	"uri": "https://osctrl.net/components/metrics/",
+	"title": "Metrics",
+	"tags": [],
+	"description": "",
+	"content": " Monitoring and metrics for osctrl This is not completed yet.\n"
+},
+{
+	"uri": "https://osctrl.net/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": " osctrl What is osctrl? osctrl is a fast and efficient osquery management solution, implementing its remote API as TLS endpoint.\nWith osctrl you are able to:\n Monitor all your systems running osquery. Distribute its configuration fast. Collect all the status and result logs, whether you want to store them or forward them. Run on-demand queries. Carve files.  "
+},
+{
+	"uri": "https://osctrl.net/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://osctrl.net/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
