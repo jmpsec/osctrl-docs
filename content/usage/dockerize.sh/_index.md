@@ -31,5 +31,6 @@ Examples:
 	./docker/dockerize.sh -u -b -f
   Generate only configuration files:
 	./docker/dockerize.sh -c
-
 ```
+
+There are good examples of the usage of `dockerize.sh` in the [Makefile](https://github.com/jmpsec/osctrl/blob/master/Makefile)

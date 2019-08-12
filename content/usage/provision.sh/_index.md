@@ -63,6 +63,4 @@ Examples:
 	./deploy/provision.sh -m prod -t own -k /etc/certs/my.key -c /etc/certs/cert.crt -p tls
   Update service in development mode and running admin only from /home/foobar/osctrl:
 	./deploy/provision.sh -U -s /home/foobar/osctrl -p admin
-
 ```
-

@@ -5,6 +5,24 @@ weight = 2
 pre = ""
 +++
 
-Execute `osquery-admin -h` to show the usage of the binary:
+`osctrl-admin` is the Admin service for **osctrl**.
 
-This is not completed yet.
+Execute `./osctrl-admin -h` to show the main help of the program:
+
+```properties
+$ ./osctrl-admin -h
+NAME:
+   osctrl-admin - Admin service for osctrl
+
+USAGE: osctrl-admin [global options] [arguments...]
+
+DESCRIPTION:
+   Admin service for osctrl, a fast and efficient osquery management
+
+GLOBAL OPTIONS:
+  -D string
+    	DB configuration JSON file to use. (default "config/db.json")
+  -c string
+    	Service configuration JSON file to use. (default "config/admin.json")
+  -v	Displays the binary version.
+```
