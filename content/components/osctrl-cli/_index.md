@@ -5,6 +5,8 @@ weight = 3
 pre = ""
 +++
 
-### CLI for **osctrl**
+<p align="center">
 
-This is not completed yet.
+  <img src="/osctrl-cli.png" style="width:50%; margin: 0;"/>
+
+</p>

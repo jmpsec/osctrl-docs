@@ -25,7 +25,7 @@
 	"title": "osctrl-tls",
 	"tags": [],
 	"description": "",
-	"content": " TLS endpoint service This is not completed yet.\n"
+	"content": ""
 },
 {
 	"uri": "https://osctrl.net/components/",
@@ -60,7 +60,7 @@
 	"title": "osctrl-admin",
 	"tags": [],
 	"description": "",
-	"content": " Admin service for osctrl This is not completed yet.\n"
+	"content": ""
 },
 {
 	"uri": "https://osctrl.net/deployment/",
@@ -88,7 +88,7 @@
 	"title": "osctrl-cli",
 	"tags": [],
 	"description": "",
-	"content": " CLI for osctrl This is not completed yet.\n"
+	"content": ""
 },
 {
 	"uri": "https://osctrl.net/configuration/",
@@ -109,7 +109,7 @@
 	"title": "nginx",
 	"tags": [],
 	"description": "",
-	"content": " TLS termination using nginx This is not completed yet.\n"
+	"content": ""
 },
 {
 	"uri": "https://osctrl.net/usage/",
@@ -130,7 +130,7 @@
 	"title": "Backend",
 	"tags": [],
 	"description": "",
-	"content": " Backend service to store osctrl data This is not completed yet.\n"
+	"content": ""
 },
 {
 	"uri": "https://osctrl.net/contributing/",
@@ -144,7 +144,7 @@
 	"title": "Metrics",
 	"tags": [],
 	"description": "",
-	"content": " Monitoring and metrics for osctrl This is not completed yet.\n"
+	"content": ""
 },
 {
 	"uri": "https://osctrl.net/",

@@ -5,6 +5,8 @@ weight = 4
 pre = ""
 +++
 
-### TLS termination using nginx
+<p align="center">
 
-This is not completed yet.
+  <img src="/nginx.png" style="width:75%; margin: 0;"/>
+
+</p>

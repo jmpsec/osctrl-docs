@@ -5,6 +5,8 @@ weight = 6
 pre = ""
 +++
 
-### Monitoring and metrics for **osctrl**
+<p align="center">
 
-This is not completed yet.
+  <img src="/metrics.png" style="width:75%; margin: 0;"/>
+
+</p>

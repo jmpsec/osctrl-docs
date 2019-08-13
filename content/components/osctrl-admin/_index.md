@@ -5,6 +5,8 @@ weight = 2
 pre = ""
 +++
 
-### Admin service for **osctrl**
+<p align="center">
 
-This is not completed yet.
+  <img src="/osctrl-admin.png" style="width:75%; margin: 0;"/>
+
+</p>

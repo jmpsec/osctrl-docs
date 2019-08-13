@@ -5,6 +5,8 @@ weight = 1
 pre = ""
 +++
 
-### TLS endpoint service
+<p align="center">
 
-This is not completed yet.
+  <img src="/osctrl-tls.png" style="width:75%; margin: 0;"/>
+
+</p>
