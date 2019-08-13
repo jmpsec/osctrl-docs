@@ -7,6 +7,6 @@ pre = ""
 
 <p align="center">
 
-  <img src="/osctrl-cli.png" style="width:50%; margin: 0;"/>
+  <img src="/osctrl-cli.png" style="width:75%; margin: 0;"/>
 
 </p>
