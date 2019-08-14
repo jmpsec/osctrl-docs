@@ -10,3 +10,7 @@ pre = ""
   <img src="/osctrl-admin.png" style="width:75%; margin: 0;"/>
 
 </p>
+
+---
+
+The osctrl-admin component of **osctrl** provides an administration interface to interact with the enrolled nodes.

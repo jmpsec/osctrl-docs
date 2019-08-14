@@ -8,4 +8,4 @@ pre = "<b>2. </b>"
 
 # Deployment
 
-Work in progress. This is not completed yet.
+Different ways to deploy **osctrl** and customize the environment.

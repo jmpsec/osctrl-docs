@@ -18,14 +18,14 @@
 	"title": "Using Vagrant",
 	"tags": [],
 	"description": "",
-	"content": " Work in progress This is not completed yet.\n"
+	"content": "Vagrant can be used for osctrl local development. Execute vagrant up to create a local virtual machine running Ubuntu 18.04. Once it has finished deploying, osctrl will be ready to be used and you can access it following the instructions in the terminal.\nTake a look at the Vagrantfile to understand how the local vagrant machine is created and modify to better fit your needs. It will install and configure all components of osctrl using the provision.sh script, and full command used looks as follows:\n./deploy/provision.sh --nginx --postgres -E --metrics -p all --tls-hostname \u0026quot;10.10.10.6\u0026quot; --admin-hostname \u0026quot;10.10.10.6\u0026quot; --password \u0026quot;admin\u0026quot;  Once it is done, osctrl will be ready to be used using a private IP, and the admin service will be accesible at https://10.10.10.6:8443/ with the credentials admin/admin.\nTake a look at the usage section of provision.sh if you need to make changes to the command used with vagrant.\n"
 },
 {
 	"uri": "https://osctrl.net/components/osctrl-tls/",
 	"title": "osctrl-tls",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "The osctrl-tls component is the actual TLS endpoint that implements the remote API of osquery.\n"
 },
 {
 	"uri": "https://osctrl.net/components/",
@@ -53,21 +53,21 @@
 	"title": "Using Docker",
 	"tags": [],
 	"description": "",
-	"content": " Work in progress This is not completed yet.\n"
+	"content": "You can use docker to run osctrl and each component has a separate Dockerfile to run independently. Also there is a docker-compose.yml that ties all the components together, to serve a functional deployment.\nUsing the Makefile\n"
 },
 {
 	"uri": "https://osctrl.net/components/osctrl-admin/",
 	"title": "osctrl-admin",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "The osctrl-admin component of osctrl provides an administration interface to interact with the enrolled nodes.\n"
 },
 {
 	"uri": "https://osctrl.net/deployment/",
 	"title": "Deployment",
 	"tags": [],
 	"description": "",
-	"content": " Deployment Work in progress. This is not completed yet.\n"
+	"content": " Deployment Different ways to deploy osctrl and customize the environment.\n"
 },
 {
 	"uri": "https://osctrl.net/usage/osctrl-cli/",
@@ -81,14 +81,14 @@
 	"title": "Using provision.sh",
 	"tags": [],
 	"description": "",
-	"content": " Work in progress This is not completed yet.\n"
+	"content": "If you want to deploy osctrl in your own environment, you can use the provision.sh to install all necessary dependencies and configure all components.\n"
 },
 {
 	"uri": "https://osctrl.net/components/osctrl-cli/",
 	"title": "osctrl-cli",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "The osctrl-cli component is the CLI for osctrl. Its purpose is to execute actions in osctrl without having to access directly the backend or use the admin interface. It can be very handy to automate actions in scripts or similar.\nFor a comprehensive list of all the commands and options, take a look at the usage of osctrl-cli.\n"
 },
 {
 	"uri": "https://osctrl.net/configuration/",
@@ -109,7 +109,7 @@
 	"title": "nginx",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "The nginx component performs the task of TLS termination for the osctrl services. If your network has many nodes enrolled in osctrl, most likely your TLS service (osctrl-tls) will receive a large number of requests per second, and on top of TLS termination, this component also can act as load balancer.\n"
 },
 {
 	"uri": "https://osctrl.net/usage/",
@@ -130,7 +130,7 @@
 	"title": "Backend",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "The backend component provides a centralized place where all the osctrl data is stored. In the diagram above, it is displayed with a PostgreSQL logo, and in fact, the default provisioning of osctrl does install postgres as backend. However, the code that handles database access, uses GORM so the changes to make osctrl work with a different backend solution would be minimal.\n"
 },
 {
 	"uri": "https://osctrl.net/contributing/",
@@ -144,7 +144,7 @@
 	"title": "Metrics",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "The metrics component of osctrl provides instrumentation for the following operations:\n Received requests to osctrl-tls. If the number of enrolled nodes is large enough, this will generate valuable data to assess the performance of our service. Received requests to osctrl-admin. Errors generated during normal operations both in osctrl-tls and osctrl-admin.  "
 },
 {
 	"uri": "https://osctrl.net/",

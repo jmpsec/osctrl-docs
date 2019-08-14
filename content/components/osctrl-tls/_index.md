@@ -10,3 +10,7 @@ pre = ""
   <img src="/osctrl-tls.png" style="width:75%; margin: 0;"/>
 
 </p>
+
+---
+
+The **osctrl-tls** component is the actual TLS endpoint that implements the [remote API](https://osquery.readthedocs.io/en/stable/deployment/remote/) of [osquery](https://osquery.io).
