@@ -1,12 +1,5 @@
 [
 {
-	"uri": "https://osctrl.net/configuration/osctrl-services/",
-	"title": "osctrl Services",
-	"tags": [],
-	"description": "",
-	"content": " Work in progress This is not completed yet.\n"
-},
-{
 	"uri": "https://osctrl.net/usage/osctrl-tls/",
 	"title": "osctrl-tls",
 	"tags": [],
@@ -25,21 +18,14 @@
 	"title": "osctrl-tls",
 	"tags": [],
 	"description": "",
-	"content": "The osctrl-tls component is the actual TLS endpoint that implements the remote API of osquery.\n"
+	"content": "The osctrl-tls component is the actual TLS endpoint that implements the remote API of osquery.\nInside of the osctrl-tls, you can run a number of TLS endpoints, to group the nodes that will enroll in each of them. Within osctrl this concept is called an environment.\nEach environment implements handlers to manage the following actions:\n Enroll nodes. Serve osquery configuration to enrolled nodes. Log osquery status messages and osquery results from enrolled nodes: Run on-demand queries in enrolled nodes and collect results. Perform file carving operations in enrolled nodes.  Inside osctrl there can be many environments. Think having the typical environment where you have corporate and production systems. Then you should have one environment for corp, and another one for prod. If you may need to distribute different configuration to the enrolled nodes, then you should use different environments.\n"
 },
 {
 	"uri": "https://osctrl.net/components/",
 	"title": "Components",
 	"tags": [],
 	"description": "",
-	"content": " Components Diagram of all the different components that are part of osctrl:\n"
-},
-{
-	"uri": "https://osctrl.net/configuration/logging/",
-	"title": "Logging",
-	"tags": [],
-	"description": "",
-	"content": " Work in progress This is not completed yet.\n"
+	"content": " Components Different components that are part of osctrl and how they interact with each other:\n"
 },
 {
 	"uri": "https://osctrl.net/usage/osctrl-admin/",
@@ -116,7 +102,7 @@
 	"title": "Usage",
 	"tags": [],
 	"description": "",
-	"content": " Usage Work in progress. This is not completed yet.\n"
+	"content": " Usage Usage of different osctrl components\n"
 },
 {
 	"uri": "https://osctrl.net/usage/dockerize.sh/",
@@ -130,7 +116,7 @@
 	"title": "Backend",
 	"tags": [],
 	"description": "",
-	"content": "The backend component provides a centralized place where all the osctrl data is stored. In the diagram above, it is displayed with a PostgreSQL logo, and in fact, the default provisioning of osctrl does install postgres as backend. However, the code that handles database access, uses GORM so the changes to make osctrl work with a different backend solution would be minimal.\n"
+	"content": "The backend component provides a centralized place where all the osctrl data is stored. In the diagram above, it is displayed with a PostgreSQL logo, and in fact, the default provisioning of osctrl does install PostgreSQL 9.6 as backend. However, the code that handles database access, uses GORM so the changes to make osctrl work with a different backend solution would be minimal.\nEach component uses the backend differently but all of them have read/write operations.\n"
 },
 {
 	"uri": "https://osctrl.net/contributing/",
@@ -151,7 +137,7 @@
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": " osctrl What is osctrl? osctrl is a fast and efficient osquery management solution, implementing its remote API as TLS endpoint.\nWith osctrl you are able to:\n Monitor all your systems running osquery. Distribute its configuration fast. Collect all the status and result logs, whether you want to store them or forward them. Run on-demand queries. Carve files.  "
+	"content": " osctrl What is osctrl? osctrl is a fast and efficient osquery management solution, implementing its remote API as TLS endpoint.\nWith osctrl you are able to:\n Monitor all your systems running osquery. Distribute osquery configuration fast across all your enrolled nodes. Collect all the status and result logs, whether you want to store them or forward them to a different system (Splunk, ELK, Kafka, Graylog\u0026hellip;) Run quasi-real-time on-demand queries in your selected enrolled nodes. Carve files or directories from your enrolled nodes.  osctrl has been designed to work as a scalable and reliable solution. It has been used successfully in networks from hundreds to hundreds of thousands nodes.\nGive it a try! https://github.com/jmpsec/osctrl\n"
 },
 {
 	"uri": "https://osctrl.net/categories/",

@@ -8,4 +8,4 @@ pre = "<b>4. </b>"
 
 # Usage
 
-Work in progress. This is not completed yet.
+Usage of different **osctrl** components

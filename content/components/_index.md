@@ -8,7 +8,7 @@ pre = "<b>1. </b>"
 
 # Components
 
-Diagram of all the different components that are part of **osctrl**:
+Different components that are part of **osctrl** and how they interact with each other:
 
 <p align="center">
 
