@@ -169,6 +169,6 @@ a:hover {
   border-right-color: var(--MENU-HEADER-BG-color);
 }
 
-body {
-  font-family: 'Bai Jamjuree';
+* {
+  font-family: 'Bai Jamjuree', sans-serif;
 }
