@@ -15,6 +15,8 @@ pre = ""
 
 The metrics component of **osctrl** provides instrumentation for the following operations:
 
-* Received requests to osctrl-tls. If the number of enrolled nodes is large enough, this will generate valuable data to assess the performance of our service.
-* Received requests to osctrl-admin.
-* Errors generated during normal operations both in osctrl-tls and osctrl-admin.
+* Receiving requests to osctrl-tls,
+* Receiving requests to osctrl-admin,
+* Generating errors during normal operations both in osctrl-tls and osctrl-admin.
+
+Note that if the number of enrolled nodes is large enough, these metrics will generate valuable data to assess the performance of **osctrl**.

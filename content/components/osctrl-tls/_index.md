@@ -19,10 +19,10 @@ Inside of the osctrl-tls, you can run a number of TLS endpoints, to group the no
 
 Each **environment** implements handlers to manage the following actions:
 
-* Enroll nodes.
-* Serve osquery configuration to enrolled nodes.
-* Log osquery status messages and osquery results from enrolled nodes:
-* Run on-demand queries in enrolled nodes and collect results.
+* Enroll nodes,
+* Serve osquery configuration to enrolled nodes,
+* Log osquery status messages and osquery results from enrolled nodes,
+* Run on-demand queries in enrolled nodes and collect results,
 * Perform file carving operations in enrolled nodes.
 
-Inside **osctrl** there can be *many* environments. Think having the typical environment where you have corporate and production systems. Then you would have one environment for corp, and another one for prod. The reasoning is, if you may need to distribute different configuration to the enrolled nodes, then you should use different environments.
+Inside **osctrl** there can be *many* environments, like a typical environment where you have corporate and production systems. Then you would have one environment for corp, and another one for prod. The reasoning is, if you may need to distribute different configurations to the enrolled nodes, then you should use different environments.

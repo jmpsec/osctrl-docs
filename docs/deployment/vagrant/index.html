@@ -12,20 +12,20 @@
     <title>Using Vagrant :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1566056628" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1566056628" rel="stylesheet">
-    <link href="/css/hybrid.css?1566056628" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1566056628" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1566056628" rel="stylesheet">
-    <link href="/css/auto-complete.css?1566056628" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1566056628" rel="stylesheet">
-    <link href="/css/theme.css?1566056628" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1566056628" rel="stylesheet">
+    <link href="/css/nucleus.css?1566184183" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1566184183" rel="stylesheet">
+    <link href="/css/hybrid.css?1566184183" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1566184183" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1566184183" rel="stylesheet">
+    <link href="/css/auto-complete.css?1566184183" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1566184183" rel="stylesheet">
+    <link href="/css/theme.css?1566184183" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1566184183" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1566056628" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1566184183" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1566056628"></script>
+    <script src="/js/jquery-3.3.1.min.js?1566184183"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -76,14 +76,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1566056628"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1566056628"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1566184183"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1566184183"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1566056628"></script>
+<script type="text/javascript" src="/js/search.js?1566184183"></script>
 
     
   </div>
@@ -522,6 +522,174 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/user/" title="user" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/user/">
+          user
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/environment/" title="environment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/environment/">
+          environment
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/settings/" title="settings" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/settings/">
+          settings
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/node/" title="node" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/node/">
+          node
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/query/" title="query" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/query/">
+          query
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/check/" title="check" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/check/">
+          check
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -755,14 +923,35 @@
 
 	<p><a href="https://www.vagrantup.com/">Vagrant</a> can be used for <strong>osctrl</strong> local development. Execute <code>vagrant up</code> to create a local virtual machine running Ubuntu 18.04. Once it has finished deploying, <strong>osctrl</strong> will be ready to be used and you can access it following the instructions in the terminal.</p>
 
-<p>Take a look at the <a href="https://github.com/jmpsec/osctrl/blob/master/Vagrantfile">Vagrantfile</a> to understand how the local vagrant machine is created and modify to better fit your needs. It will install and configure all components of <strong>osctrl</strong> using the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/provision.sh">provision.sh</a> script, and full command used looks as follows:</p>
+<p>Take a look at the <a href="https://github.com/jmpsec/osctrl/blob/master/Vagrantfile">Vagrantfile</a> to understand how the local vagrant machine is created and to modify it to better fit your needs. It will install and configure all components of <strong>osctrl</strong> using the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/provision.sh">provision.sh</a> script. The full command used looks as follows:</p>
 
-<pre><code class="language-sh">./deploy/provision.sh --nginx --postgres -E --metrics -p all --tls-hostname &quot;10.10.10.6&quot; --admin-hostname &quot;10.10.10.6&quot; --password &quot;admin&quot;
+<pre><code class="language-sh">./deploy/provision.sh --nginx --postgres -E --metrics --tls-hostname &quot;10.10.10.6&quot; --admin-hostname &quot;10.10.10.6&quot; --password &quot;admin&quot;
 </code></pre>
+
+<p>According to the <a href="/usage/provision.sh/">usage</a> of the deployment script, the command above will:</p>
+
+<ul>
+<li><code>--nginx</code>: Deploy the nginx that is going to be used as TLS termination,</li>
+<li><code>--postgres</code>: Deploy the backend component (PostgreSQL),</li>
+<li><code>-E</code>: Enroll itself in <strong>osctrl</strong>,</li>
+<li><code>--metrics</code>: Deploy the metrics component (Grafana),</li>
+<li><code>--tls-hostname &quot;10.10.10.6&quot;</code>: Use <code>10.10.10.6</code> as hostname for osctrl-tls,</li>
+<li><code>--admin-hostname &quot;10.10.10.6&quot;</code>: Use <code>10.10.10.6</code> as hostname for osctrl-admin,</li>
+<li><code>--password &quot;admin&quot;</code>: Use <code>admin</code> as the administrative user (admin) password.</li>
+</ul>
+
+<p>There are however some options that aren&rsquo;t set given the default values. Those are:</p>
+
+<ul>
+<li><code>-m dev</code>: Mode is <code>dev</code> which means that provision will run in development mode. Certificate will be self-signed,</li>
+<li><code>-p all</code>: All parts will be provisioned, admin and tls.</li>
+</ul>
 
 <p>Once it is done, <strong>osctrl</strong> will be ready to be used using a private IP, and the admin service will be accesible at <a href="https://10.10.10.6:8443/">https://10.10.10.6:8443/</a> with the credentials <code>admin/admin</code>.</p>
 
-<p>Take a look at the <a href="https://www.osctrl.net/usage/provision.sh/">usage</a> section of <code>provision.sh</code> if you need to make changes to the command used with vagrant.</p>
+<p>Here is the whole output of a successfully executed <code>vagrant up</code> command:</p>
+
+<script id="asciicast-263137" src="https://asciinema.org/a/263137.js" async></script>
 
 
 
@@ -1059,8 +1248,106 @@
 
                     
                     
+                        
+                    
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1138,20 +1425,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1566056628"></script>
-    <script src="/js/perfect-scrollbar.min.js?1566056628"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1566056628"></script>
-    <script src="/js/jquery.sticky.js?1566056628"></script>
-    <script src="/js/featherlight.min.js?1566056628"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1566056628"></script>
-    <script src="/js/highlight.pack.js?1566056628"></script>
+    <script src="/js/clipboard.min.js?1566184183"></script>
+    <script src="/js/perfect-scrollbar.min.js?1566184183"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1566184183"></script>
+    <script src="/js/jquery.sticky.js?1566184183"></script>
+    <script src="/js/featherlight.min.js?1566184183"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1566184183"></script>
+    <script src="/js/highlight.pack.js?1566184183"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1566056628"></script>
-    <script src="/js/learn.js?1566056628"></script>
-    <script src="/js/hugo-learn.js?1566056628"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1566184183"></script>
+    <script src="/js/learn.js?1566184183"></script>
+    <script src="/js/hugo-learn.js?1566184183"></script>
 
-    <link href="/mermaid/mermaid.css?1566056628" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1566056628"></script>
+    <link href="/mermaid/mermaid.css?1566184183" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1566184183"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

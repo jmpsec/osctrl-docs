@@ -8,10 +8,10 @@ pre = "<b>1. </b>"
 
 # Components
 
-Different components that are part of **osctrl** and how they interact with each other:
-
 <p align="center">
 
   <img src="/components.png"/>
 
 </p>
+
+**osctrl** components and their interactions

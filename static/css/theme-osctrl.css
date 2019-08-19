@@ -43,6 +43,10 @@
 
 }
 
+body {
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
 code {
   color: #444;
   background: #eee;
@@ -167,8 +171,4 @@ a:hover {
 
 #body .tags a.tag-link:before {
   border-right-color: var(--MENU-HEADER-BG-color);
-}
-
-* {
-  font-family: 'Bai Jamjuree', sans-serif;
 }
