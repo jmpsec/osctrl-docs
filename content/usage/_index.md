@@ -8,4 +8,11 @@ pre = "<b>4. </b>"
 
 # Usage
 
-Usage of different **osctrl** components
+You can't know how to use **osctrl** components if you don't read the documentation...
+
+<p align="center">
+
+  <img src="/gifs/usage.gif"/>
+
+</p>
+

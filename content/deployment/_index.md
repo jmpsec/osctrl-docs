@@ -9,3 +9,9 @@ pre = "<b>2. </b>"
 # Deployment
 
 Different ways to deploy **osctrl** and customize the environment.
+
+<p align="center">
+
+  <img src="/gifs/deployment.gif"/>
+
+</p>

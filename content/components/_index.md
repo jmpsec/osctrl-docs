@@ -13,5 +13,3 @@ pre = "<b>1. </b>"
   <img src="/components.png"/>
 
 </p>
-
-**osctrl** components and their interactions

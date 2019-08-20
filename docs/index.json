@@ -18,21 +18,21 @@
 	"title": "Using Vagrant",
 	"tags": [],
 	"description": "",
-	"content": "Vagrant can be used for osctrl local development. Execute vagrant up to create a local virtual machine running Ubuntu 18.04. Once it has finished deploying, osctrl will be ready to be used and you can access it following the instructions in the terminal.\nTake a look at the Vagrantfile to understand how the local vagrant machine is created and to modify it to better fit your needs. It will install and configure all components of osctrl using the provision.sh script. The full command used looks as follows:\n./deploy/provision.sh --nginx --postgres -E --metrics --tls-hostname \u0026quot;10.10.10.6\u0026quot; --admin-hostname \u0026quot;10.10.10.6\u0026quot; --password \u0026quot;admin\u0026quot;  According to the usage of the deployment script, the command above will:\n --nginx: Deploy the nginx that is going to be used as TLS termination, --postgres: Deploy the backend component (PostgreSQL), -E: Enroll itself in osctrl, --metrics: Deploy the metrics component (Grafana), --tls-hostname \u0026quot;10.10.10.6\u0026quot;: Use 10.10.10.6 as hostname for osctrl-tls, --admin-hostname \u0026quot;10.10.10.6\u0026quot;: Use 10.10.10.6 as hostname for osctrl-admin, --password \u0026quot;admin\u0026quot;: Use admin as the administrative user (admin) password.  There are however some options that aren\u0026rsquo;t set given the default values. Those are:\n -m dev: Mode is dev which means that provision will run in development mode. Certificate will be self-signed, -p all: All parts will be provisioned, admin and tls.  Once it is done, osctrl will be ready to be used using a private IP, and the admin service will be accesible at https://10.10.10.6:8443/ with the credentials admin/admin.\nHere is the whole output of a successfully executed vagrant up command:\n "
+	"content": "Vagrant can be used for osctrl local development. Execute vagrant up to create a local virtual machine running Ubuntu 18.04. Once it has finished deploying, osctrl will be ready to be used and you can access it following the instructions in the terminal.\nTake a look at the Vagrantfile to understand how the local vagrant machine is created and to modify it to better fit your needs. It will install and configure all components of osctrl using the provision.sh script. The full command used looks as follows:\n./deploy/provision.sh --nginx --postgres -E --metrics --tls-hostname \u0026quot;10.10.10.6\u0026quot; --admin-hostname \u0026quot;10.10.10.6\u0026quot; --password \u0026quot;admin\u0026quot;  According to the usage of the deployment script, the command above will:\n --nginx: Deploy the nginx that is going to be used as TLS termination, --postgres: Deploy the backend component (PostgreSQL), -E: Enroll itself in osctrl, --metrics: Deploy the metrics component (Grafana), --tls-hostname \u0026quot;10.10.10.6\u0026quot;: Use 10.10.10.6 as hostname for osctrl-tls, --admin-hostname \u0026quot;10.10.10.6\u0026quot;: Use 10.10.10.6 as hostname for osctrl-admin, --password \u0026quot;admin\u0026quot;: Use admin as the administrative user (admin) password.  Some options will have default values. For example -m will be dev as mode which means that provision will run in development mode and certificate will be self-signed, or -p with all parts provisioned, admin and tls.\n Once it is done, osctrl will be ready to be used using a private IP, and the admin service will be accesible at https://10.10.10.6:8443/ with the credentials admin/admin.\nHere is the whole output of a successfully executed vagrant up command:\n "
 },
 {
 	"uri": "https://osctrl.net/components/osctrl-tls/",
 	"title": "osctrl-tls",
 	"tags": [],
 	"description": "",
-	"content": "The osctrl-tls component is the actual TLS endpoint that implements the remote API of osquery.\nInside of the osctrl-tls, you can run a number of TLS endpoints, to group the nodes that will enroll in each of them. Within osctrl this concept is called an environment.\nEach environment implements handlers to manage the following actions:\n Enroll nodes, Serve osquery configuration to enrolled nodes, Log osquery status messages and osquery results from enrolled nodes, Run on-demand queries in enrolled nodes and collect results, Perform file carving operations in enrolled nodes.  Inside osctrl there can be many environments, like a typical environment where you have corporate and production systems. Then you would have one environment for corp, and another one for prod. The reasoning is, if you may need to distribute different configurations to the enrolled nodes, then you should use different environments.\n"
+	"content": " The osctrl-tls component is the actual TLS endpoint that implements the remote API of osquery.\nInside of the osctrl-tls, you can run a number of TLS endpoints, to group the nodes that will enroll in each of them. Within osctrl this concept is called an environment.\nEach environment implements handlers to manage the following actions:\n Enroll nodes, Serve osquery configuration to enrolled nodes, Log osquery status messages and osquery results from enrolled nodes, Run on-demand queries in enrolled nodes and collect results, Perform file carving operations in enrolled nodes.  Inside osctrl there can be many environments, like a typical environment where you have corporate and production systems. Then you would have one environment for corp, and another one for prod. The reasoning is, if you may need to distribute different configurations to the enrolled nodes, then you should use different environments.\nEnrolling osquery nodes Escaling osctrl-tls "
 },
 {
 	"uri": "https://osctrl.net/components/",
 	"title": "Components",
 	"tags": [],
 	"description": "",
-	"content": " Components osctrl components and their interactions\n"
+	"content": " Components "
 },
 {
 	"uri": "https://osctrl.net/usage/osctrl-cli/environment/",
@@ -53,7 +53,7 @@
 	"title": "Using Docker",
 	"tags": [],
 	"description": "",
-	"content": "You can use docker to run osctrl. Each component has a separate Dockerfile to run independently. There is also a docker-compose.yml that ties all the components together to serve a functional deployment.\nIn the Makefile there are docker specific commands to deploy osctrl\n"
+	"content": "You can use docker to run osctrl. Each component has a separate Dockerfile to run independently. There is also a docker-compose.yml that ties all the components together to serve a functional deployment.\nIn the Makefile there are docker specific commands to deploy osctrl, which are utilizing the dockerize.sh command\n"
 },
 {
 	"uri": "https://osctrl.net/components/osctrl-admin/",
@@ -130,7 +130,7 @@
 	"title": "Usage",
 	"tags": [],
 	"description": "",
-	"content": " Usage Usage of different osctrl components\n"
+	"content": " Usage You can\u0026rsquo;t know how to use osctrl components if you don\u0026rsquo;t read the documentation\u0026hellip;\n"
 },
 {
 	"uri": "https://osctrl.net/usage/osctrl-cli/query/",
@@ -144,7 +144,7 @@
 	"title": "dockerize.sh",
 	"tags": [],
 	"description": "",
-	"content": "dockerize.sh is the provisioning script for osctrl in a Docker environment. It needs a docker-compose.yml and requires docker-compose to be installed.\nIt uses several functions from /deploy/lib.sh.\nExecute ./docker/dockerize.sh -h to show the usage of the script:\n$ ./docker/dockerize.sh -h Usage: ./docker/dockerize.sh -h [PARAMETER] [PARAMETER] ... Parameters: -h\tShows this help message and exit. -b\tBuilds new docker containers. -u\tRun osctrl containers. -c\tGenerates configuration files. -f\tForces the generation of new certificates and configuration. -m\tUses mkcert (https://github.com/FiloSottile/mkcert) to generate certificate. -d\tTakes down running containers. -x\tRemoves container images. Examples: Run dockerized osctrl building new containers and forcing to generate new configuration/certs: ./docker/dockerize.sh -u -b -f Generate only configuration files: ./docker/dockerize.sh -c  There are good examples of the usage of dockerize.sh in the Makefile\n"
+	"content": "dockerize.sh is the provisioning script for osctrl in a Docker environment. It needs a docker-compose.yml and requires docker-compose to be installed.\nIt uses several functions from /deploy/lib.sh.\nExecute ./docker/dockerize.sh -h to show the usage of the script:\n$ ./docker/dockerize.sh -h Usage: ./docker/dockerize.sh -h [PARAMETER] [PARAMETER] ... Parameters: -h\tShows this help message and exit. -b\tBuilds new docker containers. -u\tRun osctrl containers. -c\tGenerates configuration files. -f\tForces the generation of new certificates and configuration. -m\tUses mkcert (https://github.com/FiloSottile/mkcert) to generate certificate. -d\tTakes down running containers. -x\tRemoves container images. Examples: Run dockerized osctrl building new containers and forcing to generate new configuration/certs: ./docker/dockerize.sh -u -b -f Generate only configuration files: ./docker/dockerize.sh -c  There are good examples of the usage of dockerize.sh in the Makefile.\n"
 },
 {
 	"uri": "https://osctrl.net/components/backend/",
@@ -165,14 +165,14 @@
 	"title": "check",
 	"tags": [],
 	"description": "",
-	"content": " Check $ ./osctrl-cli check -h NAME: osctrl-cli check - Checks DB connection USAGE: osctrl-cli check [arguments...]  "
+	"content": " Check $ ./osctrl-cli check -h NAME: osctrl-cli check - Checks DB connection USAGE: osctrl-cli check [arguments...]  Although this command may appear a bit confusing, it comes in really handy to verify when the backend component is ready to go.\n"
 },
 {
 	"uri": "https://osctrl.net/components/metrics/",
 	"title": "Metrics",
 	"tags": [],
 	"description": "",
-	"content": "The metrics component of osctrl provides instrumentation for the following operations:\n Receiving requests to osctrl-tls, Receiving requests to osctrl-admin, Generating errors during normal operations both in osctrl-tls and osctrl-admin.  Note that if the number of enrolled nodes is large enough, these metrics will generate valuable data to assess the performance of osctrl.\n"
+	"content": "The metrics component of osctrl provides instrumentation for the following operations:\n Receiving requests to osctrl-tls, Receiving requests to osctrl-admin, Generating errors during normal operations both in osctrl-tls and osctrl-admin.  Note that if the number of enrolled nodes is large enough, these metrics will generate valuable data to assess the performance of osctrl.\nThe default provisioning of osctrl does install InfluxDB + Telegraf + Grafana to act as the metrics component, but any monitoring solution that follows the push model, should work as well.\n"
 },
 {
 	"uri": "https://osctrl.net/",

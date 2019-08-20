@@ -22,12 +22,13 @@ According to the [usage](/usage/provision.sh/) of the deployment script, the com
 * `--admin-hostname "10.10.10.6"`: Use `10.10.10.6` as hostname for osctrl-admin,
 * `--password "admin"`: Use `admin` as the administrative user (admin) password.
 
-There are however some options that aren't set given the default values. Those are:
-
-* `-m dev`: Mode is `dev` which means that provision will run in development mode. Certificate will be self-signed,
-* `-p all`: All parts will be provisioned, admin and tls.
+{{% notice info %}}
+Some options will have default values. For example `-m` will be `dev` as mode which means that provision will run in development mode and certificate will be self-signed, or `-p` with all parts provisioned, admin and tls.
+{{% /notice %}}
 
 Once it is done, **osctrl** will be ready to be used using a private IP, and the admin service will be accesible at [https://10.10.10.6:8443/](https://10.10.10.6:8443/) with the credentials `admin/admin`.
+
+---
 
 Here is the whole output of a successfully executed `vagrant up` command:
 

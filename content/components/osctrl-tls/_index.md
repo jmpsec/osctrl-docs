@@ -26,3 +26,7 @@ Each **environment** implements handlers to manage the following actions:
 * Perform file carving operations in enrolled nodes.
 
 Inside **osctrl** there can be *many* environments, like a typical environment where you have corporate and production systems. Then you would have one environment for corp, and another one for prod. The reasoning is, if you may need to distribute different configurations to the enrolled nodes, then you should use different environments.
+
+#### Enrolling osquery nodes
+
+#### Escaling osctrl-tls
