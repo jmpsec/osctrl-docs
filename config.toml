@@ -21,16 +21,20 @@ url = "https://github.com/jmpsec/osctrl"
 weight = 1
 
 [[menu.shortcuts]]
+name = '<center><a class="github-button" href="https://github.com/jmpsec/osctrl" data-icon="octicon-star" data-show-count="true" aria-label="Star jmpsec/osctrl on GitHub">Star</a> <a class="github-button" href="https://github.com/jmpsec/osctrl/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork jmpsec/osctrl on GitHub">Fork</a><center>'
+weight = 2
+
+[[menu.shortcuts]]
 name = '<br/><img alt="Software License" src="https://img.shields.io/badge/license-GPL3-brightgreen.svg?style=flat-square">'
 url = "https://github.com/jmpsec/osctrl/blob/master/LICENSE.md"
-weight = 2
+weight = 3
 
 [[menu.shortcuts]]
 name = '<img alt="Travis" src="https://img.shields.io/travis/jmpsec/osctrl/master.svg?style=flat-square">'
 url = "https://travis-ci.org/jmpsec/osctrl"
-weight = 3
+weight = 4
 
 [[menu.shortcuts]]
 name = '<img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/jmpsec/osctrl?style=flat-square&fuckgithubcache=1">'
 url = "https://goreportcard.com/report/github.com/jmpsec/osctrl"
-weight = 4
+weight = 5

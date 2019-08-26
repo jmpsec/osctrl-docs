@@ -20,4 +20,6 @@ With **osctrl** you are able to:
 
 **osctrl** has been designed to work as a scalable and reliable solution. It has been used successfully in networks from hundreds to hundreds of thousands nodes.
 
-Give it a try! [https://github.com/jmpsec/osctrl](https://github.com/jmpsec/osctrl)
+Give it a try!
+
+[https://github.com/jmpsec/osctrl](https://github.com/jmpsec/osctrl)

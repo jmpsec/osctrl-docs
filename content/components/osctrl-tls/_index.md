@@ -29,4 +29,40 @@ Inside **osctrl** there can be *many* environments, like a typical environment w
 
 #### Enrolling osquery nodes
 
+As mentioned before, osquery nodes must be enrolled inside of an environment. In order to achieve that, osquery requires an enrolling secret that will be stored in disk. Also, and given that osquery communicates with **osctrl** using TLS, a certificate may also be needed.
+
+For example, here are the flags to enroll osquery nodes in the *dev* environment, used as example when deploying **osctrl** locally. The important part are the path for the different requests to arrive and the intervals in secods:
+
+```properties
+--host_identifier=uuid
+--force=true
+--utc=true
+--enroll_secret_path=__SECRET_FILE__
+--enroll_tls_endpoint=/dev/enroll
+--config_plugin=tls
+--config_tls_endpoint=/dev/config
+--config_tls_refresh=10
+--logger_plugin=tls
+--logger_tls_compress=true
+--logger_tls_endpoint=/dev/log
+--logger_tls_period=10
+--disable_carver=false
+--carver_disable_function=false
+--carver_start_endpoint=/dev/init
+--carver_continue_endpoint=/dev/block
+--disable_distributed=false
+--distributed_interval=10
+--distributed_plugin=tls
+--distributed_tls_max_attempts=3
+--distributed_tls_read_endpoint=/dev/read
+--distributed_tls_write_endpoint=/dev/write
+--tls_dump=true
+--tls_hostname=osctrl-nginx
+--tls_server_certs=__CERT_FILE__
+```
+
+The values of `__CERT_FILE__` and `__SECRET_FILE__` will be the local full path for certificate and secret respectively.
+
 #### Escaling osctrl-tls
+
+The idea behind making osctrl-tls its own component is all about scalability. In a scenario with many nodes enrolled, the number of requests is going to increase quickly, especially if we lower the intervals. For example

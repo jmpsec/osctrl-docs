@@ -10,6 +10,6 @@ pre = "<b>1. </b>"
 
 <p align="center">
 
-  <img src="/components.png"/>
+  <img src="/components.png" alt="osctrl components and their interactions"/>
 
 </p>

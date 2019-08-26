@@ -25,7 +25,7 @@ The format of those files follows the [template](https://github.com/jmpsec/osctr
 }
 ```
 
-If you want to utilize the helper functions that are part of the provisioning process, first you have to import the [lib.sh](https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh), like so:
+If you want to use the helper functions that are part of the provisioning process, first you have to import the [lib.sh](https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh), like so:
 
 ```bash
 $ source deploy/lib.sh

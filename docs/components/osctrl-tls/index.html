@@ -12,20 +12,20 @@
     <title>osctrl-tls :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1566676468" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1566676468" rel="stylesheet">
-    <link href="/css/hybrid.css?1566676468" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1566676468" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1566676468" rel="stylesheet">
-    <link href="/css/auto-complete.css?1566676468" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1566676468" rel="stylesheet">
-    <link href="/css/theme.css?1566676468" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1566676468" rel="stylesheet">
+    <link href="/css/nucleus.css?1566827593" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1566827593" rel="stylesheet">
+    <link href="/css/hybrid.css?1566827593" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1566827593" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1566827593" rel="stylesheet">
+    <link href="/css/auto-complete.css?1566827593" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1566827593" rel="stylesheet">
+    <link href="/css/theme.css?1566827593" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1566827593" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1566676468" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1566827593" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1566676468"></script>
+    <script src="/js/jquery-3.3.1.min.js?1566827593"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -45,6 +45,26 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap');
+
+.jmpsec {
+    height: 5em;
+    width: auto;
+    margin: auto;
+    bottom: 3em;
+    left: 0;
+    right: 0;
+    border: 2px solid black;
+    border-bottom: 4px solid black;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+    transition: all 200ms ease-out;
+    background-color: #ffffff;
+}
+
+.jmpsec:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  transform: scale(1.5);
+}
 </style>
 
   </head>
@@ -76,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1566676468"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1566676468"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1566827593"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1566827593"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1566676468"></script>
+<script type="text/javascript" src="/js/search.js?1566827593"></script>
 
     
   </div>
@@ -795,6 +815,10 @@
               </li>
           
               <li> 
+                  <a class="padding" href="https://osctrl.net/"><center><a class="github-button" href="https://github.com/jmpsec/osctrl" data-icon="octicon-star" data-show-count="true" aria-label="Star jmpsec/osctrl on GitHub">Star</a> <a class="github-button" href="https://github.com/jmpsec/osctrl/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork jmpsec/osctrl on GitHub">Fork</a><center></a>
+              </li>
+          
+              <li> 
                   <a class="padding" href="https://github.com/jmpsec/osctrl/blob/master/LICENSE.md"><br/><img alt="Software License" src="https://img.shields.io/badge/license-GPL3-brightgreen.svg?style=flat-square"></a>
               </li>
           
@@ -823,15 +847,13 @@
     </section>
     
     <section id="footer">
-      <center>
-    
-    <a class="github-button" href="https://github.com/jmpsec/osctrl" data-icon="octicon-star" data-show-count="true" aria-label="Star jmpsec/osctrl on GitHub">Star</a>
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-    
-    <a class="github-button" href="https://github.com/jmpsec/osctrl/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork jmpsec/osctrl on GitHub">Fork</a>
+<center>
+  <a href="https://jmpsec.com" target="_blank">
+    <img class="jmpsec" src="/jmpsec.png" alt="JMP Security"/>
+  </a>
 </center>
-
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 
     </section>
   </div>
@@ -963,7 +985,42 @@
 
 <h4 id="enrolling-osquery-nodes">Enrolling osquery nodes</h4>
 
+<p>As mentioned before, osquery nodes must be enrolled inside of an environment. In order to achieve that, osquery requires an enrolling secret that will be stored in disk. Also, and given that osquery communicates with <strong>osctrl</strong> using TLS, a certificate may also be needed.</p>
+
+<p>For example, here are the flags to enroll osquery nodes in the <em>dev</em> environment, used as example when deploying <strong>osctrl</strong> locally. The important part are the path for the different requests to arrive and the intervals in secods:</p>
+
+<pre><code class="language-properties">--host_identifier=uuid
+--force=true
+--utc=true
+--enroll_secret_path=__SECRET_FILE__
+--enroll_tls_endpoint=/dev/enroll
+--config_plugin=tls
+--config_tls_endpoint=/dev/config
+--config_tls_refresh=10
+--logger_plugin=tls
+--logger_tls_compress=true
+--logger_tls_endpoint=/dev/log
+--logger_tls_period=10
+--disable_carver=false
+--carver_disable_function=false
+--carver_start_endpoint=/dev/init
+--carver_continue_endpoint=/dev/block
+--disable_distributed=false
+--distributed_interval=10
+--distributed_plugin=tls
+--distributed_tls_max_attempts=3
+--distributed_tls_read_endpoint=/dev/read
+--distributed_tls_write_endpoint=/dev/write
+--tls_dump=true
+--tls_hostname=osctrl-nginx
+--tls_server_certs=__CERT_FILE__
+</code></pre>
+
+<p>The values of <code>__CERT_FILE__</code> and <code>__SECRET_FILE__</code> will be the local full path for certificate and secret respectively.</p>
+
 <h4 id="escaling-osctrl-tls">Escaling osctrl-tls</h4>
+
+<p>The idea behind making osctrl-tls its own component is all about scalability. In a scenario with many nodes enrolled, the number of requests is going to increase quickly, especially if we lower the intervals. For example</p>
 
 
 
@@ -1434,20 +1491,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1566676468"></script>
-    <script src="/js/perfect-scrollbar.min.js?1566676468"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1566676468"></script>
-    <script src="/js/jquery.sticky.js?1566676468"></script>
-    <script src="/js/featherlight.min.js?1566676468"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1566676468"></script>
-    <script src="/js/highlight.pack.js?1566676468"></script>
+    <script src="/js/clipboard.min.js?1566827593"></script>
+    <script src="/js/perfect-scrollbar.min.js?1566827593"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1566827593"></script>
+    <script src="/js/jquery.sticky.js?1566827593"></script>
+    <script src="/js/featherlight.min.js?1566827593"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1566827593"></script>
+    <script src="/js/highlight.pack.js?1566827593"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1566676468"></script>
-    <script src="/js/learn.js?1566676468"></script>
-    <script src="/js/hugo-learn.js?1566676468"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1566827593"></script>
+    <script src="/js/learn.js?1566827593"></script>
+    <script src="/js/hugo-learn.js?1566827593"></script>
 
-    <link href="/mermaid/mermaid.css?1566676468" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1566676468"></script>
+    <link href="/mermaid/mermaid.css?1566827593" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1566827593"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
