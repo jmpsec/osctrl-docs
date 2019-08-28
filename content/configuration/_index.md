@@ -25,6 +25,29 @@ The format of those files follows the [template](https://github.com/jmpsec/osctr
 }
 ```
 
+All the fields that start with an underscore, will be filled in with a value. Here are the values that can go on each:
+
+* `_SERVICE_NAME`: To identify the service that is file is configuring. It can be `tls` or `admin`,
+* `_LISTENER`: Local listener for the service. Usually `127.0.0.1`, but sometimes in docker it could be `0.0.0.0`,
+* `_SERVICE_PORT`: Local port for the listener. By default is `9000` for osctrl-tls and `9001` for ostrl-admin,
+* `_SERVICE_HOST`: Host or domain that this service will be accesible from,
+* `_SERVICE_AUTH`: Type of authentication that will service will implement. Values can be:
+  * `none` - No authentication
+  * `json` - Users provided in the same JSON configuration file
+  * `db` - Users stored and retrieved from backend
+  * `saml` - Authentication will be provided using SAML. It requires its own `saml.json` configuration file
+  * `headers` - Authentication will be provided verifying headers, using a middleware approach
+* `_SERVICE_LOGGING`: Type of logging that each service will implement. Values can be:
+  * `none` - No logging, data will be discarded
+  * `stdout` - Logs will go to the stdout of the service
+  * `db` - Logs will be store in the backend
+  * `graylog` - Logs will be sent to [Graylog](https://www.graylog.org/). It requires its own `graylog.json` configuration file
+  * `splunk` - Logs will be sent to [Splunk](https://www.splunk.com/). It requires its own `splunk.json` configuration file
+
+{{% notice warning %}}
+Logging is implemented using [plugins](https://github.com/javuto/osctrl/tree/master/plugins) and each plugin will require its own configuration.
+{{% /notice %}}
+
 If you want to use the helper functions that are part of the provisioning process, first you have to import the [lib.sh](https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh), like so:
 
 ```bash
@@ -62,6 +85,16 @@ Similar to the service configuration, there is a [template](https://github.com/j
 
 ### nginx
 
+TLS termination using ngix.
+
 ### Metrics
 
+Metrics using [InfluxDB](https://www.influxdata.com/products/influxdb-overview/) + [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/) + [Grafana](https://grafana.com/).
+
 ### Logging
+
+Loggity logs.
+
+{{% notice info %}}
+Logging is implemented using [plugins](https://github.com/javuto/osctrl/tree/master/plugins) and each plugin will require its own configuration.
+{{% /notice %}}

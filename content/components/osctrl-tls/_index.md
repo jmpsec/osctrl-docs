@@ -65,4 +65,6 @@ The values of `__CERT_FILE__` and `__SECRET_FILE__` will be the local full path 
 
 #### Escaling osctrl-tls
 
-The idea behind making osctrl-tls its own component is all about scalability. In a scenario with many nodes enrolled, the number of requests is going to increase quickly, especially if we lower the intervals. For example
+The idea behind making osctrl-tls its own component is all about scalability. In a scenario with many nodes enrolled, the number of requests is going to increase quickly, especially if we lower the intervals.
+
+Running multiple instances of osctrl-tls will help to scale the service and be reliable for a larger number of nodes.

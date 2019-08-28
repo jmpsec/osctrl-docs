@@ -12,20 +12,20 @@
     <title>Configuration :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1566827593" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1566827593" rel="stylesheet">
-    <link href="/css/hybrid.css?1566827593" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1566827593" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1566827593" rel="stylesheet">
-    <link href="/css/auto-complete.css?1566827593" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1566827593" rel="stylesheet">
-    <link href="/css/theme.css?1566827593" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1566827593" rel="stylesheet">
+    <link href="/css/nucleus.css?1566970402" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1566970402" rel="stylesheet">
+    <link href="/css/hybrid.css?1566970402" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1566970402" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1566970402" rel="stylesheet">
+    <link href="/css/auto-complete.css?1566970402" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1566970402" rel="stylesheet">
+    <link href="/css/theme.css?1566970402" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1566970402" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1566827593" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1566970402" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1566827593"></script>
+    <script src="/js/jquery-3.3.1.min.js?1566970402"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1566827593"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1566827593"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1566970402"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1566970402"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1566827593"></script>
+<script type="text/javascript" src="/js/search.js?1566970402"></script>
 
     
   </div>
@@ -972,6 +972,38 @@
 }
 </code></pre>
 
+<p>All the fields that start with an underscore, will be filled in with a value. Here are the values that can go on each:</p>
+
+<ul>
+<li><code>_SERVICE_NAME</code>: To identify the service that is file is configuring. It can be <code>tls</code> or <code>admin</code>,</li>
+<li><code>_LISTENER</code>: Local listener for the service. Usually <code>127.0.0.1</code>, but sometimes in docker it could be <code>0.0.0.0</code>,</li>
+<li><code>_SERVICE_PORT</code>: Local port for the listener. By default is <code>9000</code> for osctrl-tls and <code>9001</code> for ostrl-admin,</li>
+<li><code>_SERVICE_HOST</code>: Host or domain that this service will be accesible from,</li>
+<li><code>_SERVICE_AUTH</code>: Type of authentication that will service will implement. Values can be:
+
+<ul>
+<li><code>none</code> - No authentication</li>
+<li><code>json</code> - Users provided in the same JSON configuration file</li>
+<li><code>db</code> - Users stored and retrieved from backend</li>
+<li><code>saml</code> - Authentication will be provided using SAML. It requires its own <code>saml.json</code> configuration file</li>
+<li><code>headers</code> - Authentication will be provided verifying headers, using a middleware approach</li>
+</ul></li>
+<li><code>_SERVICE_LOGGING</code>: Type of logging that each service will implement. Values can be:
+
+<ul>
+<li><code>none</code> - No logging, data will be discarded</li>
+<li><code>stdout</code> - Logs will go to the stdout of the service</li>
+<li><code>db</code> - Logs will be store in the backend</li>
+<li><code>graylog</code> - Logs will be sent to <a href="https://www.graylog.org/">Graylog</a>. It requires its own <code>graylog.json</code> configuration file</li>
+<li><code>splunk</code> - Logs will be sent to <a href="https://www.splunk.com/">Splunk</a>. It requires its own <code>splunk.json</code> configuration file</li>
+</ul></li>
+</ul>
+
+
+<div class="notices warning" ><p>Logging is implemented using <a href="https://github.com/javuto/osctrl/tree/master/plugins">plugins</a> and each plugin will require its own configuration.</p>
+</div>
+
+
 <p>If you want to use the helper functions that are part of the provisioning process, first you have to import the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh">lib.sh</a>, like so:</p>
 
 <pre><code class="language-bash">$ source deploy/lib.sh
@@ -1006,9 +1038,20 @@
 
 <h3 id="nginx">nginx</h3>
 
+<p>TLS termination using ngix.</p>
+
 <h3 id="metrics">Metrics</h3>
 
+<p>Metrics using <a href="https://www.influxdata.com/products/influxdb-overview/">InfluxDB</a> + <a href="https://www.influxdata.com/time-series-platform/telegraf/">Telegraf</a> + <a href="https://grafana.com/">Grafana</a>.</p>
+
 <h3 id="logging">Logging</h3>
+
+<p>Loggity logs.</p>
+
+
+<div class="notices info" ><p>Logging is implemented using <a href="https://github.com/javuto/osctrl/tree/master/plugins">plugins</a> and each plugin will require its own configuration.</p>
+</div>
+
 
 
 
@@ -1481,20 +1524,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1566827593"></script>
-    <script src="/js/perfect-scrollbar.min.js?1566827593"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1566827593"></script>
-    <script src="/js/jquery.sticky.js?1566827593"></script>
-    <script src="/js/featherlight.min.js?1566827593"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1566827593"></script>
-    <script src="/js/highlight.pack.js?1566827593"></script>
+    <script src="/js/clipboard.min.js?1566970402"></script>
+    <script src="/js/perfect-scrollbar.min.js?1566970402"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1566970402"></script>
+    <script src="/js/jquery.sticky.js?1566970402"></script>
+    <script src="/js/featherlight.min.js?1566970402"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1566970402"></script>
+    <script src="/js/highlight.pack.js?1566970402"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1566827593"></script>
-    <script src="/js/learn.js?1566827593"></script>
-    <script src="/js/hugo-learn.js?1566827593"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1566970402"></script>
+    <script src="/js/learn.js?1566970402"></script>
+    <script src="/js/hugo-learn.js?1566970402"></script>
 
-    <link href="/mermaid/mermaid.css?1566827593" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1566827593"></script>
+    <link href="/mermaid/mermaid.css?1566970402" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1566970402"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
