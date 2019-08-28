@@ -29,7 +29,7 @@ All the fields that start with an underscore, will be filled in with a value. He
 
 * `_SERVICE_NAME`: To identify the service that is file is configuring. It can be `tls` or `admin`,
 * `_LISTENER`: Local listener for the service. Usually `127.0.0.1`, but sometimes in docker it could be `0.0.0.0`,
-* `_SERVICE_PORT`: Local port for the listener. By default is `9000` for osctrl-tls and `9001` for ostrl-admin,
+* `_SERVICE_PORT`: Local port for the listener. By default is `9000` for [osctrl-tls](/components/osctrl-tls/) and `9001` for [osctrl-admin](/components/osctrl-admin/),
 * `_SERVICE_HOST`: Host or domain that this service will be accesible from,
 * `_SERVICE_AUTH`: Type of authentication that will service will implement. Values can be:
   * `none` - No authentication
@@ -45,7 +45,7 @@ All the fields that start with an underscore, will be filled in with a value. He
   * `splunk` - Logs will be sent to [Splunk](https://www.splunk.com/). It requires its own `splunk.json` configuration file
 
 {{% notice warning %}}
-Logging is implemented using [plugins](https://github.com/javuto/osctrl/tree/master/plugins) and each plugin will require its own configuration.
+Each service will only allow some types! For [osctrl-tls](/components/osctrl-tls/), the allowed types for logging are `graylog`, `db` and `splunk` while only `none` is allowed for auth. For [osctrl-admin](/components/osctrl-admin/), the only allowed type for logging is `db`  while for logging are `db`, `saml`, `headers` and `json`.
 {{% /notice %}}
 
 If you want to use the helper functions that are part of the provisioning process, first you have to import the [lib.sh](https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh), like so:

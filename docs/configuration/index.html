@@ -12,20 +12,20 @@
     <title>Configuration :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1566970402" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1566970402" rel="stylesheet">
-    <link href="/css/hybrid.css?1566970402" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1566970402" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1566970402" rel="stylesheet">
-    <link href="/css/auto-complete.css?1566970402" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1566970402" rel="stylesheet">
-    <link href="/css/theme.css?1566970402" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1566970402" rel="stylesheet">
+    <link href="/css/nucleus.css?1566999745" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1566999745" rel="stylesheet">
+    <link href="/css/hybrid.css?1566999745" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1566999745" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1566999745" rel="stylesheet">
+    <link href="/css/auto-complete.css?1566999745" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1566999745" rel="stylesheet">
+    <link href="/css/theme.css?1566999745" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1566999745" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1566970402" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1566999745" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1566970402"></script>
+    <script src="/js/jquery-3.3.1.min.js?1566999745"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1566970402"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1566970402"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1566999745"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1566999745"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1566970402"></script>
+<script type="text/javascript" src="/js/search.js?1566999745"></script>
 
     
   </div>
@@ -977,7 +977,7 @@
 <ul>
 <li><code>_SERVICE_NAME</code>: To identify the service that is file is configuring. It can be <code>tls</code> or <code>admin</code>,</li>
 <li><code>_LISTENER</code>: Local listener for the service. Usually <code>127.0.0.1</code>, but sometimes in docker it could be <code>0.0.0.0</code>,</li>
-<li><code>_SERVICE_PORT</code>: Local port for the listener. By default is <code>9000</code> for osctrl-tls and <code>9001</code> for ostrl-admin,</li>
+<li><code>_SERVICE_PORT</code>: Local port for the listener. By default is <code>9000</code> for <a href="/components/osctrl-tls/">osctrl-tls</a> and <code>9001</code> for <a href="/components/osctrl-admin/">osctrl-admin</a>,</li>
 <li><code>_SERVICE_HOST</code>: Host or domain that this service will be accesible from,</li>
 <li><code>_SERVICE_AUTH</code>: Type of authentication that will service will implement. Values can be:
 
@@ -1000,7 +1000,7 @@
 </ul>
 
 
-<div class="notices warning" ><p>Logging is implemented using <a href="https://github.com/javuto/osctrl/tree/master/plugins">plugins</a> and each plugin will require its own configuration.</p>
+<div class="notices warning" ><p>Each service will only allow some types! For <a href="/components/osctrl-tls/">osctrl-tls</a>, the allowed types for logging are <code>graylog</code>, <code>db</code> and <code>splunk</code> while only <code>none</code> is allowed for auth. For <a href="/components/osctrl-admin/">osctrl-admin</a>, the only allowed type for logging is <code>db</code>  while for logging are <code>db</code>, <code>saml</code>, <code>headers</code> and <code>json</code>.</p>
 </div>
 
 
@@ -1524,20 +1524,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1566970402"></script>
-    <script src="/js/perfect-scrollbar.min.js?1566970402"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1566970402"></script>
-    <script src="/js/jquery.sticky.js?1566970402"></script>
-    <script src="/js/featherlight.min.js?1566970402"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1566970402"></script>
-    <script src="/js/highlight.pack.js?1566970402"></script>
+    <script src="/js/clipboard.min.js?1566999745"></script>
+    <script src="/js/perfect-scrollbar.min.js?1566999745"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1566999745"></script>
+    <script src="/js/jquery.sticky.js?1566999745"></script>
+    <script src="/js/featherlight.min.js?1566999745"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1566999745"></script>
+    <script src="/js/highlight.pack.js?1566999745"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1566970402"></script>
-    <script src="/js/learn.js?1566970402"></script>
-    <script src="/js/hugo-learn.js?1566970402"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1566999745"></script>
+    <script src="/js/learn.js?1566999745"></script>
+    <script src="/js/hugo-learn.js?1566999745"></script>
 
-    <link href="/mermaid/mermaid.css?1566970402" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1566970402"></script>
+    <link href="/mermaid/mermaid.css?1566999745" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1566999745"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
