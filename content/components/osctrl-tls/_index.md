@@ -41,17 +41,18 @@ For example, here are the flags to enroll osquery nodes in the *dev* environment
 --enroll_tls_endpoint=/dev/enroll
 --config_plugin=tls
 --config_tls_endpoint=/dev/config
---config_tls_refresh=10
+--config_tls_refresh=300
+--config_tls_max_attempts=5
 --logger_plugin=tls
 --logger_tls_compress=true
 --logger_tls_endpoint=/dev/log
---logger_tls_period=10
+--logger_tls_period=600
 --disable_carver=false
 --carver_disable_function=false
 --carver_start_endpoint=/dev/init
 --carver_continue_endpoint=/dev/block
 --disable_distributed=false
---distributed_interval=10
+--distributed_interval=60
 --distributed_plugin=tls
 --distributed_tls_max_attempts=3
 --distributed_tls_read_endpoint=/dev/read
@@ -68,3 +69,5 @@ The values of `__CERT_FILE__` and `__SECRET_FILE__` will be the local full path 
 The idea behind making osctrl-tls its own component is all about scalability. In a scenario with many nodes enrolled, the number of requests is going to increase quickly, especially if we lower the intervals.
 
 Running multiple instances of osctrl-tls will help to scale the service and be reliable for a larger number of nodes.
+
+For example, using the intervals of the flags above, where logs, configuration and queries run every 600, 300 and 60 seconds. Presuming that you have 1000 machines and you want to enroll them all in **osctrl**
