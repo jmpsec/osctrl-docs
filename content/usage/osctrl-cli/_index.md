@@ -18,7 +18,7 @@ USAGE:
    osctrl-cli [global options] command [command options] [arguments...]
 
 DESCRIPTION:
-   CLI for osctrl, a fast and efficient operative system management
+   CLI for osctrl, a fast and efficient osquery management
 
 COMMANDS:
      user              Commands for users
