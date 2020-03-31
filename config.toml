@@ -4,6 +4,10 @@ title = "osctrl: Fast and efficient osquery management"
 publishDir = "docs"
 
 theme = "hugo-theme-learn"
+
+[markup.goldmark.renderer]
+unsafe= true
+
 # For search functionality
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
