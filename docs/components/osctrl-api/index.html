@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/favicon.png" type="image/png">
 
-    <title>environment :: osctrl: Fast and efficient osquery management</title>
+    <title>osctrl-admin :: osctrl: Fast and efficient osquery management</title>
 
     
     <link href="/css/nucleus.css?1585621465" rel="stylesheet">
@@ -68,7 +68,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/usage/osctrl-cli/environment/">
+  <body class="" data-url="/components/osctrl-api/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -120,7 +120,7 @@
   
     
     <li data-nav-id="/components/" title="Components" class="dd-item 
-        
+        parent
         
         
         ">
@@ -175,8 +175,8 @@
   
     
     <li data-nav-id="/components/osctrl-api/" title="osctrl-admin" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/components/osctrl-api/">
@@ -476,7 +476,7 @@
   
     
     <li data-nav-id="/usage/" title="Usage" class="dd-item 
-        parent
+        
         
         
         ">
@@ -583,7 +583,7 @@
   
     
     <li data-nav-id="/usage/osctrl-cli/" title="osctrl-cli" class="dd-item 
-        parent
+        
         
         
         ">
@@ -638,8 +638,8 @@
   
     
     <li data-nav-id="/usage/osctrl-cli/environment/" title="environment" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/usage/osctrl-cli/environment/">
@@ -926,7 +926,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/jmpsec/osctrl-docs/edit/master/content/usage/osctrl-cli/environment/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/jmpsec/osctrl-docs/edit/master/content/components/osctrl-api/_index.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -957,13 +957,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'></a> > <a href='/usage/'>Usage</a> > <a href='/usage/osctrl-cli/'>osctrl-cli</a> > environment
-          
-         
+            <a href='/'></a> > <a href='/components/'>Components</a> > osctrl-admin
           
          
           
@@ -976,15 +970,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#environment">Environment</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1000,7 +986,7 @@
           
             <h1>
               
-              environment
+              osctrl-admin
             </h1>
           
 
@@ -1009,101 +995,12 @@
 
 
 
-	<h3 id="environment">Environment</h3>
-<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment -h
-NAME:
-   osctrl-cli environment - Commands for TLS environment
+	<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<hr>
+<p>The osctrl-api component of <strong>osctrl</strong> provides an API interface to interact with its enrolled nodes and with <strong>osctrl</strong> itself.</p>
 
-USAGE:
-   osctrl-cli environment command [command options] [arguments...]
-
-COMMANDS:
-     add, a         Add a new TLS environment
-     delete, d      Delete an existing TLS environment
-     show, s        Show a TLS environment
-     show-flags, w  Show the flags for a TLS environment
-     list, l        List all existing TLS environments
-     quick-add, q   Generates one-liner for quick adding nodes to environment
-     flags, f       Generates the flags to run nodes in an environment
-     secret, x      Output the secret to enroll nodes in an environment
-
-OPTIONS:
-   --help, -h  show help
-</code></pre><h4 id="add-environment">Add environment</h4>
-<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment add -h
-NAME:
-   osctrl-cli environment add - Add a new TLS environment
-
-USAGE:
-   osctrl-cli environment add [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value               Environment to be added
-   --hostname value, --host value       Environment host to be added
-   --debug, -d                          Environment debug capability
-   --configuration value, --conf value  Configuration file to be read
-   --certificate value, --crt value     Certificate file to be read
-</code></pre><h4 id="delete-environment">Delete environment</h4>
-<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment delete -h
-NAME:
-   osctrl-cli environment delete - Delete an existing TLS environment
-
-USAGE:
-   osctrl-cli environment delete [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value  Environment to be deleted
-</code></pre><h4 id="show-environment">Show environment</h4>
-<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment show -h
-NAME:
-   osctrl-cli environment show - Show a TLS environment
-
-USAGE:
-   osctrl-cli environment show [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value  Environment to be displayed
-</code></pre><h4 id="show-environment-flags">Show environment flags</h4>
-<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment show-flags -h
-NAME:
-   osctrl-cli environment show-flags - Show the flags for a TLS environment
-
-USAGE:
-   osctrl-cli environment show-flags [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value  Environment to be displayed
-</code></pre><h4 id="list-environments">List environments</h4>
-<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment list -h
-NAME:
-   osctrl-cli environment list - List all existing TLS environments
-
-USAGE:
-   osctrl-cli environment list [arguments...]
-</code></pre><h4 id="quick-add-to-environment">Quick-add to environment</h4>
-<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment quick-add -h
-NAME:
-   osctrl-cli environment quick-add - Generates one-liner for quick adding nodes to environment
-
-USAGE:
-   osctrl-cli environment quick-add [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value    Environment to be used
-   --target value, -t value  Type of one-liner (default: &quot;sh&quot;)
-</code></pre><h4 id="flags">Flags</h4>
-<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment flags -h
-NAME:
-   osctrl-cli environment flags - Generates the flags to run nodes in an environment
-
-USAGE:
-   osctrl-cli environment flags [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value            Environment to be used
-   --certificate value, --crt value  Certificate path to be used
-   --secret value, -s value          Secret file path to be used
-</code></pre>
 
 
 
@@ -1143,8 +1040,6 @@ OPTIONS:
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1160,6 +1055,45 @@ OPTIONS:
             
             
                 
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1236,38 +1170,6 @@ OPTIONS:
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1358,7 +1260,6 @@ OPTIONS:
             
                 
                     
-                    
                 
                 
 
@@ -1373,9 +1274,6 @@ OPTIONS:
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1425,7 +1323,6 @@ OPTIONS:
             
                 
                     
-                    
                 
                 
 
@@ -1440,9 +1337,6 @@ OPTIONS:
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1460,7 +1354,6 @@ OPTIONS:
             
                 
                     
-                    
                 
                 
 
@@ -1476,9 +1369,6 @@ OPTIONS:
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1602,10 +1492,10 @@ OPTIONS:
 	 
 	 
 		
-			<a class="nav nav-prev" href="/usage/osctrl-cli/user/" title="user"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/components/osctrl-tls/" title="osctrl-tls"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/usage/osctrl-cli/settings/" title="settings" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/components/osctrl-admin/" title="osctrl-admin" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

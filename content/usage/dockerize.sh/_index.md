@@ -7,7 +7,7 @@ pre = ""
 
 [dockerize.sh](https://github.com/jmpsec/osctrl/blob/master/docker/dockerize.sh) is the provisioning script for **osctrl** in a Docker environment. It needs a [docker-compose.yml](https://github.com/jmpsec/osctrl/blob/master/docker/docker-compose.yml) and requires `docker-compose` to be installed.
 
-It uses several functions from [/deploy/lib.sh](https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh).
+It uses several functions from [/deploy/lib.sh](https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh). The main idea behind using a helper like this is to be able to generate configurations and certificates before launching the containers. For a pure docker or k8s environment just use each `Dockerfile` as reference.
 
 Execute `./docker/dockerize.sh -h` to show the usage of the script:
 
