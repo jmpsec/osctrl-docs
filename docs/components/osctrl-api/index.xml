@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>osctrl-admin on osctrl: Fast and efficient osquery management</title>
+    <title>osctrl-api on osctrl: Fast and efficient osquery management</title>
     <link>https://osctrl.net/components/osctrl-api/</link>
-    <description>Recent content in osctrl-admin on osctrl: Fast and efficient osquery management</description>
+    <description>Recent content in osctrl-api on osctrl: Fast and efficient osquery management</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Mar 2020 19:00:50 -0800</lastBuildDate>

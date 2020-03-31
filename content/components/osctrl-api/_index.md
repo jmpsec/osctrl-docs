@@ -1,5 +1,5 @@
 +++
-title = "osctrl-admin"
+title = "osctrl-api"
 date = 2020-03-02T19:00:50-08:00
 weight = 2
 pre = ""

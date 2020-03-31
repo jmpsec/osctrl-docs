@@ -43,7 +43,7 @@
 },
 {
 	"uri": "https://osctrl.net/components/osctrl-api/",
-	"title": "osctrl-admin",
+	"title": "osctrl-api",
 	"tags": [],
 	"description": "",
 	"content": " The osctrl-api component of osctrl provides an API interface to interact with its enrolled nodes and with osctrl itself.\n"
