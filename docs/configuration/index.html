@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.56.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos de Prado, JMPSec">
 
@@ -12,20 +12,20 @@
     <title>Configuration :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1566999745" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1566999745" rel="stylesheet">
-    <link href="/css/hybrid.css?1566999745" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1566999745" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1566999745" rel="stylesheet">
-    <link href="/css/auto-complete.css?1566999745" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1566999745" rel="stylesheet">
-    <link href="/css/theme.css?1566999745" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1566999745" rel="stylesheet">
+    <link href="/css/nucleus.css?1585621465" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1585621465" rel="stylesheet">
+    <link href="/css/hybrid.css?1585621465" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1585621465" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1585621465" rel="stylesheet">
+    <link href="/css/auto-complete.css?1585621465" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1585621465" rel="stylesheet">
+    <link href="/css/theme.css?1585621465" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1585621465" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1566999745" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1585621465" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1566999745"></script>
+    <script src="/js/jquery-3.3.1.min.js?1585621465"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1566999745"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1566999745"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1585621465"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1585621465"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1566999745"></script>
+<script type="text/javascript" src="/js/search.js?1585621465"></script>
 
     
   </div>
@@ -155,6 +155,32 @@
         ">
       <a href="/components/osctrl-tls/">
           osctrl-tls
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/components/osctrl-api/" title="osctrl-admin" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/components/osctrl-api/">
+          osctrl-admin
           
             <i class="fas fa-check read-icon"></i>
           
@@ -485,6 +511,32 @@
         ">
       <a href="/usage/osctrl-tls/">
           osctrl-tls
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-api/" title="osctrl-api" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-api/">
+          osctrl-api
           
             <i class="fas fa-check read-icon"></i>
           
@@ -913,19 +965,17 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#service-json">service.json</a></li>
-<li><a href="#backend-access">Backend access</a></li>
-<li><a href="#nginx">nginx</a></li>
-<li><a href="#metrics">Metrics</a></li>
-<li><a href="#logging">Logging</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#servicejson">service.json</a></li>
+        <li><a href="#backend-access">Backend access</a></li>
+        <li><a href="#nginx">nginx</a></li>
+        <li><a href="#metrics">Metrics</a></li>
+        <li><a href="#logging">Logging</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -951,103 +1001,74 @@
 
 
 
-	
-
-<p>Each <a href="/components/">component</a> of <strong>osctrl</strong> requires a separate configuration in order to operate properly. During deployment, each configuration will be generated using templates and some helper functions that are part of the provisioning tools.</p>
-
-<h3 id="service-json">service.json</h3>
-
+	<p>Each <a href="/components/">component</a> of <strong>osctrl</strong> requires a separate configuration in order to operate properly. During deployment, each configuration will be generated using templates and some helper functions that are part of the provisioning tools.</p>
+<h3 id="servicejson">service.json</h3>
 <p>The configuration of the service applies both to <a href="/components/osctrl-tls/">osctrl-tls</a> and <a href="/components/osctrl-admin/">osctrl-admin</a> and it is expected to be named by default <code>tls.json</code> and <code>admin.json</code> respectively. However those default values can be modified, and a different filename may be specified, using the right parameter.</p>
-
 <p>The format of those files follows the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/service.json">template</a>:</p>
-
-<pre><code class="language-json">{
-  &quot;_SERVICE_NAME&quot;: {
-    &quot;listener&quot;: &quot;_LISTENER&quot;,
-    &quot;port&quot;: &quot;_SERVICE_PORT&quot;,
-    &quot;host&quot;: &quot;_SERVICE_HOST&quot;,
-    &quot;auth&quot;: &quot;_SERVICE_AUTH&quot;,
-    &quot;logging&quot;: &quot;_SERVICE_LOGGING&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;_SERVICE_NAME&#34;</span>: {
+    <span style="color:#f92672">&#34;listener&#34;</span>: <span style="color:#e6db74">&#34;_LISTENER&#34;</span>,
+    <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#e6db74">&#34;_SERVICE_PORT&#34;</span>,
+    <span style="color:#f92672">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;_SERVICE_HOST&#34;</span>,
+    <span style="color:#f92672">&#34;auth&#34;</span>: <span style="color:#e6db74">&#34;_SERVICE_AUTH&#34;</span>,
+    <span style="color:#f92672">&#34;logging&#34;</span>: <span style="color:#e6db74">&#34;_SERVICE_LOGGING&#34;</span>
   }
 }
-</code></pre>
-
-<p>All the fields that start with an underscore, will be filled in with a value. Here are the values that can go on each:</p>
-
+</code></pre></div><p>All the fields that start with an underscore, will be filled in with a value. Here are the values that can go on each:</p>
 <ul>
 <li><code>_SERVICE_NAME</code>: To identify the service that is file is configuring. It can be <code>tls</code> or <code>admin</code>,</li>
 <li><code>_LISTENER</code>: Local listener for the service. Usually <code>127.0.0.1</code>, but sometimes in docker it could be <code>0.0.0.0</code>,</li>
 <li><code>_SERVICE_PORT</code>: Local port for the listener. By default is <code>9000</code> for <a href="/components/osctrl-tls/">osctrl-tls</a> and <code>9001</code> for <a href="/components/osctrl-admin/">osctrl-admin</a>,</li>
 <li><code>_SERVICE_HOST</code>: Host or domain that this service will be accesible from,</li>
 <li><code>_SERVICE_AUTH</code>: Type of authentication that will service will implement. Values can be:
-
 <ul>
 <li><code>none</code> - No authentication</li>
 <li><code>json</code> - Users provided in the same JSON configuration file</li>
 <li><code>db</code> - Users stored and retrieved from backend</li>
 <li><code>saml</code> - Authentication will be provided using SAML. It requires its own <code>saml.json</code> configuration file</li>
 <li><code>headers</code> - Authentication will be provided verifying headers, using a middleware approach</li>
-</ul></li>
+</ul>
+</li>
 <li><code>_SERVICE_LOGGING</code>: Type of logging that each service will implement. Values can be:
-
 <ul>
 <li><code>none</code> - No logging, data will be discarded</li>
 <li><code>stdout</code> - Logs will go to the stdout of the service</li>
 <li><code>db</code> - Logs will be store in the backend</li>
 <li><code>graylog</code> - Logs will be sent to <a href="https://www.graylog.org/">Graylog</a>. It requires its own <code>graylog.json</code> configuration file</li>
 <li><code>splunk</code> - Logs will be sent to <a href="https://www.splunk.com/">Splunk</a>. It requires its own <code>splunk.json</code> configuration file</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 
 <div class="notices warning" ><p>Each service will only allow some types! For <a href="/components/osctrl-tls/">osctrl-tls</a>, the allowed types for logging are <code>graylog</code>, <code>db</code> and <code>splunk</code> while only <code>none</code> is allowed for auth. For <a href="/components/osctrl-admin/">osctrl-admin</a>, the only allowed type for logging is <code>db</code>  while for logging are <code>db</code>, <code>saml</code>, <code>headers</code> and <code>json</code>.</p>
 </div>
 
-
 <p>If you want to use the helper functions that are part of the provisioning process, first you have to import the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh">lib.sh</a>, like so:</p>
-
-<pre><code class="language-bash">$ source deploy/lib.sh
-</code></pre>
-
-<p>And now just call the function <code>configuration_service</code> with the correct parameters, for example:</p>
-
-<pre><code class="language-bash">$ configuration_service &quot;deploy/service.json&quot; &quot;admin.json&quot; &quot;localhost|9001&quot; &quot;admin&quot; &quot;0.0.0.0&quot; &quot;db&quot; &quot;db&quot;
-</code></pre>
-
-<p>For other examples you can see how this is done during the deployment process, for the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/provision.sh#L517">admin</a> and the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/provision.sh#L499">tls</a> components.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ source deploy/lib.sh
+</code></pre></div><p>And now just call the function <code>configuration_service</code> with the correct parameters, for example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ configuration_service <span style="color:#e6db74">&#34;deploy/service.json&#34;</span> <span style="color:#e6db74">&#34;admin.json&#34;</span> <span style="color:#e6db74">&#34;localhost|9001&#34;</span> <span style="color:#e6db74">&#34;admin&#34;</span> <span style="color:#e6db74">&#34;0.0.0.0&#34;</span> <span style="color:#e6db74">&#34;db&#34;</span> <span style="color:#e6db74">&#34;db&#34;</span>
+</code></pre></div><p>For other examples you can see how this is done during the deployment process, for the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/provision.sh#L517">admin</a> and the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/provision.sh#L499">tls</a> components.</p>
 <h3 id="backend-access">Backend access</h3>
-
 <p>The access to the backend service applies to <a href="/components/osctrl-tls/">osctrl-tls</a>, <a href="/components/osctrl-admin/">osctrl-admin</a> and <a href="/components/osctrl-cli/">osctrl-cli</a> considering that they all access the data stored in the backend component.</p>
-
 <p>Similar to the service configuration, there is a <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/db.json">template</a>:</p>
-
-<pre><code class="language-json">{
-  &quot;db&quot;: {
-    &quot;host&quot;: &quot;_DB_HOST&quot;,
-    &quot;port&quot;: &quot;_DB_PORT&quot;,
-    &quot;name&quot;: &quot;_DB_NAME&quot;,
-    &quot;username&quot;: &quot;_DB_USERNAME&quot;,
-    &quot;password&quot;: &quot;_DB_PASSWORD&quot;,
-    &quot;max_idle_conns&quot;: 20,
-    &quot;max_open_conns&quot;: 100,
-    &quot;conn_max_lifetime&quot;: 30
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;db&#34;</span>: {
+    <span style="color:#f92672">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;_DB_HOST&#34;</span>,
+    <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#e6db74">&#34;_DB_PORT&#34;</span>,
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;_DB_NAME&#34;</span>,
+    <span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;_DB_USERNAME&#34;</span>,
+    <span style="color:#f92672">&#34;password&#34;</span>: <span style="color:#e6db74">&#34;_DB_PASSWORD&#34;</span>,
+    <span style="color:#f92672">&#34;max_idle_conns&#34;</span>: <span style="color:#ae81ff">20</span>,
+    <span style="color:#f92672">&#34;max_open_conns&#34;</span>: <span style="color:#ae81ff">100</span>,
+    <span style="color:#f92672">&#34;conn_max_lifetime&#34;</span>: <span style="color:#ae81ff">30</span>
   }
 }
-</code></pre>
-
-<h3 id="nginx">nginx</h3>
-
-<p>TLS termination using ngix.</p>
-
+</code></pre></div><h3 id="nginx">nginx</h3>
+<p>TLS termination using nginx.</p>
 <h3 id="metrics">Metrics</h3>
-
 <p>Metrics using <a href="https://www.influxdata.com/products/influxdb-overview/">InfluxDB</a> + <a href="https://www.influxdata.com/time-series-platform/telegraf/">Telegraf</a> + <a href="https://grafana.com/">Grafana</a>.</p>
-
 <h3 id="logging">Logging</h3>
-
 <p>Loggity logs.</p>
-
 
 <div class="notices info" ><p>Logging is implemented using <a href="https://github.com/javuto/osctrl/tree/master/plugins">plugins</a> and each plugin will require its own configuration.</p>
 </div>
@@ -1201,56 +1222,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -1275,6 +1246,72 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1304,6 +1341,22 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1524,20 +1577,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1566999745"></script>
-    <script src="/js/perfect-scrollbar.min.js?1566999745"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1566999745"></script>
-    <script src="/js/jquery.sticky.js?1566999745"></script>
-    <script src="/js/featherlight.min.js?1566999745"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1566999745"></script>
-    <script src="/js/highlight.pack.js?1566999745"></script>
+    <script src="/js/clipboard.min.js?1585621465"></script>
+    <script src="/js/perfect-scrollbar.min.js?1585621465"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1585621465"></script>
+    <script src="/js/jquery.sticky.js?1585621465"></script>
+    <script src="/js/featherlight.min.js?1585621465"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1585621465"></script>
+    <script src="/js/highlight.pack.js?1585621465"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1566999745"></script>
-    <script src="/js/learn.js?1566999745"></script>
-    <script src="/js/hugo-learn.js?1566999745"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1585621465"></script>
+    <script src="/js/learn.js?1585621465"></script>
+    <script src="/js/hugo-learn.js?1585621465"></script>
 
-    <link href="/mermaid/mermaid.css?1566999745" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1566999745"></script>
+    <link href="/mermaid/mermaid.css?1585621465" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1585621465"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

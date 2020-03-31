@@ -85,7 +85,7 @@ Similar to the service configuration, there is a [template](https://github.com/j
 
 ### nginx
 
-TLS termination using ngix.
+TLS termination using nginx.
 
 ### Metrics
 

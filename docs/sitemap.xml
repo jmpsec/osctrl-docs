@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -25,6 +25,16 @@
   <url>
     <loc>https://osctrl.net/components/</loc>
     <lastmod>2019-07-31T02:29:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/usage/osctrl-api/</loc>
+    <lastmod>2020-03-02T19:03:05-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://osctrl.net/components/osctrl-api/</loc>
+    <lastmod>2020-03-02T19:00:50-08:00</lastmod>
   </url>
   
   <url>
@@ -129,17 +139,16 @@
   
   <url>
     <loc>https://osctrl.net/</loc>
+    <lastmod>2020-03-02T19:03:05-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://osctrl.net/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://osctrl.net/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
