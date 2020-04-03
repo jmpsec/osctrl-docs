@@ -12,20 +12,20 @@
     <title>provision.sh :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1585623783" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1585623783" rel="stylesheet">
-    <link href="/css/hybrid.css?1585623783" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1585623783" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1585623783" rel="stylesheet">
-    <link href="/css/auto-complete.css?1585623783" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1585623783" rel="stylesheet">
-    <link href="/css/theme.css?1585623783" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1585623783" rel="stylesheet">
+    <link href="/css/nucleus.css?1585893718" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1585893718" rel="stylesheet">
+    <link href="/css/hybrid.css?1585893718" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1585893718" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1585893718" rel="stylesheet">
+    <link href="/css/auto-complete.css?1585893718" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1585893718" rel="stylesheet">
+    <link href="/css/theme.css?1585893718" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1585893718" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1585623783" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1585893718" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1585623783"></script>
+    <script src="/js/jquery-3.3.1.min.js?1585893718"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1585623783"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1585623783"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1585893718"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1585893718"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1585623783"></script>
+<script type="text/javascript" src="/js/search.js?1585893718"></script>
 
     
   </div>
@@ -1026,10 +1026,14 @@ Arguments for PART:
 Optional Parameters:
   --public-tls-port PORT 	Port for the TLS endpoint service. Default is 443
   --public-admin-port PORT 	Port for the admin service. Default is 8443
+  --public-api-port PORT 	Port for the API service. Default is 8444
   --private-tls-port PORT 	Port for the TLS endpoint service. Default is 9000
   --private-admin-port PORT 	Port for the admin service. Default is 9001
+  --private-api-port PORT 	Port for the API service. Default is 9002
+  --all-hostname HOSTNAME 	Hostname for all the services. Default is 127.0.0.1
   --tls-hostname HOSTNAME 	Hostname for the TLS endpoint service. Default is 127.0.0.1
   --admin-hostname HOSTNAME 	Hostname for the admin service. Default is 127.0.0.1
+  --api-hostname HOSTNAME 	Hostname for the API service. Default is 127.0.0.1
   -X PASS     --password 	Force the admin password for the admin interface. Default is random
   -U          --update 		Pull from master and sync files to the current folder
   -c PATH     --certfile PATH 	Path to supplied TLS server PEM certificate(s) bundle
@@ -1043,12 +1047,13 @@ Optional Parameters:
   -E          --enroll  	Enroll the serve into itself using osquery. Default is disabled
 
 Examples:
-  Provision service in development mode, code is in /vagrant and both admin and tls:
+  Provision service in development mode, code is in /vagrant and all components (admin, tls, api):
 	./deploy/provision.sh -m dev -s /vagrant -p all
   Provision service in production mode using my own certificate and only with TLS endpoint:
 	./deploy/provision.sh -m prod -t own -k /etc/certs/my.key -c /etc/certs/cert.crt -p tls
   Update service in development mode and running admin only from /home/foobar/osctrl:
 	./deploy/provision.sh -U -s /home/foobar/osctrl -p admin
+
 </code></pre>
 
 
@@ -1557,20 +1562,20 @@ Examples:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1585623783"></script>
-    <script src="/js/perfect-scrollbar.min.js?1585623783"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1585623783"></script>
-    <script src="/js/jquery.sticky.js?1585623783"></script>
-    <script src="/js/featherlight.min.js?1585623783"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1585623783"></script>
-    <script src="/js/highlight.pack.js?1585623783"></script>
+    <script src="/js/clipboard.min.js?1585893718"></script>
+    <script src="/js/perfect-scrollbar.min.js?1585893718"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1585893718"></script>
+    <script src="/js/jquery.sticky.js?1585893718"></script>
+    <script src="/js/featherlight.min.js?1585893718"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1585893718"></script>
+    <script src="/js/highlight.pack.js?1585893718"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1585623783"></script>
-    <script src="/js/learn.js?1585623783"></script>
-    <script src="/js/hugo-learn.js?1585623783"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1585893718"></script>
+    <script src="/js/learn.js?1585893718"></script>
+    <script src="/js/hugo-learn.js?1585893718"></script>
 
-    <link href="/mermaid/mermaid.css?1585623783" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1585623783"></script>
+    <link href="/mermaid/mermaid.css?1585893718" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1585893718"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

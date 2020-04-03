@@ -40,10 +40,14 @@ Arguments for PART:
 Optional Parameters:
   --public-tls-port PORT 	Port for the TLS endpoint service. Default is 443
   --public-admin-port PORT 	Port for the admin service. Default is 8443
+  --public-api-port PORT 	Port for the API service. Default is 8444
   --private-tls-port PORT 	Port for the TLS endpoint service. Default is 9000
   --private-admin-port PORT 	Port for the admin service. Default is 9001
+  --private-api-port PORT 	Port for the API service. Default is 9002
+  --all-hostname HOSTNAME 	Hostname for all the services. Default is 127.0.0.1
   --tls-hostname HOSTNAME 	Hostname for the TLS endpoint service. Default is 127.0.0.1
   --admin-hostname HOSTNAME 	Hostname for the admin service. Default is 127.0.0.1
+  --api-hostname HOSTNAME 	Hostname for the API service. Default is 127.0.0.1
   -X PASS     --password 	Force the admin password for the admin interface. Default is random
   -U          --update 		Pull from master and sync files to the current folder
   -c PATH     --certfile PATH 	Path to supplied TLS server PEM certificate(s) bundle
@@ -57,10 +61,11 @@ Optional Parameters:
   -E          --enroll  	Enroll the serve into itself using osquery. Default is disabled
 
 Examples:
-  Provision service in development mode, code is in /vagrant and both admin and tls:
+  Provision service in development mode, code is in /vagrant and all components (admin, tls, api):
 	./deploy/provision.sh -m dev -s /vagrant -p all
   Provision service in production mode using my own certificate and only with TLS endpoint:
 	./deploy/provision.sh -m prod -t own -k /etc/certs/my.key -c /etc/certs/cert.crt -p tls
   Update service in development mode and running admin only from /home/foobar/osctrl:
 	./deploy/provision.sh -U -s /home/foobar/osctrl -p admin
+
 ```
