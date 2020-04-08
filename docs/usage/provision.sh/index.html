@@ -12,20 +12,20 @@
     <title>provision.sh :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1585893718" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1585893718" rel="stylesheet">
-    <link href="/css/hybrid.css?1585893718" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1585893718" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1585893718" rel="stylesheet">
-    <link href="/css/auto-complete.css?1585893718" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1585893718" rel="stylesheet">
-    <link href="/css/theme.css?1585893718" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1585893718" rel="stylesheet">
+    <link href="/css/nucleus.css?1586333317" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1586333317" rel="stylesheet">
+    <link href="/css/hybrid.css?1586333317" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1586333317" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1586333317" rel="stylesheet">
+    <link href="/css/auto-complete.css?1586333317" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1586333317" rel="stylesheet">
+    <link href="/css/theme.css?1586333317" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1586333317" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1585893718" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1586333317" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1585893718"></script>
+    <script src="/js/jquery-3.3.1.min.js?1586333317"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1585893718"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1585893718"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1586333317"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1586333317"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1585893718"></script>
+<script type="text/javascript" src="/js/search.js?1586333317"></script>
 
     
   </div>
@@ -1011,7 +1011,6 @@ Parameters:
 Arguments for MODE:
   dev 		Provision will run in development mode. Certificate will be self-signed.
   prod 		Provision will run in production mode.
-  update 	Provision will update the service running in the machine.
 
 Arguments for TYPE:
   self 		Provision will use a self-signed TLS certificate that will be generated.
@@ -1035,7 +1034,6 @@ Optional Parameters:
   --admin-hostname HOSTNAME 	Hostname for the admin service. Default is 127.0.0.1
   --api-hostname HOSTNAME 	Hostname for the API service. Default is 127.0.0.1
   -X PASS     --password 	Force the admin password for the admin interface. Default is random
-  -U          --update 		Pull from master and sync files to the current folder
   -c PATH     --certfile PATH 	Path to supplied TLS server PEM certificate(s) bundle
   -d DOMAIN   --domain DOMAIN 	Domain for the TLS certificate to be generated using letsencrypt
   -e EMAIL    --email EMAIL 	Domain for the TLS certificate to be generated using letsencrypt
@@ -1045,14 +1043,13 @@ Optional Parameters:
   -P          --postgres 	Install and configure PostgreSQL as backend
   -M          --metrics 	Install and configure all services for metrics (InfluxDB + Telegraf + Grafana)
   -E          --enroll  	Enroll the serve into itself using osquery. Default is disabled
+  -N NAME     --env NAME 	Initial environment name to be created. Default is the mode (dev or prod)
 
 Examples:
   Provision service in development mode, code is in /vagrant and all components (admin, tls, api):
 	./deploy/provision.sh -m dev -s /vagrant -p all
   Provision service in production mode using my own certificate and only with TLS endpoint:
 	./deploy/provision.sh -m prod -t own -k /etc/certs/my.key -c /etc/certs/cert.crt -p tls
-  Update service in development mode and running admin only from /home/foobar/osctrl:
-	./deploy/provision.sh -U -s /home/foobar/osctrl -p admin
 
 </code></pre>
 
@@ -1562,20 +1559,20 @@ Examples:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1585893718"></script>
-    <script src="/js/perfect-scrollbar.min.js?1585893718"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1585893718"></script>
-    <script src="/js/jquery.sticky.js?1585893718"></script>
-    <script src="/js/featherlight.min.js?1585893718"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1585893718"></script>
-    <script src="/js/highlight.pack.js?1585893718"></script>
+    <script src="/js/clipboard.min.js?1586333317"></script>
+    <script src="/js/perfect-scrollbar.min.js?1586333317"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1586333317"></script>
+    <script src="/js/jquery.sticky.js?1586333317"></script>
+    <script src="/js/featherlight.min.js?1586333317"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1586333317"></script>
+    <script src="/js/highlight.pack.js?1586333317"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1585893718"></script>
-    <script src="/js/learn.js?1585893718"></script>
-    <script src="/js/hugo-learn.js?1585893718"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1586333317"></script>
+    <script src="/js/learn.js?1586333317"></script>
+    <script src="/js/hugo-learn.js?1586333317"></script>
 
-    <link href="/mermaid/mermaid.css?1585893718" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1585893718"></script>
+    <link href="/mermaid/mermaid.css?1586333317" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1586333317"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

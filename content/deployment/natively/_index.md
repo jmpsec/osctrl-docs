@@ -10,4 +10,4 @@ It is a good idea to take a look at the [usage](/usage/provision.sh/) of the pro
 
 ### Examples
 
-The most common use case for provisioning **osctrl** is very similar to how it gets provisioned for [vagrant](/deployment/vagrant/), but instead of a dev environment
+The most common use case for provisioning **osctrl** is very similar to how it gets provisioned for [vagrant](/deployment/vagrant/), which means in dev mode and using self-signed certificates.

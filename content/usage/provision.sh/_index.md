@@ -25,7 +25,6 @@ Parameters:
 Arguments for MODE:
   dev 		Provision will run in development mode. Certificate will be self-signed.
   prod 		Provision will run in production mode.
-  update 	Provision will update the service running in the machine.
 
 Arguments for TYPE:
   self 		Provision will use a self-signed TLS certificate that will be generated.
@@ -49,7 +48,6 @@ Optional Parameters:
   --admin-hostname HOSTNAME 	Hostname for the admin service. Default is 127.0.0.1
   --api-hostname HOSTNAME 	Hostname for the API service. Default is 127.0.0.1
   -X PASS     --password 	Force the admin password for the admin interface. Default is random
-  -U          --update 		Pull from master and sync files to the current folder
   -c PATH     --certfile PATH 	Path to supplied TLS server PEM certificate(s) bundle
   -d DOMAIN   --domain DOMAIN 	Domain for the TLS certificate to be generated using letsencrypt
   -e EMAIL    --email EMAIL 	Domain for the TLS certificate to be generated using letsencrypt
@@ -59,13 +57,12 @@ Optional Parameters:
   -P          --postgres 	Install and configure PostgreSQL as backend
   -M          --metrics 	Install and configure all services for metrics (InfluxDB + Telegraf + Grafana)
   -E          --enroll  	Enroll the serve into itself using osquery. Default is disabled
+  -N NAME     --env NAME 	Initial environment name to be created. Default is the mode (dev or prod)
 
 Examples:
   Provision service in development mode, code is in /vagrant and all components (admin, tls, api):
 	./deploy/provision.sh -m dev -s /vagrant -p all
   Provision service in production mode using my own certificate and only with TLS endpoint:
 	./deploy/provision.sh -m prod -t own -k /etc/certs/my.key -c /etc/certs/cert.crt -p tls
-  Update service in development mode and running admin only from /home/foobar/osctrl:
-	./deploy/provision.sh -U -s /home/foobar/osctrl -p admin
 
 ```
