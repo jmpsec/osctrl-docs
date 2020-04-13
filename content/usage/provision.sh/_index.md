@@ -58,11 +58,14 @@ Optional Parameters:
   -M          --metrics 	Install and configure all services for metrics (InfluxDB + Telegraf + Grafana)
   -E          --enroll  	Enroll the serve into itself using osquery. Default is disabled
   -N NAME     --env NAME 	Initial environment name to be created. Default is the mode (dev or prod)
+  -U          --upgrade 	Keep osctrl upgraded with the latest code from Github
 
 Examples:
   Provision service in development mode, code is in /vagrant and all components (admin, tls, api):
 	./deploy/provision.sh -m dev -s /vagrant -p all
   Provision service in production mode using my own certificate and only with TLS endpoint:
 	./deploy/provision.sh -m prod -t own -k /etc/certs/my.key -c /etc/certs/cert.crt -p tls
+  Upgrade service with the latest code from Github. Does not create services nor certificates:
+	./deploy/provision.sh -U -s /code/osctrl -S /srv/osctrl
 
 ```
