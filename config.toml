@@ -29,8 +29,8 @@ name = '<center><a class="github-button" href="https://github.com/jmpsec/osctrl"
 weight = 2
 
 [[menu.shortcuts]]
-name = '<br/><img alt="Software License" src="https://img.shields.io/badge/license-GPL3-brightgreen.svg?style=flat-square">'
-url = "https://github.com/jmpsec/osctrl/blob/master/LICENSE.md"
+name = '<br/><img alt="Software License" src="https://img.shields.io/badge/license-MIT-green?style=flat-square&fuckgithubcache=1">'
+url = "https://github.com/jmpsec/osctrl/blob/master/LICENSE"
 weight = 3
 
 [[menu.shortcuts]]
