@@ -39,14 +39,14 @@
 	"title": "osctrl-api",
 	"tags": [],
 	"description": "",
-	"content": "osctrl-api is the API service for osctrl.\nExecute ./osctrl-api -h to show the main help of the program:\n$ ./osctrl-api -h NAME: osctrl-api - API service for osctrl USAGE: osctrl-api [global options] [arguments...] VERSION: 0.2.0 DESCRIPTION: API service for osctrl, a fast and efficient osquery management GLOBAL OPTIONS: -D string DB configuration JSON file to use. (default \u0026quot;config/db.json\u0026quot;) -J string JWT configuration JSON file to use. (default \u0026quot;config/jwt.json\u0026quot;) -c string Service configuration JSON file to use. (default \u0026quot;config/api.json\u0026quot;) -v\tDisplays the binary version. "
+	"content": "osctrl-api is the API service for osctrl.\nExecute ./osctrl-api -h to show the main help of the program:\n$ ./osctrl-api -h NAME: osctrl-api - API service for osctrl USAGE: osctrl-api [global options] [arguments...] VERSION: 0.2.3 DESCRIPTION: API service for osctrl, a fast and efficient osquery management GLOBAL OPTIONS: -D string DB configuration JSON file to use. (default \u0026quot;config/db.json\u0026quot;) -J string JWT configuration JSON file to use. (default \u0026quot;config/jwt.json\u0026quot;) -c string Service configuration JSON file to use. (default \u0026quot;config/api.json\u0026quot;) -v\tDisplays the binary version. "
 },
 {
 	"uri": "https://osctrl.net/components/osctrl-api/",
 	"title": "osctrl-api",
 	"tags": [],
 	"description": "",
-	"content": " The osctrl-api component of osctrl provides an API interface to interact with its enrolled nodes and with osctrl itself.\n"
+	"content": " The osctrl-api component of osctrl provides an API interface to interact with its enrolled nodes and with osctrl itself.\nThe API is documented with Swagger:\nhttps://app.swaggerhub.com/apis-docs/jmpsec/osctrl-api/\n"
 },
 {
 	"uri": "https://osctrl.net/usage/osctrl-cli/environment/",

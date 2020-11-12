@@ -17,7 +17,7 @@ NAME:
 USAGE: osctrl-api [global options] [arguments...]
 
 VERSION:
-   0.2.0
+   0.2.3
 
 DESCRIPTION:
    API service for osctrl, a fast and efficient osquery management
