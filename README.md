@@ -41,6 +41,6 @@ If you like **osctrl** you can send BTC or ETH donations to the following wallet
     <img alt="Donate BTC to osctrl" src="https://osctrl.net/btc.png">
   </a>
   <a href="ethereum:0x99e211251fca06286596498823Fd0a48785B64eB">
-    <img alt="Donate BTC to osctrl" src="https://osctrl.net/eth.png">
+    <img alt="Donate ETH to osctrl" src="https://osctrl.net/eth.png">
   </a>
 <p>
