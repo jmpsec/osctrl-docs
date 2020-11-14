@@ -31,3 +31,16 @@ Once it is ready, you can use the `Makefile` to render your changes into the HTM
 ## Serve docs
 
 To see how the documentation will look like before submitting your changes, you can serve it locally. Using the `Makefile` issue the command `make serve` and the documentation will be generated and served locally.
+
+## Donate
+
+If you like **osctrl** you can send BTC or ETH donations to the following wallets:
+
+<p align="center">
+  <a href="bitcoin:bc1qvjep6r6j7a00xyhcgp4g2ea2f4pupaprcvllj5">
+    <img alt="Donate BTC to osctrl" src="https://osctrl.net/btc.png&fuckgithubcache=1">
+  </a>
+  <a href="ethereum:0x99e211251fca06286596498823Fd0a48785B64eB">
+    <img alt="Donate BTC to osctrl" src="https://osctrl.net/eth.png&fuckgithubcache=1">
+  </a>
+<p>
