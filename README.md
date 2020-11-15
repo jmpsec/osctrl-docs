@@ -34,13 +34,15 @@ To see how the documentation will look like before submitting your changes, you 
 
 ## Donate
 
-If you like **osctrl** you can send BTC or ETH donations to the following wallets:
+If you like **osctrl** you can send [BTC](bitcoin:bc1qvjep6r6j7a00xyhcgp4g2ea2f4pupaprcvllj5) or [ETH](ethereum:0x99e211251fca06286596498823Fd0a48785B64eB) donations to the following wallets:
 
-<p align="center">
-  <a href="bitcoin:bc1qvjep6r6j7a00xyhcgp4g2ea2f4pupaprcvllj5">
-    <img alt="Donate BTC to osctrl" src="https://osctrl.net/btc.png">
-  </a>
-  <a href="ethereum:0x99e211251fca06286596498823Fd0a48785B64eB">
-    <img alt="Donate ETH to osctrl" src="https://osctrl.net/eth.png">
-  </a>
-<p>
+<table>
+  <tr align="center">
+    <td><img alt="bitcoin:bc1qvjep6r6j7a00xyhcgp4g2ea2f4pupaprcvllj5" src="https://osctrl.net/btc.png" width="175" title="bitcoin:bc1qvjep6r6j7a00xyhcgp4g2ea2f4pupaprcvllj5"/></td>
+    <td><img alt="ethereum:0x99e211251fca06286596498823Fd0a48785B64eB" src="https://osctrl.net/eth.png" width="175" title="ethereum:0x99e211251fca06286596498823Fd0a48785B64eB"/></td>
+  </tr>
+  <tr align="center">
+    <td><sub>bitcoin:bc1qvjep6r6j7a00xyhcgp4g2ea2f4pupaprcvllj5</sub></td>
+    <td><sub>ethereum:0x99e211251fca06286596498823Fd0a48785B64eB</sub></td>
+  </tr>
+</table>
