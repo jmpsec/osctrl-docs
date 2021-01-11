@@ -36,10 +36,12 @@ USAGE:
    osctrl-cli user add [command options] [arguments...]
 
 OPTIONS:
-   --username value, -u value  Username for the new user
-   --password value, -p value  Password for the new user
-   --admin, -a                 Make this user an admin
-   --fullname value, -n value  Full name for the new user
+   --username value, -u value     Username for the new user
+   --password value, -p value     Password for the new user
+   --admin, -a                    Make this user an admin
+   --environment value, -E value  Default environment for the new user
+   --email value, -e value        Email for the new user
+   --fullname value, -n value     Full name for the new user
 ```
 
 #### Edit user
@@ -53,11 +55,13 @@ USAGE:
    osctrl-cli user edit [command options] [arguments...]
 
 OPTIONS:
-   --username value, -u value  User to be edited
-   --password value, -p value  New password to be used
-   --fullname value, -n value  Full name to be used
-   --admin, -a                 Make this user an admin
-   --non-admin, -d             Make this user an non-admin
+   --username value, -u value     User to be edited
+   --password value, -p value     New password to be used
+   --email value, -e value        Email to be used
+   --fullname value, -n value     Full name to be used
+   --admin, -a                    Make this user an admin
+   --non-admin, -d                Make this user an non-admin
+   --environment value, -E value  Default environment for this user
 ```
 
 #### Delete user

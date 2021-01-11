@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/favicon.png" type="image/png">
 
-    <title>Components :: osctrl: Fast and efficient osquery management</title>
+    <title>tag :: osctrl: Fast and efficient osquery management</title>
 
     
     <link href="/css/nucleus.css?1610381788" rel="stylesheet">
@@ -68,7 +68,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/components/">
+  <body class="" data-url="/usage/osctrl-cli/tag/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -120,8 +120,8 @@
   
     
     <li data-nav-id="/components/" title="Components" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/components/">
@@ -476,7 +476,7 @@
   
     
     <li data-nav-id="/usage/" title="Usage" class="dd-item 
-        
+        parent
         
         
         ">
@@ -583,7 +583,7 @@
   
     
     <li data-nav-id="/usage/osctrl-cli/" title="osctrl-cli" class="dd-item 
-        
+        parent
         
         
         ">
@@ -664,8 +664,8 @@
   
     
     <li data-nav-id="/usage/osctrl-cli/tag/" title="tag" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/usage/osctrl-cli/tag/">
@@ -952,7 +952,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/jmpsec/osctrl-docs/edit/master/content/components/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/jmpsec/osctrl-docs/edit/master/content/usage/osctrl-cli/tag/_index.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -967,6 +967,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -977,7 +979,19 @@
             
           
           
-            <a href='/'></a> > Components
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/usage/'>Usage</a> > <a href='/usage/osctrl-cli/'>osctrl-cli</a> > tag
+          
+         
+          
+         
           
          
           
@@ -986,6 +1000,21 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#tags">Tags</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -993,9 +1022,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              tag
+            </h1>
           
 
         
@@ -1003,12 +1035,77 @@
 
 
 
-	<h1 id="components">Components</h1>
-<p align="center">
-  <img src="/components.png" alt="osctrl components and their interactions"/>
-</p>
-<p>Test</p>
+	<h3 id="tags">Tags</h3>
+<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli tag -h
+NAME:
+   osctrl-cli tag - Commands for tags
 
+USAGE:
+   osctrl-cli tag command [command options] [arguments...]
+
+COMMANDS:
+   add, a     Add a new tag
+   edit, e    Edit values for an existing tag
+   delete, d  Delete an existing tag
+   list, l    List all tags
+   show, s    Show an existing tag
+
+OPTIONS:
+   --help, -h  show help
+</code></pre><h4 id="add-tag">Add tag</h4>
+<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli tag add -h
+NAME:
+   osctrl-cli tag add - Add a new tag
+
+USAGE:
+   osctrl-cli tag add [command options] [arguments...]
+
+OPTIONS:
+   --name value, -n value         Tage name to be added
+   --color value, -c value        Tag color to be added
+   --description value, -d value  Tag description to be added
+   --icon value, -i value         Tag icon to be added
+</code></pre><h4 id="edit-tag">Edit tag</h4>
+<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli tag edit -h
+NAME:
+   osctrl-cli tag edit - Edit values for an existing tag
+
+USAGE:
+   osctrl-cli tag edit [command options] [arguments...]
+
+OPTIONS:
+   --name value, -n value         Tage name to be edited
+   --color value, -c value        Tag color to be edited
+   --description value, -d value  Tag description to be edited
+   --icon value, -i value         Tag icon to be edited
+</code></pre><h4 id="delete-tag">Delete tag</h4>
+<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli tag delete -h
+NAME:
+   osctrl-cli tag delete - Delete an existing tag
+
+USAGE:
+   osctrl-cli tag delete [command options] [arguments...]
+
+OPTIONS:
+   --name value, -n value  Tag name to be deleted
+</code></pre><h4 id="list-tags">List tags</h4>
+<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli tag list -h
+NAME:
+   osctrl-cli tag list - List all tags
+
+USAGE:
+   osctrl-cli tag list [arguments...]
+</code></pre><h4 id="show-tag">Show tag</h4>
+<pre><code class="language-properties" data-lang="properties">$ ./osctrl-cli tag show -h
+NAME:
+   osctrl-cli tag show - Show an existing tag
+
+USAGE:
+   osctrl-cli tag show [command options] [arguments...]
+
+OPTIONS:
+   --name value, -n value  Tag name to be displayed
+</code></pre>
 
 
 
@@ -1017,8 +1114,6 @@
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1050,221 +1145,8 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1334,6 +1216,73 @@
 
                     
                     
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                         
                     
                     
@@ -1387,10 +1336,167 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1514,10 +1620,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/" title=""> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/usage/osctrl-cli/environment/" title="environment"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/components/osctrl-tls/" title="osctrl-tls" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/usage/osctrl-cli/settings/" title="settings" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

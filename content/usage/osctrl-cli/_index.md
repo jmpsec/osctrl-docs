@@ -10,24 +10,28 @@ pre = ""
 Execute `./osctrl-cli -h` to show the main help of the program:
 
 ```properties
-$ ./osctrl-cli -h
+$ ./osctrl-cli
 NAME:
    osctrl-cli - CLI for osctrl
 
 USAGE:
    osctrl-cli [global options] command [command options] [arguments...]
 
+VERSION:
+   0.2.5
+
 DESCRIPTION:
    CLI for osctrl, a fast and efficient osquery management
 
 COMMANDS:
-     user              Commands for users
-     environment, env  Commands for TLS environment
-     settings          Commands for settings
-     node              Commands for nodes
-     query             Commands for queries
-     check             Checks DB connection
-     help, h           Shows a list of commands or help for one command
+   user              Commands for users
+   environment, env  Commands for TLS environment
+   settings          Commands for settings
+   node              Commands for nodes
+   query             Commands for queries
+   tag               Commands for tags
+   check             Checks DB connection
+   help, h           Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
    -D FILE, --db FILE  Load DB configuration from FILE (default: "config/db.json") [$DB_CONFIG]
