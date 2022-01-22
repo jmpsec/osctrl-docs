@@ -10,3 +10,6 @@
 
 # Ignore public folder
 /public
+
+# Hugo
+.hugo_build.lock

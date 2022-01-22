@@ -14,23 +14,26 @@ Execute `./docker/dockerize.sh -h` to show the usage of the script:
 ```properties
 $ ./docker/dockerize.sh -h
 
-Usage: ./docker/dockerize.sh -h [PARAMETER] [PARAMETER] ...
+Usage: ./deploy/docker/dockerize.sh -h [PARAMETER] [PARAMETER] ...
 
 Parameters:
   -h	Shows this help message and exit.
   -b	Builds new docker containers.
-  -u	Run osctrl containers.
-  -c	Generates configuration files.
-  -f	Forces the generation of new certificates and configuration.
-  -m	Uses mkcert (https://github.com/FiloSottile/mkcert) to generate certificate.
-  -d	Takes down running containers.
+  -u	Run existing osctrl containers.
+  -f	Forces the generation of new certificates.
+  -J	Generates new JWT secret.
+  -m	Uses mkcert (https://github.com/FiloSottile/mkcert) to generate a certificate and trust it locally.
+  -d	Takes down running osctrl containers.
   -x	Removes container images.
+  -C	Existing certificate to be used with osctrl.
+  -K	Existing private key to be used with osctrl.
+  -D	Build development environment.
 
 Examples:
-  Run dockerized osctrl building new containers and forcing to generate new configuration/certs:
-	./docker/dockerize.sh -u -b -f
-  Generate only configuration files:
-	./docker/dockerize.sh -c
+  Run dockerized osctrl building new containers and forcing to generate new certificates:
+	./deploy/docker/dockerize.sh -u -b -f
+  Run existing containers with existing certificates:
+	./deploy/docker/dockerize.sh -u -C cert.crt -K private.key
 ```
 
 There are good examples of the usage of `dockerize.sh` in the [Makefile](https://github.com/jmpsec/osctrl/blob/master/Makefile).

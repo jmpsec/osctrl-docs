@@ -20,7 +20,7 @@ The format of those files follows the [template](https://github.com/jmpsec/osctr
     "port": "_SERVICE_PORT",
     "host": "_SERVICE_HOST",
     "auth": "_SERVICE_AUTH",
-    "logging": "_SERVICE_LOGGING"
+    "logger": "_SERVICE_LOGGING"
   }
 }
 ```

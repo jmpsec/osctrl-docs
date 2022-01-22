@@ -6,10 +6,6 @@
     <description>Recent content in dockerize.sh on osctrl: Fast and efficient osquery management</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Aug 2019 13:16:16 +0200</lastBuildDate>
-    
-	<atom:link href="https://osctrl.net/usage/dockerize.sh/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 11 Aug 2019 13:16:16 +0200</lastBuildDate><atom:link href="https://osctrl.net/usage/dockerize.sh/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

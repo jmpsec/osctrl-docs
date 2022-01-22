@@ -6,10 +6,6 @@
     <description>Recent content in provision.sh on osctrl: Fast and efficient osquery management</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Aug 2019 13:16:09 +0200</lastBuildDate>
-    
-	<atom:link href="https://osctrl.net/usage/provision.sh/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 11 Aug 2019 13:16:09 +0200</lastBuildDate><atom:link href="https://osctrl.net/usage/provision.sh/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -10,7 +10,7 @@ pre = ""
 Execute `./osctrl-cli -h` to show the main help of the program:
 
 ```properties
-$ ./osctrl-cli
+$ ./osctrl-cli -h
 NAME:
    osctrl-cli - CLI for osctrl
 
@@ -18,7 +18,7 @@ USAGE:
    osctrl-cli [global options] command [command options] [arguments...]
 
 VERSION:
-   0.2.5
+   0.2.7
 
 DESCRIPTION:
    CLI for osctrl, a fast and efficient osquery management
@@ -34,9 +34,10 @@ COMMANDS:
    help, h           Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   -D FILE, --db FILE  Load DB configuration from FILE (default: "config/db.json") [$DB_CONFIG]
-   --help, -h          show help
-   --version, -v       print the version
+   --db, -d                 Provide DB configuration via JSON file (default: false) [$DB_CONFIG]
+   --db-file FILE, -D FILE  Load DB configuration from FILE (default: "config/db.json") [$DB_CONFIG_FILE]
+   --help, -h               show help (default: false)
+   --version, -v            print the version (default: false)
 ```
 
 Each command has its own help and it is displayed appending `-h` to them. Each subcommand has its own help as well.

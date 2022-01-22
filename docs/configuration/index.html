@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.89.1" />
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos de Prado, JMPSec">
 
@@ -12,20 +12,20 @@
     <title>Configuration :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1610381788" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610381788" rel="stylesheet">
-    <link href="/css/hybrid.css?1610381788" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610381788" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610381788" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610381788" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610381788" rel="stylesheet">
-    <link href="/css/theme.css?1610381788" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610381788" rel="stylesheet">
+    <link href="/css/nucleus.css?1642866018" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1642866018" rel="stylesheet">
+    <link href="/css/hybrid.css?1642866018" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1642866018" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1642866018" rel="stylesheet">
+    <link href="/css/auto-complete.css?1642866018" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1642866018" rel="stylesheet">
+    <link href="/css/theme.css?1642866018" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1642866018" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1610381788" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1642866018" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610381788"></script>
+    <script src="/js/jquery-3.3.1.min.js?1642866018"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610381788"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610381788"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1642866018"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1642866018"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610381788"></script>
+<script type="text/javascript" src="/js/search.js?1642866018"></script>
 
     
   </div>
@@ -1031,7 +1031,7 @@
 <h3 id="servicejson">service.json</h3>
 <p>The configuration of the service applies both to <a href="/components/osctrl-tls/">osctrl-tls</a> and <a href="/components/osctrl-admin/">osctrl-admin</a> and it is expected to be named by default <code>tls.json</code> and <code>admin.json</code> respectively. However those default values can be modified, and a different filename may be specified, using the right parameter.</p>
 <p>The format of those files follows the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/service.json">template</a>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;_SERVICE_NAME&#34;</span>: {
     <span style="color:#f92672">&#34;listener&#34;</span>: <span style="color:#e6db74">&#34;_LISTENER&#34;</span>,
     <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#e6db74">&#34;_SERVICE_PORT&#34;</span>,
@@ -1070,14 +1070,14 @@
 </div>
 
 <p>If you want to use the helper functions that are part of the provisioning process, first you have to import the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh">lib.sh</a>, like so:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ source deploy/lib.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ source deploy/lib.sh
 </code></pre></div><p>And now just call the function <code>configuration_service</code> with the correct parameters, for example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ configuration_service <span style="color:#e6db74">&#34;deploy/service.json&#34;</span> <span style="color:#e6db74">&#34;admin.json&#34;</span> <span style="color:#e6db74">&#34;localhost|9001&#34;</span> <span style="color:#e6db74">&#34;admin&#34;</span> <span style="color:#e6db74">&#34;0.0.0.0&#34;</span> <span style="color:#e6db74">&#34;db&#34;</span> <span style="color:#e6db74">&#34;db&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ configuration_service <span style="color:#e6db74">&#34;deploy/service.json&#34;</span> <span style="color:#e6db74">&#34;admin.json&#34;</span> <span style="color:#e6db74">&#34;localhost|9001&#34;</span> <span style="color:#e6db74">&#34;admin&#34;</span> <span style="color:#e6db74">&#34;0.0.0.0&#34;</span> <span style="color:#e6db74">&#34;db&#34;</span> <span style="color:#e6db74">&#34;db&#34;</span>
 </code></pre></div><p>For other examples you can see how this is done during the deployment process, for the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/provision.sh#L517">admin</a> and the <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/provision.sh#L499">tls</a> components.</p>
 <h3 id="backend-access">Backend access</h3>
 <p>The access to the backend service applies to <a href="/components/osctrl-tls/">osctrl-tls</a>, <a href="/components/osctrl-admin/">osctrl-admin</a> and <a href="/components/osctrl-cli/">osctrl-cli</a> considering that they all access the data stored in the backend component.</p>
 <p>Similar to the service configuration, there is a <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/db.json">template</a>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;db&#34;</span>: {
     <span style="color:#f92672">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;_DB_HOST&#34;</span>,
     <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#e6db74">&#34;_DB_PORT&#34;</span>,
@@ -1619,20 +1619,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610381788"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610381788"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610381788"></script>
-    <script src="/js/jquery.sticky.js?1610381788"></script>
-    <script src="/js/featherlight.min.js?1610381788"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1610381788"></script>
-    <script src="/js/highlight.pack.js?1610381788"></script>
+    <script src="/js/clipboard.min.js?1642866018"></script>
+    <script src="/js/perfect-scrollbar.min.js?1642866018"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1642866018"></script>
+    <script src="/js/jquery.sticky.js?1642866018"></script>
+    <script src="/js/featherlight.min.js?1642866018"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1642866018"></script>
+    <script src="/js/highlight.pack.js?1642866018"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610381788"></script>
-    <script src="/js/learn.js?1610381788"></script>
-    <script src="/js/hugo-learn.js?1610381788"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1642866018"></script>
+    <script src="/js/learn.js?1642866018"></script>
+    <script src="/js/hugo-learn.js?1642866018"></script>
 
-    <link href="/mermaid/mermaid.css?1610381788" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610381788"></script>
+    <link href="/mermaid/mermaid.css?1642866018" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1642866018"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

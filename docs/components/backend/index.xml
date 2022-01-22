@@ -6,10 +6,6 @@
     <description>Recent content in Backend on osctrl: Fast and efficient osquery management</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Aug 2019 12:51:06 +0200</lastBuildDate>
-    
-	<atom:link href="https://osctrl.net/components/backend/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 10 Aug 2019 12:51:06 +0200</lastBuildDate><atom:link href="https://osctrl.net/components/backend/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
