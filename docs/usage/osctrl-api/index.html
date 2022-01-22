@@ -12,20 +12,20 @@
     <title>osctrl-api :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1642866018" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1642866018" rel="stylesheet">
-    <link href="/css/hybrid.css?1642866018" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1642866018" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1642866018" rel="stylesheet">
-    <link href="/css/auto-complete.css?1642866018" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1642866018" rel="stylesheet">
-    <link href="/css/theme.css?1642866018" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1642866018" rel="stylesheet">
+    <link href="/css/nucleus.css?1642871650" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1642871650" rel="stylesheet">
+    <link href="/css/hybrid.css?1642871650" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1642871650" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1642871650" rel="stylesheet">
+    <link href="/css/auto-complete.css?1642871650" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1642871650" rel="stylesheet">
+    <link href="/css/theme.css?1642871650" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1642871650" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1642866018" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1642871650" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1642866018"></script>
+    <script src="/js/jquery-3.3.1.min.js?1642871650"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1642866018"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1642866018"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1642871650"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1642871650"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1642866018"></script>
+<script type="text/javascript" src="/js/search.js?1642871650"></script>
 
     
   </div>
@@ -1025,24 +1025,46 @@
 <p>Execute <code>./osctrl-api -h</code> to show the main help of the program:</p>
 <pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-api -h
 NAME:
-   osctrl-api - API service for osctrl
+   osctrl-api - API service for osctrl, a fast and efficient osquery management
 
-USAGE: osctrl-api [global options] [arguments...]
+USAGE:
+   osctrl-api [global options] command [command options] [arguments...]
 
 VERSION:
-   0.2.3
+   0.2.7
 
 DESCRIPTION:
    API service for osctrl, a fast and efficient osquery management
 
+COMMANDS:
+   help
+
 GLOBAL OPTIONS:
-  -D string
-    	DB configuration JSON file to use. (default &quot;config/db.json&quot;)
-  -J string
-    	JWT configuration JSON file to use. (default &quot;config/jwt.json&quot;)
-  -c string
-    	Service configuration JSON file to use. (default &quot;config/api.json&quot;)
-  -v	Displays the binary version.
+   --config, -c                  Provide service configuration via JSON file (default: false) [$SERVICE_CONFIG]
+   --config-file FILE, -C FILE   Load service configuration from FILE (default: &quot;config/api.json&quot;) [$SERVICE_CONFIG_FILE]
+   --listener value, -l value    Listener for the service (default: &quot;0.0.0.0&quot;) [$SERVICE_LISTENER]
+   --port value, -p value        TCP port for the service (default: &quot;9002&quot;) [$SERVICE_PORT]
+   --auth value, -A value        Authentication mechanism for the service (default: &quot;none&quot;) [$SERVICE_AUTH]
+   --host value, -H value        Exposed hostname the service uses (default: &quot;0.0.0.0&quot;) [$SERVICE_HOST]
+   --logging value, -L value     Logging mechanism to handle logs from nodes (default: &quot;none&quot;) [$SERVICE_LOGGING]
+   --db, -d                      Provide DB configuration via JSON file (default: false) [$DB_CONFIG]
+   --db-file FILE, -D FILE       Load DB configuration from FILE (default: &quot;config/db.json&quot;) [$DB_CONFIG_FILE]
+   --db-host value               Backend host to be connected to (default: &quot;127.0.0.1&quot;) [$DB_HOST]
+   --db-port value               Backend port to be connected to (default: &quot;5432&quot;) [$DB_PORT]
+   --db-name value               Database name to be used in the backend (default: &quot;postgres&quot;) [$DB_NAME]
+   --db-user value               Username to be used for the backend (default: &quot;postgres&quot;) [$DB_USER]
+   --db-pass value               Password to be used for the backend (default: &quot;postgres&quot;) [$DB_PASS]
+   --db-max-idle-conns value     Maximum number of connections in the idle connection pool (default: 20) [$DB_MAX_IDLE_CONNS]
+   --db-max-open-conns value     Maximum number of open connections to the database (default: 100) [$DB_MAX_OPEN_CONNS]
+   --db-conn-max-lifetime value  Maximum amount of time a connection may be reused (default: 30) [$DB_CONN_MAX_LIFETIME]
+   --tls, -t                     Enable TLS termination. It requires certificate and key (default: false) [$TLS_SERVER]
+   --cert FILE, -T FILE          TLS termination certificate from FILE (default: &quot;config/tls.crt&quot;) [$TLS_CERTIFICATE]
+   --key FILE, -K FILE           TLS termination private key from FILE (default: &quot;config/tls.key&quot;) [$TLS_KEY]
+   --jwt, -j                     Provide JWT configuration via JSON file (default: false) [$JWT_CONFIG]
+   --jwt-file FILE               Load JWT configuration from FILE (default: &quot;config/jwt.json&quot;) [$JWT_CONFIG_FILE]
+   --jwt-secret value            Password to be used for the backend [$JWT_SECRET]
+   --jwt-expire value            Maximum amount of hours for the tokens to expire (default: 3) [$JWT_EXPIRE]
+   --version, -v                 print the version (default: false)
 </code></pre>
 
 
@@ -1567,20 +1589,20 @@ GLOBAL OPTIONS:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1642866018"></script>
-    <script src="/js/perfect-scrollbar.min.js?1642866018"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1642866018"></script>
-    <script src="/js/jquery.sticky.js?1642866018"></script>
-    <script src="/js/featherlight.min.js?1642866018"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1642866018"></script>
-    <script src="/js/highlight.pack.js?1642866018"></script>
+    <script src="/js/clipboard.min.js?1642871650"></script>
+    <script src="/js/perfect-scrollbar.min.js?1642871650"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1642871650"></script>
+    <script src="/js/jquery.sticky.js?1642871650"></script>
+    <script src="/js/featherlight.min.js?1642871650"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1642871650"></script>
+    <script src="/js/highlight.pack.js?1642871650"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1642866018"></script>
-    <script src="/js/learn.js?1642866018"></script>
-    <script src="/js/hugo-learn.js?1642866018"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1642871650"></script>
+    <script src="/js/learn.js?1642871650"></script>
+    <script src="/js/hugo-learn.js?1642871650"></script>
 
-    <link href="/mermaid/mermaid.css?1642866018" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1642866018"></script>
+    <link href="/mermaid/mermaid.css?1642871650" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1642871650"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
