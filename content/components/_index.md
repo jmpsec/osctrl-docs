@@ -14,4 +14,4 @@ pre = "<b>1. </b>"
 
 </p>
 
-Test
+Diagram of all the osctrl components in action

@@ -20,7 +20,8 @@ The format of those files follows the [template](https://github.com/jmpsec/osctr
     "port": "_SERVICE_PORT",
     "host": "_SERVICE_HOST",
     "auth": "_SERVICE_AUTH",
-    "logger": "_SERVICE_LOGGING"
+    "logger": "_SERVICE_LOGGING",
+    "carver": "_SERVICE_CARVER"
   }
 }
 ```
@@ -43,6 +44,10 @@ All the fields that start with an underscore, will be filled in with a value. He
   * `db` - Logs will be store in the backend
   * `graylog` - Logs will be sent to [Graylog](https://www.graylog.org/). It requires its own `graylog.json` configuration file
   * `splunk` - Logs will be sent to [Splunk](https://www.splunk.com/). It requires its own `splunk.json` configuration file
+  * `s3` - Logs will be sent to [AWS S3](https://aws.amazon.com/s3/). It requires its own `carver.json` configuration file
+* `_SERVICE_CARVER`: Type of carver that each service will implment. Values can be:
+  * `db` - Carves will be store in the backend
+  * `s3` - Carves will be sent to [AWS S3](https://aws.amazon.com/s3/). It requires its own `carver.json` configuration file
 
 {{% notice warning %}}
 Each service will only allow some types! For [osctrl-tls](/components/osctrl-tls/), the allowed types for logging are `graylog`, `db` and `splunk` while only `none` is allowed for auth. For [osctrl-admin](/components/osctrl-admin/), the only allowed type for logging is `db`  while for logging are `db`, `saml`, `headers` and `json`.

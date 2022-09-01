@@ -13,7 +13,10 @@ NAME:
    osctrl-cli check - Checks DB connection
 
 USAGE:
-   osctrl-cli check [arguments...]
+   osctrl-cli check [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help (default: false)
 ```
 
 Although this command may appear a bit confusing, it comes in really handy to verify when the backend component is ready to go.
