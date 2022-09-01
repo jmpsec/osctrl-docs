@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.100.2" />
+    <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
+<meta name="author" content="Javier Marcos de Prado, JMPSec">
+
+    <link rel="icon" href="/favicon.png" type="image/png">
+
+    <title>osctrl-api :: osctrl: Fast and efficient osquery management</title>
+
+    
+    <link href="/css/nucleus.css?1662043319" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1662043319" rel="stylesheet">
+    <link href="/css/hybrid.css?1662043319" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1662043319" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1662043319" rel="stylesheet">
+    <link href="/css/auto-complete.css?1662043319" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1662043319" rel="stylesheet">
+    <link href="/css/theme.css?1662043319" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1662043319" rel="stylesheet">
+    
+      <link href="/css/theme-osctrl.css?1662043319" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1662043319"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144353364-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144353364-2');
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap');
+
+.jmpsec {
+    height: 5em;
+    width: auto;
+    margin: auto;
+    bottom: 3em;
+    left: 0;
+    right: 0;
+    border: 2px solid black;
+    border-bottom: 4px solid black;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+    transition: all 200ms ease-out;
+    background-color: #ffffff;
+}
+
+.jmpsec:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  transform: scale(1.5);
+}
+</style>
+
+  </head>
+  <body class="" data-url="/usage/osctrl-api/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+  <h1 style="margin:0; padding:0">
+    <img src="/logo.png" style="width: 65%" alt="osctrl"/>
+  </h1>
+
+</a>
+
+<center>
+  <a href="https://github.com/jmpsec/osctrl/releases/latest">
+    <img alt="Release" src="https://img.shields.io/github/release/jmpsec/osctrl.svg?style=flat-square">
+  </a>
+</center>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1662043319"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1662043319"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/osctrl.net\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1662043319"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/components/" title="Components" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/components/">
+          <b>1. </b>Components
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/components/osctrl-tls/" title="osctrl-tls" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/components/osctrl-tls/">
+          osctrl-tls
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/components/osctrl-api/" title="osctrl-api" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/components/osctrl-api/">
+          osctrl-api
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/components/osctrl-admin/" title="osctrl-admin" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/components/osctrl-admin/">
+          osctrl-admin
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/components/osctrl-cli/" title="osctrl-cli" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/components/osctrl-cli/">
+          osctrl-cli
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/components/nginx/" title="nginx" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/components/nginx/">
+          nginx
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/components/backend/" title="Backend" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/components/backend/">
+          Backend
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/components/metrics/" title="Metrics" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/components/metrics/">
+          Metrics
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/components/osctrld/" title="osctrld" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/components/osctrld/">
+          osctrld
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/deployment/" title="Deployment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/deployment/">
+          <b>2. </b>Deployment
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/deployment/vagrant/" title="Using Vagrant" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/deployment/vagrant/">
+          Using Vagrant
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/deployment/docker/" title="Using Docker" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/deployment/docker/">
+          Using Docker
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/deployment/natively/" title="Using provision.sh" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/deployment/natively/">
+          Using provision.sh
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/configuration/" title="Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/configuration/">
+          <b>3. </b>Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/" title="Usage" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/usage/">
+          <b>4. </b>Usage
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrld/" title="osctrld" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrld/">
+          osctrld
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-tls/" title="osctrl-tls" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-tls/">
+          osctrl-tls
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-api/" title="osctrl-api" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/usage/osctrl-api/">
+          osctrl-api
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-admin/" title="osctrl-admin" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-admin/">
+          osctrl-admin
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/" title="osctrl-cli" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/">
+          osctrl-cli
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/user/" title="user" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/user/">
+          user
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/environment/" title="environment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/environment/">
+          environment
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/tag/" title="tag" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/tag/">
+          tag
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/settings/" title="settings" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/settings/">
+          settings
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/node/" title="node" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/node/">
+          node
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/query/" title="query" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/query/">
+          query
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/check/" title="check" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/check/">
+          check
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/provision.sh/" title="provision.sh" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/provision.sh/">
+          provision.sh
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/dockerize.sh/" title="dockerize.sh" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/dockerize.sh/">
+          dockerize.sh
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/contributing/" title="Contributing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/contributing/">
+          <b>5. </b>Contributing
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/jmpsec/osctrl"><i class='fab fa-github'></i> Github repo - osctrl</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://osctrl.net/"><center><a class="github-button" href="https://github.com/jmpsec/osctrl" data-icon="octicon-star" data-show-count="true" aria-label="Star jmpsec/osctrl on GitHub">Star</a> <a class="github-button" href="https://github.com/jmpsec/osctrl/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork jmpsec/osctrl on GitHub">Fork</a><center></a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/jmpsec/osctrl/blob/master/LICENSE"><br/><img alt="Software License" src="https://img.shields.io/badge/license-MIT-green?style=flat-square&fuckgithubcache=1"></a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/jmpsec/osctrl/actions"><img alt="Github Actions" src="https://github.com/jmpsec/osctrl/actions/workflows/build_and_test_main_merge.yml/badge.svg"></a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://goreportcard.com/report/github.com/jmpsec/osctrl"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/jmpsec/osctrl?style=flat-square&fuckgithubcache=1"></a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<center>
+  <a href="https://jmpsec.com" target="_blank">
+    <img class="jmpsec" src="/jmpsec.png" alt="JMP Security"/>
+  </a>
+</center>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/jmpsec/osctrl-docs/edit/master/content/usage/osctrl-api/_index.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/usage/'>Usage</a> > osctrl-api
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              osctrl-api
+            </h1>
+          
+
+        
+
+
+
+
+	<p><code>osctrl-api</code> is the API service for <strong>osctrl</strong>.</p>
+<p>Execute <code>./osctrl-api -h</code> to show the main help of the program:</p>
+<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-api -h
+NAME:
+   osctrl-api - API service for osctrl, a fast and efficient osquery management
+
+USAGE:
+   osctrl-api [global options] command [command options] [arguments...]
+
+VERSION:
+   0.3.0
+
+DESCRIPTION:
+   API service for osctrl, a fast and efficient osquery management
+
+COMMANDS:
+   help
+
+GLOBAL OPTIONS:
+   --config, -c                  Provide service configuration via JSON file (default: false) [$SERVICE_CONFIG]
+   --config-file FILE, -C FILE   Load service configuration from FILE (default: &#34;config/api.json&#34;) [$SERVICE_CONFIG_FILE]
+   --listener value, -l value    Listener for the service (default: &#34;0.0.0.0&#34;) [$SERVICE_LISTENER]
+   --port value, -p value        TCP port for the service (default: &#34;9002&#34;) [$SERVICE_PORT]
+   --auth value, -A value        Authentication mechanism for the service (default: &#34;none&#34;) [$SERVICE_AUTH]
+   --host value, -H value        Exposed hostname the service uses (default: &#34;0.0.0.0&#34;) [$SERVICE_HOST]
+   --logging value, -L value     Logging mechanism to handle logs from nodes (default: &#34;none&#34;) [$SERVICE_LOGGER]
+   --redis, -r                   Provide redis configuration via JSON file (default: false) [$REDIS_CONFIG]
+   --redis-file FILE, -R FILE    Load redis configuration from FILE (default: &#34;config/redis.json&#34;) [$REDIS_CONFIG_FILE]
+   --redis-host value            Redis host to be connected to (default: &#34;127.0.0.1&#34;) [$REDIS_HOST]
+   --redis-port value            Redis port to be connected to (default: &#34;6379&#34;) [$REDIS_PORT]
+   --redis-pass value            Password to be used for redis [$REDIS_PASS]
+   --redis-db value              Redis database to be selected after connecting (default: 0) [$REDIS_DB]
+   --db, -d                      Provide DB configuration via JSON file (default: false) [$DB_CONFIG]
+   --db-file FILE, -D FILE       Load DB configuration from FILE (default: &#34;config/db.json&#34;) [$DB_CONFIG_FILE]
+   --db-host value               Backend host to be connected to (default: &#34;127.0.0.1&#34;) [$DB_HOST]
+   --db-port value               Backend port to be connected to (default: &#34;5432&#34;) [$DB_PORT]
+   --db-name value               Database name to be used in the backend (default: &#34;osctrl&#34;) [$DB_NAME]
+   --db-user value               Username to be used for the backend (default: &#34;postgres&#34;) [$DB_USER]
+   --db-pass value               Password to be used for the backend (default: &#34;postgres&#34;) [$DB_PASS]
+   --db-max-idle-conns value     Maximum number of connections in the idle connection pool (default: 20) [$DB_MAX_IDLE_CONNS]
+   --db-max-open-conns value     Maximum number of open connections to the database (default: 100) [$DB_MAX_OPEN_CONNS]
+   --db-conn-max-lifetime value  Maximum amount of time a connection may be reused (default: 30) [$DB_CONN_MAX_LIFETIME]
+   --tls, -t                     Enable TLS termination. It requires certificate and key (default: false) [$TLS_SERVER]
+   --cert FILE, -T FILE          TLS termination certificate from FILE (default: &#34;config/tls.crt&#34;) [$TLS_CERTIFICATE]
+   --key FILE, -K FILE           TLS termination private key from FILE (default: &#34;config/tls.key&#34;) [$TLS_KEY]
+   --jwt, -j                     Provide JWT configuration via JSON file (default: false) [$JWT_CONFIG]
+   --jwt-file FILE               Load JWT configuration from FILE (default: &#34;config/jwt.json&#34;) [$JWT_CONFIG_FILE]
+   --jwt-secret value            Password to be used for the backend [$JWT_SECRET]
+   --jwt-expire value            Maximum amount of hours for the tokens to expire (default: 3) [$JWT_EXPIRE]
+   --version, -v                 print the version (default: false)
+</code></pre>
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/usage/osctrl-tls/" title="osctrl-tls"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/usage/osctrl-admin/" title="osctrl-admin" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1662043319"></script>
+    <script src="/js/perfect-scrollbar.min.js?1662043319"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1662043319"></script>
+    <script src="/js/jquery.sticky.js?1662043319"></script>
+    <script src="/js/featherlight.min.js?1662043319"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1662043319"></script>
+    <script src="/js/highlight.pack.js?1662043319"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1662043319"></script>
+    <script src="/js/learn.js?1662043319"></script>
+    <script src="/js/hugo-learn.js?1662043319"></script>
+
+    <link href="/mermaid/mermaid.css?1662043319" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1662043319"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
