@@ -12,20 +12,20 @@
     <title>osctrl-cli :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1662043319" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1662043319" rel="stylesheet">
-    <link href="/css/hybrid.css?1662043319" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1662043319" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1662043319" rel="stylesheet">
-    <link href="/css/auto-complete.css?1662043319" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1662043319" rel="stylesheet">
-    <link href="/css/theme.css?1662043319" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1662043319" rel="stylesheet">
+    <link href="/css/nucleus.css?1663603438" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1663603438" rel="stylesheet">
+    <link href="/css/hybrid.css?1663603438" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1663603438" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1663603438" rel="stylesheet">
+    <link href="/css/auto-complete.css?1663603438" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1663603438" rel="stylesheet">
+    <link href="/css/theme.css?1663603438" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1663603438" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1662043319" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1663603438" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1662043319"></script>
+    <script src="/js/jquery-3.3.1.min.js?1663603438"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1662043319"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1662043319"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1663603438"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1663603438"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1662043319"></script>
+<script type="text/javascript" src="/js/search.js?1663603438"></script>
 
     
   </div>
@@ -1095,12 +1095,17 @@ COMMANDS:
    node              Commands for nodes
    query             Commands for queries
    tag               Commands for tags
-   check             Checks DB connection
+   check-db          Checks DB connection
+   check-api         Checks API token
    help, h           Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --db, -d                      Provide DB configuration via JSON file (default: false) [$DB_CONFIG]
-   --db-file FILE, -D FILE       Load DB configuration from FILE (default: &#34;config/db.json&#34;) [$DB_CONFIG_FILE]
+   --db, -d                      Connect to local osctrl DB using JSON config file (default: false) [$DB_CONFIG]
+   --api, -a                     Connect to remote osctrl using JSON config file (default: true) [$API_CONFIG]
+   --api-file FILE, -A FILE      Load API JSON configuration from FILE [$API_CONFIG_FILE]
+   --api-url value, -U value     The URL for osctrl API to be used [$API_URL]
+   --api-token value, -T value   Token to authenticate with the osctrl API [$API_TOKEN]
+   --db-file FILE, -D FILE       Load DB JSON configuration from FILE [$DB_CONFIG_FILE]
    --db-host value               Backend host to be connected to (default: &#34;127.0.0.1&#34;) [$DB_HOST]
    --db-port value               Backend port to be connected to (default: &#34;5432&#34;) [$DB_PORT]
    --db-name value               Database name to be used in the backend (default: &#34;osctrl&#34;) [$DB_NAME]
@@ -1109,6 +1114,10 @@ GLOBAL OPTIONS:
    --db-max-idle-conns value     Maximum number of connections in the idle connection pool (default: 20) [$DB_MAX_IDLE_CONNS]
    --db-max-open-conns value     Maximum number of open connections to the database (default: 100) [$DB_MAX_OPEN_CONNS]
    --db-conn-max-lifetime value  Maximum amount of time a connection may be reused (default: 30) [$DB_CONN_MAX_LIFETIME]
+   --insecure, -i                Allow insecure server connections when using SSL (default: false)
+   --json, -j                    Print output in JSON format (default: false)
+   --csv, -c                     Print output in CSV format (default: false)
+   --pretty, -p                  Print output in pretty format (table) (default: true)
    --help, -h                    show help (default: false)
    --version, -v                 print the version (default: false)
 </code></pre><p>Each command has its own help and it is displayed appending <code>-h</code> to them. Each subcommand has its own help as well.</p>
@@ -1668,20 +1677,20 @@ GLOBAL OPTIONS:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1662043319"></script>
-    <script src="/js/perfect-scrollbar.min.js?1662043319"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1662043319"></script>
-    <script src="/js/jquery.sticky.js?1662043319"></script>
-    <script src="/js/featherlight.min.js?1662043319"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1662043319"></script>
-    <script src="/js/highlight.pack.js?1662043319"></script>
+    <script src="/js/clipboard.min.js?1663603438"></script>
+    <script src="/js/perfect-scrollbar.min.js?1663603438"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1663603438"></script>
+    <script src="/js/jquery.sticky.js?1663603438"></script>
+    <script src="/js/featherlight.min.js?1663603438"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1663603438"></script>
+    <script src="/js/highlight.pack.js?1663603438"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1662043319"></script>
-    <script src="/js/learn.js?1662043319"></script>
-    <script src="/js/hugo-learn.js?1662043319"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1663603438"></script>
+    <script src="/js/learn.js?1663603438"></script>
+    <script src="/js/hugo-learn.js?1663603438"></script>
 
-    <link href="/mermaid/mermaid.css?1662043319" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1662043319"></script>
+    <link href="/mermaid/mermaid.css?1663603438" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1663603438"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
