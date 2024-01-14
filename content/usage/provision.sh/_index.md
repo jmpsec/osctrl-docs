@@ -34,6 +34,7 @@ Arguments for TYPE:
 Arguments for PART:
   admin  Provision will deploy only the admin interface.
   tls   Provision will deploy only the TLS endpoint.
+  api   Provision will deploy only the API endpoint.
   all   Provision will deploy both the admin and the TLS endpoint.
 
 Optional Parameters:

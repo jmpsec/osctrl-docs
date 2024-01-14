@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.100.2" />
+    <meta name="generator" content="Hugo 0.120.4">
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos de Prado, JMPSec">
 
@@ -12,20 +12,20 @@
     <title>osctrld :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1663603438" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1663603438" rel="stylesheet">
-    <link href="/css/hybrid.css?1663603438" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1663603438" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1663603438" rel="stylesheet">
-    <link href="/css/auto-complete.css?1663603438" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1663603438" rel="stylesheet">
-    <link href="/css/theme.css?1663603438" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1663603438" rel="stylesheet">
+    <link href="/css/nucleus.css?1705261124" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1705261124" rel="stylesheet">
+    <link href="/css/hybrid.css?1705261124" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1705261124" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1705261124" rel="stylesheet">
+    <link href="/css/auto-complete.css?1705261124" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1705261124" rel="stylesheet">
+    <link href="/css/theme.css?1705261124" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1705261124" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1663603438" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1705261124" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1663603438"></script>
+    <script src="/js/jquery-3.3.1.min.js?1705261124"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1663603438"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1663603438"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1705261124"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1705261124"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1663603438"></script>
+<script type="text/javascript" src="/js/search.js?1705261124"></script>
 
     
   </div>
@@ -1075,41 +1075,42 @@
 
 	<p><code>osctrld</code> is the daemon service for enrolled osquery nodes in <strong>osctrl</strong>.</p>
 <p>Execute <code>./osctrld -h</code> to show the main help of the program:</p>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./bin/osctrld -h
-NAME:
-   osctrld - Daemon for osctrl
-
-USAGE:
-   osctrld [global options] command [command options] [arguments...]
-
-VERSION:
-   1.0.0
-
-DESCRIPTION:
-   Daemon for osctrl, to manage secret, flags and osquery deployment
-
-COMMANDS:
-   enroll   Enroll a new node in osctrl, using new secret and flag files
-   remove   Remove enrolled node from osctrl, clearing secret and flag files
-   verify   Verify flags, cert and secret for an enrolled node in osctrl
-   flags    Retrieve flags for osquery from osctrl and write them locally
-   cert     Retrieve server certificate for osquery from osctrl and write it locally
-   help, h  Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --certificate FILE, -C FILE                                    Use FILE as certificate for osquery, if needed. Default depends on OS [$OSQUERY_CERTIFICATE]
-   --configuration value, -c value, --conf value, --config value  Configuration file for osctrld to load all necessary values [$OSCTRL_CONFIG]
-   --environment value, -e value, --env value                     Environment in osctrl to enrolled nodes to [$OSCTRL_ENV]
-   --flagfile FILE, -F FILE                                       Use FILE as flagfile for osquery. Default depends on OS [$OSQUERY_FLAGFILE]
-   --force, -f                                                    Overwrite existing files for flags, certificate and secret (default: false) [$OSCTRL_FORCE]
-   --help, -h                                                     show help (default: false)
-   --insecure, -i                                                 Ignore TLS warnings, often used with self-signed certificates (default: false) [$OSCTRL_INSECURE]
-   --osctrl-url value, -U value                                   Base URL for the osctrl server [$OSCTRL_URL]
-   --secret value, -s value                                       Enroll secret to authenticate against osctrl server [$OSCTRL_SECRET]
-   --secret-file FILE, -S FILE                                    Use FILE as secret file for osquery. Default depends on OS [$OSQUERY_SECRET]
-   --verbose, -V                                                  Enable verbose informational messages (default: false) [$OSCTRL_VERBOSE]
-   --version, -v                                                  print the version (default: false)
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./bin/osctrld -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrld</span> <span style="color:#e6db74">- Daemon for osctrl, the fast and efficient osquery management</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrld</span> <span style="color:#e6db74">[global options] command [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">VERSION</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">   1.0.0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">DESCRIPTION</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">Daemon</span> <span style="color:#e6db74">for osctrl, the fast and efficient osquery management, to manage secret, flags and osquery deployment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">COMMANDS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">enroll</span>   <span style="color:#e6db74">Enroll a new node in osctrl, using new secret and flag files</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">remove</span>   <span style="color:#e6db74">Remove enrolled node from osctrl, clearing secret and flag files</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">verify</span>   <span style="color:#e6db74">Verify flags, cert and secret for an enrolled node in osctrl</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">flags</span>    <span style="color:#e6db74">Retrieve flags for osquery from osctrl and write them locally</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">cert</span>     <span style="color:#e6db74">Retrieve server certificate for osquery from osctrl and write it locally</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">help,</span> <span style="color:#e6db74">h  Shows a list of commands or help for one command</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">GLOBAL</span> <span style="color:#e6db74">OPTIONS:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--certificate</span> <span style="color:#e6db74">FILE, -C FILE                                    Use FILE as certificate for osquery, if needed. Default depends on OS [$OSQUERY_CERTIFICATE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--configuration</span> <span style="color:#e6db74">value, -c value, --conf value, --config value  Configuration file for osctrld to load all necessary values [$OSCTRL_CONFIG]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--environment</span> <span style="color:#e6db74">value, -e value, --env value                     Environment in osctrl to enrolled nodes to [$OSCTRL_ENV]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--flagfile</span> <span style="color:#e6db74">FILE, -F FILE                                       Use FILE as flagfile for osquery. Default depends on OS [$OSQUERY_FLAGFILE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--force,</span> <span style="color:#e6db74">-f                                                    Overwrite existing files for flags, certificate and secret (default: false) [$OSCTRL_FORCE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                                                     show help (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--insecure,</span> <span style="color:#e6db74">-i                                                 Ignore TLS warnings, often used with self-signed certificates (default: false) [$OSCTRL_INSECURE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--osctrl-url</span> <span style="color:#e6db74">value, -U value                                   Base URL for the osctrl server [$OSCTRL_URL]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--osquery-path</span> <span style="color:#e6db74">FILE, --osquery FILE, -o FILE                   Use FILE as path for osquery installation, if needed. Default depends on OS [$OSQUERY_PATH]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--secret</span> <span style="color:#e6db74">value, -s value                                       Enroll secret to authenticate against osctrl server [$OSCTRL_SECRET]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--secret-file</span> <span style="color:#e6db74">FILE, -S FILE                                    Use FILE as secret file for osquery. Default depends on OS [$OSQUERY_SECRET]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--verbose,</span> <span style="color:#e6db74">-V                                                  Enable verbose informational messages (default: false) [$OSCTRL_VERBOSE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--version,</span> <span style="color:#e6db74">-v                                                  print the version (default: false)</span>
+</span></span></code></pre></div>
 
 
 
@@ -1662,20 +1663,20 @@ GLOBAL OPTIONS:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1663603438"></script>
-    <script src="/js/jquery.sticky.js?1663603438"></script>
-    <script src="/js/featherlight.min.js?1663603438"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1663603438"></script>
-    <script src="/js/highlight.pack.js?1663603438"></script>
+    <script src="/js/clipboard.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1705261124"></script>
+    <script src="/js/jquery.sticky.js?1705261124"></script>
+    <script src="/js/featherlight.min.js?1705261124"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1705261124"></script>
+    <script src="/js/highlight.pack.js?1705261124"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1663603438"></script>
-    <script src="/js/learn.js?1663603438"></script>
-    <script src="/js/hugo-learn.js?1663603438"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1705261124"></script>
+    <script src="/js/learn.js?1705261124"></script>
+    <script src="/js/hugo-learn.js?1705261124"></script>
 
-    <link href="/mermaid/mermaid.css?1663603438" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1663603438"></script>
+    <link href="/mermaid/mermaid.css?1705261124" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1705261124"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

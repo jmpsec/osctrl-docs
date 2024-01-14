@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.100.2" />
+    <meta name="generator" content="Hugo 0.120.4">
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos de Prado, JMPSec">
 
@@ -12,20 +12,20 @@
     <title>environment :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1663603438" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1663603438" rel="stylesheet">
-    <link href="/css/hybrid.css?1663603438" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1663603438" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1663603438" rel="stylesheet">
-    <link href="/css/auto-complete.css?1663603438" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1663603438" rel="stylesheet">
-    <link href="/css/theme.css?1663603438" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1663603438" rel="stylesheet">
+    <link href="/css/nucleus.css?1705261124" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1705261124" rel="stylesheet">
+    <link href="/css/hybrid.css?1705261124" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1705261124" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1705261124" rel="stylesheet">
+    <link href="/css/auto-complete.css?1705261124" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1705261124" rel="stylesheet">
+    <link href="/css/theme.css?1705261124" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1705261124" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1663603438" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1705261124" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1663603438"></script>
+    <script src="/js/jquery-3.3.1.min.js?1705261124"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1663603438"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1663603438"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1705261124"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1705261124"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1663603438"></script>
+<script type="text/javascript" src="/js/search.js?1705261124"></script>
 
     
   </div>
@@ -1088,251 +1088,286 @@
 
 
 	<h3 id="environment">Environment</h3>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment -h
-NAME:
-   osctrl-cli environment - Commands for TLS environment
-
-USAGE:
-   osctrl-cli environment command [command options] [arguments...]
-
-COMMANDS:
-   add, a                  Add a new TLS environment
-   update, u               Update an existing TLS environment
-   add-scheduled-query     Add a new query to the osquery schedule for an environment
-   remove-scheduled-query  Remove query from the osquery schedule for an environment
-   add-osquery-option      Add or change an osquery option to the configuration
-   remove-osquery-option   Remove an option for the osquery configuration
-   add-new-pack            Add a new query pack to the osquery configuration
-   add-local-pack          Add a new local query pack to the osquery configuration
-   remove-pack             Remove query pack from the osquery configuration
-   add-query-to-pack       Add a new query to the given query pack
-   remove-query-from-pack  Remove query from the given query pack
-   delete, d               Delete an existing TLS environment
-   show, s                 Show a TLS environment
-   show-flags, w           Show the flags for a TLS environment
-   list, l                 List all existing TLS environments
-   quick-add, q            Generates one-liner for quick adding nodes to environment
-   flags, f                Generates the flags to run nodes in an environment
-   secret, x               Output the secret to enroll nodes in an environment
-
-OPTIONS:
-   --help, -h  show help
-</code></pre><h4 id="add-environment">Add environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment add -h
-NAME:
-   osctrl-cli environment add - Add a new TLS environment
-
-USAGE:
-   osctrl-cli environment add [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value            Environment to be added
-   --hostname value, --host value    Environment host to be added
-   --debug, -d                       Environment debug capability
-   --certificate value, --crt value  Certificate file to be read
-</code></pre><h4 id="update-environment">Update environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment update -h
-NAME:
-   osctrl-cli environment update - Update an existing TLS environment
-
-USAGE:
-   osctrl-cli environment update [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value          Environment to be updated
-   --debug, -d                     Environment debug capability
-   --hostname value, --host value  Environment host to be updated
-   --logging value, -l value       Logging interval in seconds (default: 0)
-   --config value, -c value        Config interval in seconds (default: 0)
-   --query value, -q value         Query interval in seconds (default: 0)
-</code></pre><h4 id="add-scheduled-query-to-environment">Add scheduled query to environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment add-scheduled-query -h
-NAME:
-   osctrl-cli environment add-scheduled-query - Add a new query to the osquery schedule for an environment
-
-USAGE:
-   osctrl-cli environment add-scheduled-query [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value        Environment to be updated
-   --query value, -q value       Query to be added to the schedule
-   --query-name value, -Q value  Query name to be idenfified in the schedule
-   --interval value, -i value    Query interval in seconds (default: 0)
-   --platform value, -p value    Restrict this query to a given platform
-   --version value, -v value     Only run on osquery versions greater than or equal-to this version
-</code></pre><h4 id="remove-scheduled-query-from-environment">Remove scheduled query from environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment remove-scheduled-query -h
-NAME:
-   osctrl-cli environment remove-scheduled-query - Remove query from the osquery schedule for an environment
-
-USAGE:
-   osctrl-cli environment remove-scheduled-query [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value        Environment to be updated
-   --query-name value, -q value  Query to be removed from the schedule
-</code></pre><h4 id="add-osquery-option-to-environment">Add osquery option to environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment add-osquery-option -h
-NAME:
-   osctrl-cli environment add-osquery-option - Add or change an osquery option to the configuration
-
-USAGE:
-   osctrl-cli environment add-osquery-option [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value          Environment to be updated
-   --option value, -o value        Option name to be added
-   --type value, -t value          Option type for the value (string, int, bool)
-   --string-value value, -s value  String value for the option
-   --int-value value, -i value     Integer value for the option (default: 0)
-   --bool-value, -b                Boolean value for the option
-</code></pre><h4 id="remove-osquery-option-from-environment">Remove osquery option from environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment remove-osquery-option -h
-NAME:
-   osctrl-cli environment remove-osquery-option - Remove an option for the osquery configuration
-
-USAGE:
-   osctrl-cli environment remove-osquery-option [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value    Environment to be updated
-   --option value, -o value  Option name to be added
-</code></pre><h4 id="add-query-pack-to-environment">Add query pack to environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment add-new-pack -h
-NAME:
-   osctrl-cli environment add-new-pack - Add a new query pack to the osquery configuration
-
-USAGE:
-   osctrl-cli environment add-new-pack [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value      Environment to be updated
-   --pack value, -p value      Pack name to be added
-   --platform value, -P value  Restrict this pack to a given platform
-   --version value, -v value   Only run on osquery versions greater than or equal-to this version
-   --shard value, -s value     Restrict this query to a percentage (1-100) of target hosts (default: 0)
-</code></pre><h4 id="add-local-query-pack-to-environment">Add local query pack to environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment add-local-pack -h
-NAME:
-   osctrl-cli environment add-local-pack - Add a new local query pack to the osquery configuration
-
-USAGE:
-   osctrl-cli environment add-local-pack [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value       Environment to be updated
-   --pack value, -p value       Pack name to be added
-   --pack-path value, -P value  Local full path to load the query pack within osquery
-</code></pre><h4 id="remove-query-pack-from-environment">Remove query pack from environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment remove-pack -h
-NAME:
-   osctrl-cli environment remove-pack - Remove query pack from the osquery configuration
-
-USAGE:
-   osctrl-cli environment remove-pack [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value  Environment to be updated
-   --pack value, -p value  Pack name to be removed
-</code></pre><h4 id="add-query-to-pack-in-environment">Add query to pack in environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment add-query-to-pack -h
-NAME:
-   osctrl-cli environment add-query-to-pack - Add a new query to the given query pack
-
-USAGE:
-   osctrl-cli environment add-query-to-pack [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value        Environment to be updated
-   --pack value, -p value        Environment to be updated
-   --query value, -q value       Query to be added to the pack
-   --query-name value, -Q value  Query name to be added to the pack
-   --interval value, -i value    Query interval in seconds (default: 0)
-   --platform value, -P value    Restrict this query to a given platform
-   --version value, -v value     Only run on osquery versions greater than or equal-to this version
-</code></pre><h4 id="remove-query-from-pack-in-environment">Remove query from pack in environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment remove-query-from-pack -h
-NAME:
-   osctrl-cli environment remove-query-from-pack - Remove query from the given query pack
-
-USAGE:
-   osctrl-cli environment remove-query-from-pack [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value        Environment to be updated
-   --pack value, -p value        Pack name to be updated
-   --query-name value, -q value  Query name to be removed
-</code></pre><h4 id="delete-environment">Delete environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment delete -h
-NAME:
-   osctrl-cli environment delete - Delete an existing TLS environment
-
-USAGE:
-   osctrl-cli environment delete [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value  Environment to be deleted
-</code></pre><h4 id="show-environment">Show environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment show -h
-NAME:
-   osctrl-cli environment show - Show a TLS environment
-
-USAGE:
-   osctrl-cli environment show [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value  Environment to be displayed
-</code></pre><h4 id="show-environment-flags">Show environment flags</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment show-flags -h
-NAME:
-   osctrl-cli environment show-flags - Show the flags for a TLS environment
-
-USAGE:
-   osctrl-cli environment show-flags [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value  Environment to be displayed
-</code></pre><h4 id="list-environments">List environments</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment list -h
-NAME:
-   osctrl-cli environment list - List all existing TLS environments
-
-USAGE:
-   osctrl-cli environment list [arguments...]
-</code></pre><h4 id="quick-add-to-environment">Quick-add to environment</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment quick-add -h
-NAME:
-   osctrl-cli environment quick-add - Generates one-liner for quick adding nodes to environment
-
-USAGE:
-   osctrl-cli environment quick-add [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value    Environment to be used
-   --target value, -t value  Type of one-liner (default: &#34;sh&#34;)
-</code></pre><h4 id="flags">Flags</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment flags -h
-NAME:
-   osctrl-cli environment flags - Generates the flags to run nodes in an environment
-
-USAGE:
-   osctrl-cli environment flags [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value            Environment to be used
-   --certificate value, --crt value  Certificate path to be used
-   --secret value, -s value          Secret file path to be used
-</code></pre><h4 id="secret">Secret</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli environment secret -h
-NAME:
-   osctrl-cli environment secret - Output the secret to enroll nodes in an environment
-
-USAGE:
-   osctrl-cli environment secret [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value  Environment to be used
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment - Commands for TLS environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment command [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">COMMANDS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">add,</span> <span style="color:#e6db74">a                  Add a new TLS environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">update,</span> <span style="color:#e6db74">u               Update an existing TLS environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">add-scheduled-query</span>     <span style="color:#e6db74">Add a new query to the osquery schedule for an environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">remove-scheduled-query</span>  <span style="color:#e6db74">Remove query from the osquery schedule for an environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">add-osquery-option</span>      <span style="color:#e6db74">Add or change an osquery option to the configuration</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">remove-osquery-option</span>   <span style="color:#e6db74">Remove an option for the osquery configuration</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">add-new-pack</span>            <span style="color:#e6db74">Add a new query pack to the osquery configuration</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">add-local-pack</span>          <span style="color:#e6db74">Add a new local query pack to the osquery configuration</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">remove-pack</span>             <span style="color:#e6db74">Remove query pack from the osquery configuration</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">add-query-to-pack</span>       <span style="color:#e6db74">Add a new query to the given query pack</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">remove-query-from-pack</span>  <span style="color:#e6db74">Remove query from the given query pack</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">delete,</span> <span style="color:#e6db74">d               Delete an existing TLS environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">show,</span> <span style="color:#e6db74">s                 Show a TLS environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">show-flags,</span> <span style="color:#e6db74">w           Show the flags for a TLS environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">gen-flags,</span> <span style="color:#e6db74">g            Generate and save the flags for a TLS environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">list,</span> <span style="color:#e6db74">l                 List all existing TLS environments</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">quick-add,</span> <span style="color:#e6db74">q            Generates one-liner for quick adding nodes to environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">flags,</span> <span style="color:#e6db74">f                Generates the flags to run nodes in an environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">secret,</span> <span style="color:#e6db74">x               Output the secret to enroll nodes in an environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">help,</span> <span style="color:#e6db74">h                 Shows a list of commands or help for one command</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h  show help</span>
+</span></span></code></pre></div><h4 id="add-environment">Add environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment add -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment add - Add a new TLS environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment add [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value            Environment name to be added</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--hostname</span> <span style="color:#e6db74">value, --host value    Environment host to be added</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--debug,</span> <span style="color:#e6db74">-d                       Environment debug capability (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--certificate</span> <span style="color:#e6db74">value, --crt value  Certificate file to be read</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                        show help</span>
+</span></span></code></pre></div><h4 id="update-environment">Update environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment update -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment update - Update an existing TLS environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment update [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value          Environment name to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--debug,</span> <span style="color:#e6db74">-d                     Environment debug capability (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--enroll,</span> <span style="color:#e6db74">-e                    Environment enroll capability (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--hostname</span> <span style="color:#e6db74">value, --host value  Environment host to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--logging</span> <span style="color:#e6db74">value, -l value       Logging interval in seconds (default: 0)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--config</span> <span style="color:#e6db74">value, -c value        Config interval in seconds (default: 0)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--query</span> <span style="color:#e6db74">value, -q value         Query interval in seconds (default: 0)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                      show help</span>
+</span></span></code></pre></div><h4 id="add-scheduled-query-to-environment">Add scheduled query to environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment add-scheduled-query -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment add-scheduled-query - Add a new query to the osquery schedule for an environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment add-scheduled-query [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value        Environment name to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--query</span> <span style="color:#e6db74">value, -q value       Query to be added to the schedule</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--query-name</span> <span style="color:#e6db74">value, -Q value  Query name to be idenfified in the schedule</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--interval</span> <span style="color:#e6db74">value, -i value    Query interval in seconds (default: 0)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--platform</span> <span style="color:#e6db74">value, -p value    Restrict this query to a given platform</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--version</span> <span style="color:#e6db74">value, -v value     Only run on osquery versions greater than or equal-to this version</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                    show help</span>
+</span></span></code></pre></div><h4 id="remove-scheduled-query-from-environment">Remove scheduled query from environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment remove-scheduled-query -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment remove-scheduled-query - Remove query from the osquery schedule for an environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment remove-scheduled-query [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value        Environment name to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--query-name</span> <span style="color:#e6db74">value, -q value  Query to be removed from the schedule</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                    show help</span>
+</span></span></code></pre></div><h4 id="add-osquery-option-to-environment">Add osquery option to environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment add-osquery-option -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment add-osquery-option - Add or change an osquery option to the configuration</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment add-osquery-option [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value          Environment name to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--option</span> <span style="color:#e6db74">value, -o value        Option name to be added</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--type</span> <span style="color:#e6db74">value, -t value          Option type for the value (string, int, bool)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--string-value</span> <span style="color:#e6db74">value, -s value  String value for the option</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--int-value</span> <span style="color:#e6db74">value, -i value     Integer value for the option (default: 0)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--bool-value,</span> <span style="color:#e6db74">-b                Boolean value for the option (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                      show help</span>
+</span></span></code></pre></div><h4 id="remove-osquery-option-from-environment">Remove osquery option from environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment remove-osquery-option -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment remove-osquery-option - Remove an option for the osquery configuration</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment remove-osquery-option [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value    Environment name to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--option</span> <span style="color:#e6db74">value, -o value  Option name to be added</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                show help</span>
+</span></span></code></pre></div><h4 id="add-query-pack-to-environment">Add query pack to environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment add-new-pack -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment add-new-pack - Add a new query pack to the osquery configuration</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment add-new-pack [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value      Environment name to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--pack</span> <span style="color:#e6db74">value, -p value      Pack name to be added</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--platform</span> <span style="color:#e6db74">value, -P value  Restrict this pack to a given platform</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--version</span> <span style="color:#e6db74">value, -v value   Only run on osquery versions greater than or equal-to this version</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--shard</span> <span style="color:#e6db74">value, -s value     Restrict this query to a percentage (1-100) of target hosts (default: 0)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                  show help</span>
+</span></span></code></pre></div><h4 id="add-local-query-pack-to-environment">Add local query pack to environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment add-local-pack -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment add-local-pack - Add a new local query pack to the osquery configuration</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment add-local-pack [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value       Environment name to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--pack</span> <span style="color:#e6db74">value, -p value       Pack name to be added</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--pack-path</span> <span style="color:#e6db74">value, -P value  Local full path to load the query pack within osquery</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                   show help</span>
+</span></span></code></pre></div><h4 id="remove-query-pack-from-environment">Remove query pack from environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment remove-pack -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment remove-pack - Remove query pack from the osquery configuration</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment remove-pack [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value  Environment name to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--pack</span> <span style="color:#e6db74">value, -p value  Pack name to be removed</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h              show help</span>
+</span></span></code></pre></div><h4 id="add-query-to-pack-in-environment">Add query to pack in environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment add-query-to-pack -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment add-query-to-pack - Add a new query to the given query pack</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment add-query-to-pack [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value        Environment name to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--pack</span> <span style="color:#e6db74">value, -p value        Environment to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--query</span> <span style="color:#e6db74">value, -q value       Query to be added to the pack</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--query-name</span> <span style="color:#e6db74">value, -Q value  Query name to be added to the pack</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--interval</span> <span style="color:#e6db74">value, -i value    Query interval in seconds (default: 0)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--platform</span> <span style="color:#e6db74">value, -P value    Restrict this query to a given platform</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--version</span> <span style="color:#e6db74">value, -v value     Only run on osquery versions greater than or equal-to this version</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                    show help</span>
+</span></span></code></pre></div><h4 id="remove-query-from-pack-in-environment">Remove query from pack in environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment remove-query-from-pack -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment remove-query-from-pack - Remove query from the given query pack</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment remove-query-from-pack [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value        Environment name to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--pack</span> <span style="color:#e6db74">value, -p value        Pack name to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--query-name</span> <span style="color:#e6db74">value, -q value  Query name to be removed</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                    show help</span>
+</span></span></code></pre></div><h4 id="delete-environment">Delete environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment delete -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment delete - Delete an existing TLS environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment delete [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value  Environment name to be deleted</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h              show help</span>
+</span></span></code></pre></div><h4 id="show-environment">Show environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment show -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment show - Show a TLS environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment show [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value  Environment name to be displayed</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h              show help</span>
+</span></span></code></pre></div><h4 id="show-environment-flags">Show environment flags</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment show-flags -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment show-flags - Show the flags for a TLS environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment show-flags [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value  Environment name to be displayed</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h              show help</span>
+</span></span></code></pre></div><h4 id="re-generate-and-update-environment-flags">Re-generate and update environment flags</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment gen-flags -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment gen-flags - Generate and save the flags for a TLS environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment gen-flags [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value  Environment name to be displayed</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h              show help</span>
+</span></span></code></pre></div><h4 id="list-environments">List environments</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment list -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment list - List all existing TLS environments</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment list [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h  show help</span>
+</span></span></code></pre></div><h4 id="quick-add-to-environment">Quick-add to environment</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment quick-add -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment quick-add - Generates one-liner for quick adding nodes to environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment quick-add [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value    Environment name to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--target</span> <span style="color:#e6db74">value, -t value  Type of one-liner (default: &#34;sh&#34;)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--insecure,</span> <span style="color:#e6db74">-i            Generate insecure one-liner (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                show help</span>
+</span></span></code></pre></div><h4 id="flags">Flags</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment flags -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment flags - Generates the flags to run nodes in an environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment flags [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value            Environment name to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--certificate</span> <span style="color:#e6db74">value, --crt value  Certificate path to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--secret</span> <span style="color:#e6db74">value, -s value          Secret file path to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                        show help</span>
+</span></span></code></pre></div><h4 id="secret">Secret</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli environment secret -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment secret - Output the secret to enroll nodes in an environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">environment secret [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value  Environment name to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h              show help</span>
+</span></span></code></pre></div>
 
 
 
@@ -1892,20 +1927,20 @@ OPTIONS:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1663603438"></script>
-    <script src="/js/jquery.sticky.js?1663603438"></script>
-    <script src="/js/featherlight.min.js?1663603438"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1663603438"></script>
-    <script src="/js/highlight.pack.js?1663603438"></script>
+    <script src="/js/clipboard.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1705261124"></script>
+    <script src="/js/jquery.sticky.js?1705261124"></script>
+    <script src="/js/featherlight.min.js?1705261124"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1705261124"></script>
+    <script src="/js/highlight.pack.js?1705261124"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1663603438"></script>
-    <script src="/js/learn.js?1663603438"></script>
-    <script src="/js/hugo-learn.js?1663603438"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1705261124"></script>
+    <script src="/js/learn.js?1705261124"></script>
+    <script src="/js/hugo-learn.js?1705261124"></script>
 
-    <link href="/mermaid/mermaid.css?1663603438" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1663603438"></script>
+    <link href="/mermaid/mermaid.css?1705261124" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1705261124"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

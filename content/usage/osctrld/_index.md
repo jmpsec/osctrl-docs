@@ -12,7 +12,7 @@ Execute `./osctrld -h` to show the main help of the program:
 ```properties
 $ ./bin/osctrld -h
 NAME:
-   osctrld - Daemon for osctrl
+   osctrld - Daemon for osctrl, the fast and efficient osquery management
 
 USAGE:
    osctrld [global options] command [command options] [arguments...]
@@ -21,7 +21,7 @@ VERSION:
    1.0.0
 
 DESCRIPTION:
-   Daemon for osctrl, to manage secret, flags and osquery deployment
+   Daemon for osctrl, the fast and efficient osquery management, to manage secret, flags and osquery deployment
 
 COMMANDS:
    enroll   Enroll a new node in osctrl, using new secret and flag files
@@ -40,6 +40,7 @@ GLOBAL OPTIONS:
    --help, -h                                                     show help (default: false)
    --insecure, -i                                                 Ignore TLS warnings, often used with self-signed certificates (default: false) [$OSCTRL_INSECURE]
    --osctrl-url value, -U value                                   Base URL for the osctrl server [$OSCTRL_URL]
+   --osquery-path FILE, --osquery FILE, -o FILE                   Use FILE as path for osquery installation, if needed. Default depends on OS [$OSQUERY_PATH]
    --secret value, -s value                                       Enroll secret to authenticate against osctrl server [$OSCTRL_SECRET]
    --secret-file FILE, -S FILE                                    Use FILE as secret file for osquery. Default depends on OS [$OSQUERY_SECRET]
    --verbose, -V                                                  Enable verbose informational messages (default: false) [$OSCTRL_VERBOSE]

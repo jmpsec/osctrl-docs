@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.100.2" />
+    <meta name="generator" content="Hugo 0.120.4">
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos de Prado, JMPSec">
 
@@ -12,20 +12,20 @@
     <title>osctrl-cli :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1663603438" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1663603438" rel="stylesheet">
-    <link href="/css/hybrid.css?1663603438" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1663603438" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1663603438" rel="stylesheet">
-    <link href="/css/auto-complete.css?1663603438" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1663603438" rel="stylesheet">
-    <link href="/css/theme.css?1663603438" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1663603438" rel="stylesheet">
+    <link href="/css/nucleus.css?1705261124" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1705261124" rel="stylesheet">
+    <link href="/css/hybrid.css?1705261124" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1705261124" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1705261124" rel="stylesheet">
+    <link href="/css/auto-complete.css?1705261124" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1705261124" rel="stylesheet">
+    <link href="/css/theme.css?1705261124" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1705261124" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1663603438" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1705261124" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1663603438"></script>
+    <script src="/js/jquery-3.3.1.min.js?1705261124"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1663603438"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1663603438"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1705261124"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1705261124"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1663603438"></script>
+<script type="text/javascript" src="/js/search.js?1705261124"></script>
 
     
   </div>
@@ -1075,52 +1075,53 @@
 
 	<p><code>osctrl-cli</code> is the CLI for <strong>osctrl</strong>. Its purpose is to execute actions in <strong>osctrl</strong> without having to access directly the backend or use the admin interface. It can be very handy to automate actions in scripts or similar.</p>
 <p>Execute <code>./osctrl-cli -h</code> to show the main help of the program:</p>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli -h
-NAME:
-   osctrl-cli - CLI for osctrl
-
-USAGE:
-   osctrl-cli [global options] command [command options] [arguments...]
-
-VERSION:
-   0.3.0
-
-DESCRIPTION:
-   CLI for osctrl, a fast and efficient osquery management
-
-COMMANDS:
-   user              Commands for users
-   environment, env  Commands for TLS environment
-   settings          Commands for settings
-   node              Commands for nodes
-   query             Commands for queries
-   tag               Commands for tags
-   check-db          Checks DB connection
-   check-api         Checks API token
-   help, h           Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --db, -d                      Connect to local osctrl DB using JSON config file (default: false) [$DB_CONFIG]
-   --api, -a                     Connect to remote osctrl using JSON config file (default: true) [$API_CONFIG]
-   --api-file FILE, -A FILE      Load API JSON configuration from FILE [$API_CONFIG_FILE]
-   --api-url value, -U value     The URL for osctrl API to be used [$API_URL]
-   --api-token value, -T value   Token to authenticate with the osctrl API [$API_TOKEN]
-   --db-file FILE, -D FILE       Load DB JSON configuration from FILE [$DB_CONFIG_FILE]
-   --db-host value               Backend host to be connected to (default: &#34;127.0.0.1&#34;) [$DB_HOST]
-   --db-port value               Backend port to be connected to (default: &#34;5432&#34;) [$DB_PORT]
-   --db-name value               Database name to be used in the backend (default: &#34;osctrl&#34;) [$DB_NAME]
-   --db-user value               Username to be used for the backend (default: &#34;postgres&#34;) [$DB_USER]
-   --db-pass value               Password to be used for the backend (default: &#34;postgres&#34;) [$DB_PASS]
-   --db-max-idle-conns value     Maximum number of connections in the idle connection pool (default: 20) [$DB_MAX_IDLE_CONNS]
-   --db-max-open-conns value     Maximum number of open connections to the database (default: 100) [$DB_MAX_OPEN_CONNS]
-   --db-conn-max-lifetime value  Maximum amount of time a connection may be reused (default: 30) [$DB_CONN_MAX_LIFETIME]
-   --insecure, -i                Allow insecure server connections when using SSL (default: false)
-   --json, -j                    Print output in JSON format (default: false)
-   --csv, -c                     Print output in CSV format (default: false)
-   --pretty, -p                  Print output in pretty format (table) (default: true)
-   --help, -h                    show help (default: false)
-   --version, -v                 print the version (default: false)
-</code></pre><p>Each command has its own help and it is displayed appending <code>-h</code> to them. Each subcommand has its own help as well.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">- CLI for osctrl</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">[global options] command [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">VERSION</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">   0.3.4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">DESCRIPTION</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">CLI</span> <span style="color:#e6db74">for osctrl, a fast and efficient osquery management</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">COMMANDS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">user</span>              <span style="color:#e6db74">Commands for users</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">environment,</span> <span style="color:#e6db74">env  Commands for TLS environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">settings</span>          <span style="color:#e6db74">Commands for settings</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">node</span>              <span style="color:#e6db74">Commands for nodes</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">query</span>             <span style="color:#e6db74">Commands for queries</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">carve</span>             <span style="color:#e6db74">Commands for file carves</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">tag</span>               <span style="color:#e6db74">Commands for tags</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">check-db</span>          <span style="color:#e6db74">Checks DB connection</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">check-api</span>         <span style="color:#e6db74">Checks API token</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">login</span>             <span style="color:#e6db74">Login into API and generate JSON config file with token</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">help,</span> <span style="color:#e6db74">h           Shows a list of commands or help for one command</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">GLOBAL</span> <span style="color:#e6db74">OPTIONS:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db,</span> <span style="color:#e6db74">-d                         Connect to local osctrl DB using JSON config file (default: false) [$DB_CONFIG]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--api,</span> <span style="color:#e6db74">-a                        Connect to remote osctrl using JSON config file (default: true) [$API_CONFIG]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--api-file</span> <span style="color:#e6db74">FILE, -A FILE         Load API JSON configuration from FILE (default: &#34;osctrl-api.json&#34;) [$API_CONFIG_FILE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--api-url</span> <span style="color:#e6db74">value, -U value        The URL for osctrl API to be used [$API_URL]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--api-token</span> <span style="color:#e6db74">value, -T value      Token to authenticate with the osctrl API [$API_TOKEN]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-file</span> <span style="color:#e6db74">FILE, -D FILE          Load DB JSON configuration from FILE [$DB_CONFIG_FILE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-host</span> <span style="color:#e6db74">value                  Backend host to be connected to (default: &#34;127.0.0.1&#34;) [$DB_HOST]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-port</span> <span style="color:#e6db74">value                  Backend port to be connected to (default: &#34;5432&#34;) [$DB_PORT]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-name</span> <span style="color:#e6db74">value                  Database name to be used in the backend (default: &#34;osctrl&#34;) [$DB_NAME]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-user</span> <span style="color:#e6db74">value                  Username to be used for the backend (default: &#34;postgres&#34;) [$DB_USER]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-pass</span> <span style="color:#e6db74">value                  Password to be used for the backend (default: &#34;postgres&#34;) [$DB_PASS]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-max-idle-conns</span> <span style="color:#e6db74">value        Maximum number of connections in the idle connection pool (default: 20) [$DB_MAX_IDLE_CONNS]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-max-open-conns</span> <span style="color:#e6db74">value        Maximum number of open connections to the database (default: 100) [$DB_MAX_OPEN_CONNS]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-conn-max-lifetime</span> <span style="color:#e6db74">value     Maximum amount of time a connection may be reused (default: 30) [$DB_CONN_MAX_LIFETIME]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--insecure,</span> <span style="color:#e6db74">-i                   Allow insecure server connections when using SSL (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--output-format</span> <span style="color:#e6db74">value, -o value  Format to be used for data output (default: &#34;pretty&#34;) [$OUTPUT_FORMAT]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--silent,</span> <span style="color:#e6db74">-s                     Silent mode (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                       show help</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--version,</span> <span style="color:#e6db74">-v                    print the version</span>
+</span></span></code></pre></div><p>Each command has its own help and it is displayed appending <code>-h</code> to them. Each subcommand has its own help as well.</p>
 
 
 
@@ -1677,20 +1678,20 @@ GLOBAL OPTIONS:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1663603438"></script>
-    <script src="/js/jquery.sticky.js?1663603438"></script>
-    <script src="/js/featherlight.min.js?1663603438"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1663603438"></script>
-    <script src="/js/highlight.pack.js?1663603438"></script>
+    <script src="/js/clipboard.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1705261124"></script>
+    <script src="/js/jquery.sticky.js?1705261124"></script>
+    <script src="/js/featherlight.min.js?1705261124"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1705261124"></script>
+    <script src="/js/highlight.pack.js?1705261124"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1663603438"></script>
-    <script src="/js/learn.js?1663603438"></script>
-    <script src="/js/hugo-learn.js?1663603438"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1705261124"></script>
+    <script src="/js/learn.js?1705261124"></script>
+    <script src="/js/hugo-learn.js?1705261124"></script>
 
-    <link href="/mermaid/mermaid.css?1663603438" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1663603438"></script>
+    <link href="/mermaid/mermaid.css?1705261124" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1705261124"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.100.2" />
+    <meta name="generator" content="Hugo 0.120.4">
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos de Prado, JMPSec">
 
@@ -12,20 +12,20 @@
     <title>dockerize.sh :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1663603438" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1663603438" rel="stylesheet">
-    <link href="/css/hybrid.css?1663603438" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1663603438" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1663603438" rel="stylesheet">
-    <link href="/css/auto-complete.css?1663603438" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1663603438" rel="stylesheet">
-    <link href="/css/theme.css?1663603438" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1663603438" rel="stylesheet">
+    <link href="/css/nucleus.css?1705261124" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1705261124" rel="stylesheet">
+    <link href="/css/hybrid.css?1705261124" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1705261124" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1705261124" rel="stylesheet">
+    <link href="/css/auto-complete.css?1705261124" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1705261124" rel="stylesheet">
+    <link href="/css/theme.css?1705261124" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1705261124" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1663603438" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1705261124" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1663603438"></script>
+    <script src="/js/jquery-3.3.1.min.js?1705261124"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1663603438"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1663603438"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1705261124"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1705261124"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1663603438"></script>
+<script type="text/javascript" src="/js/search.js?1705261124"></script>
 
     
   </div>
@@ -1076,29 +1076,29 @@
 	<p><a href="https://github.com/jmpsec/osctrl/blob/master/docker/dockerize.sh">dockerize.sh</a> is the provisioning script for <strong>osctrl</strong> in a Docker environment. It needs a <a href="https://github.com/jmpsec/osctrl/blob/master/docker/docker-compose.yml">docker-compose.yml</a> and requires <code>docker-compose</code> to be installed.</p>
 <p>It uses several functions from <a href="https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh">/deploy/lib.sh</a>. The main idea behind using a helper like this is to be able to generate configurations and certificates before launching the containers. For a pure docker or k8s environment just use each <code>Dockerfile</code> as reference.</p>
 <p>Execute <code>./docker/dockerize.sh -h</code> to show the usage of the script:</p>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./docker/dockerize.sh -h
-
-Usage: ./deploy/docker/dockerize.sh -h [PARAMETER] [PARAMETER] ...
-
-Parameters:
-  -h	Shows this help message and exit.
-  -b	Builds new docker containers.
-  -u	Run existing osctrl containers.
-  -f	Forces the generation of new certificates.
-  -J	Generates new JWT secret.
-  -m	Uses mkcert (https://github.com/FiloSottile/mkcert) to generate a certificate and trust it locally.
-  -d	Takes down running osctrl containers.
-  -x	Removes container images.
-  -C	Existing certificate to be used with osctrl.
-  -K	Existing private key to be used with osctrl.
-  -D	Build development environment.
-
-Examples:
-  Run dockerized osctrl building new containers and forcing to generate new certificates:
-	./deploy/docker/dockerize.sh -u -b -f
-  Run existing containers with existing certificates:
-	./deploy/docker/dockerize.sh -u -C cert.crt -K private.key
-</code></pre><p>There are good examples of the usage of <code>dockerize.sh</code> in the <a href="https://github.com/jmpsec/osctrl/blob/master/Makefile">Makefile</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./docker/dockerize.sh -h</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Usage</span><span style="color:#f92672">:</span> <span style="color:#e6db74">./deploy/docker/dockerize.sh -h [PARAMETER] [PARAMETER] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Parameters</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-h</span>	<span style="color:#e6db74">Shows this help message and exit.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-b</span>	<span style="color:#e6db74">Builds new docker containers.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-u</span>	<span style="color:#e6db74">Run existing osctrl containers.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-f</span>	<span style="color:#e6db74">Forces the generation of new certificates.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-J</span>	<span style="color:#e6db74">Generates new JWT secret.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-m</span>	<span style="color:#e6db74">Uses mkcert (https://github.com/FiloSottile/mkcert) to generate a certificate and trust it locally.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-d</span>	<span style="color:#e6db74">Takes down running osctrl containers.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-x</span>	<span style="color:#e6db74">Removes container images.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-C</span>	<span style="color:#e6db74">Existing certificate to be used with osctrl.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-K</span>	<span style="color:#e6db74">Existing private key to be used with osctrl.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-D</span>	<span style="color:#e6db74">Build development environment.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Examples</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Run</span> <span style="color:#e6db74">dockerized osctrl building new containers and forcing to generate new certificates:</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">./deploy/docker/dockerize.sh</span> <span style="color:#e6db74">-u -b -f</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Run</span> <span style="color:#e6db74">existing containers with existing certificates:</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">./deploy/docker/dockerize.sh</span> <span style="color:#e6db74">-u -C cert.crt -K private.key</span>
+</span></span></code></pre></div><p>There are good examples of the usage of <code>dockerize.sh</code> in the <a href="https://github.com/jmpsec/osctrl/blob/master/Makefile">Makefile</a>.</p>
 
 
 
@@ -1655,20 +1655,20 @@ Examples:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1663603438"></script>
-    <script src="/js/jquery.sticky.js?1663603438"></script>
-    <script src="/js/featherlight.min.js?1663603438"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1663603438"></script>
-    <script src="/js/highlight.pack.js?1663603438"></script>
+    <script src="/js/clipboard.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1705261124"></script>
+    <script src="/js/jquery.sticky.js?1705261124"></script>
+    <script src="/js/featherlight.min.js?1705261124"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1705261124"></script>
+    <script src="/js/highlight.pack.js?1705261124"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1663603438"></script>
-    <script src="/js/learn.js?1663603438"></script>
-    <script src="/js/hugo-learn.js?1663603438"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1705261124"></script>
+    <script src="/js/learn.js?1705261124"></script>
+    <script src="/js/hugo-learn.js?1705261124"></script>
 
-    <link href="/mermaid/mermaid.css?1663603438" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1663603438"></script>
+    <link href="/mermaid/mermaid.css?1705261124" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1705261124"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

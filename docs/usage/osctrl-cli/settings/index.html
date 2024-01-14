@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.100.2" />
+    <meta name="generator" content="Hugo 0.120.4">
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos de Prado, JMPSec">
 
@@ -12,20 +12,20 @@
     <title>settings :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1663603438" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1663603438" rel="stylesheet">
-    <link href="/css/hybrid.css?1663603438" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1663603438" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1663603438" rel="stylesheet">
-    <link href="/css/auto-complete.css?1663603438" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1663603438" rel="stylesheet">
-    <link href="/css/theme.css?1663603438" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1663603438" rel="stylesheet">
+    <link href="/css/nucleus.css?1705261124" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1705261124" rel="stylesheet">
+    <link href="/css/hybrid.css?1705261124" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1705261124" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1705261124" rel="stylesheet">
+    <link href="/css/auto-complete.css?1705261124" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1705261124" rel="stylesheet">
+    <link href="/css/theme.css?1705261124" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1705261124" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1663603438" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1705261124" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1663603438"></script>
+    <script src="/js/jquery-3.3.1.min.js?1705261124"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1663603438"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1663603438"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1705261124"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1705261124"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1663603438"></script>
+<script type="text/javascript" src="/js/search.js?1705261124"></script>
 
     
   </div>
@@ -1088,73 +1088,73 @@
 
 
 	<h3 id="settings">Settings</h3>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli settings -h
-NAME:
-   osctrl-cli settings - Commands for settings
-
-USAGE:
-   osctrl-cli settings command [command options] [arguments...]
-
-COMMANDS:
-     add, a     Add a new settings value
-     update, u  Update a configuration value
-     delete, d  Delete an existing configuration value
-     show, s    Show all configuration values
-
-OPTIONS:
-   --help, -h  show help
-</code></pre><h4 id="add-setting">Add setting</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli settings add -h
-NAME:
-   osctrl-cli settings add - Add a new settings value
-
-USAGE:
-   osctrl-cli settings add [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value     Value name to be added
-   --service value, -s value  Value service to be added
-   --type value, -t value     Value type to be added
-   --string value             Value string
-   --integer value            Value integer (default: 0)
-   --boolean                  Value boolean
-   --info value, -i value     Setting info
-</code></pre><h4 id="update-setting">Update setting</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli settings update -h
-NAME:
-   osctrl-cli settings update - Update a configuration value
-
-USAGE:
-   osctrl-cli settings update [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value     Value name to be updated
-   --service value, -s value  Value service to be updated
-   --type value, -t value     Value type to be updated
-   --string value             Value string
-   --integer value            Value integer (default: 0)
-   --true                     Value boolean true
-   --false                    Value boolean false
-   --info value, -i value     Setting info
-</code></pre><h4 id="delete-setting">Delete setting</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli settings delete -h
-NAME:
-   osctrl-cli settings delete - Delete an existing configuration value
-
-USAGE:
-   osctrl-cli settings delete [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value     Value name to be deleted
-   --service value, -s value  Value service to be deleted
-</code></pre><h4 id="show-settings">Show settings</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli settings show -h
-NAME:
-   osctrl-cli settings show - Show all configuration values
-
-USAGE:
-   osctrl-cli settings show [arguments...]
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli settings -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">settings - Commands for settings</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">settings command [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">COMMANDS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">add,</span> <span style="color:#e6db74">a     Add a new settings value</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">update,</span> <span style="color:#e6db74">u  Update a configuration value</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">delete,</span> <span style="color:#e6db74">d  Delete an existing configuration value</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">show,</span> <span style="color:#e6db74">s    Show all configuration values</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h  show help</span>
+</span></span></code></pre></div><h4 id="add-setting">Add setting</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli settings add -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">settings add - Add a new settings value</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">settings add [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value     Value name to be added</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--service</span> <span style="color:#e6db74">value, -s value  Value service to be added</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--type</span> <span style="color:#e6db74">value, -t value     Value type to be added</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--string</span> <span style="color:#e6db74">value             Value string</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--integer</span> <span style="color:#e6db74">value            Value integer (default: 0)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--boolean</span>                  <span style="color:#e6db74">Value boolean</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--info</span> <span style="color:#e6db74">value, -i value     Setting info</span>
+</span></span></code></pre></div><h4 id="update-setting">Update setting</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli settings update -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">settings update - Update a configuration value</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">settings update [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value     Value name to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--service</span> <span style="color:#e6db74">value, -s value  Value service to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--type</span> <span style="color:#e6db74">value, -t value     Value type to be updated</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--string</span> <span style="color:#e6db74">value             Value string</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--integer</span> <span style="color:#e6db74">value            Value integer (default: 0)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--true</span>                     <span style="color:#e6db74">Value boolean true</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--false</span>                    <span style="color:#e6db74">Value boolean false</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--info</span> <span style="color:#e6db74">value, -i value     Setting info</span>
+</span></span></code></pre></div><h4 id="delete-setting">Delete setting</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli settings delete -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">settings delete - Delete an existing configuration value</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">settings delete [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--name</span> <span style="color:#e6db74">value, -n value     Value name to be deleted</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--service</span> <span style="color:#e6db74">value, -s value  Value service to be deleted</span>
+</span></span></code></pre></div><h4 id="show-settings">Show settings</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli settings show -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">settings show - Show all configuration values</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">settings show [arguments...]</span>
+</span></span></code></pre></div>
 
 
 
@@ -1714,20 +1714,20 @@ USAGE:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1663603438"></script>
-    <script src="/js/jquery.sticky.js?1663603438"></script>
-    <script src="/js/featherlight.min.js?1663603438"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1663603438"></script>
-    <script src="/js/highlight.pack.js?1663603438"></script>
+    <script src="/js/clipboard.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1705261124"></script>
+    <script src="/js/jquery.sticky.js?1705261124"></script>
+    <script src="/js/featherlight.min.js?1705261124"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1705261124"></script>
+    <script src="/js/highlight.pack.js?1705261124"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1663603438"></script>
-    <script src="/js/learn.js?1663603438"></script>
-    <script src="/js/hugo-learn.js?1663603438"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1705261124"></script>
+    <script src="/js/learn.js?1705261124"></script>
+    <script src="/js/hugo-learn.js?1705261124"></script>
 
-    <link href="/mermaid/mermaid.css?1663603438" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1663603438"></script>
+    <link href="/mermaid/mermaid.css?1705261124" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1705261124"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

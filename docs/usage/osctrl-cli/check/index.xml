@@ -6,6 +6,7 @@
     <description>Recent content in check on osctrl: Fast and efficient osquery management</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Aug 2019 15:24:52 -0700</lastBuildDate><atom:link href="https://osctrl.net/usage/osctrl-cli/check/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Aug 2019 15:24:52 -0700</lastBuildDate>
+    <atom:link href="https://osctrl.net/usage/osctrl-cli/check/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

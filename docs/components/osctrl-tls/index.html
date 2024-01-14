@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.100.2" />
+    <meta name="generator" content="Hugo 0.120.4">
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos de Prado, JMPSec">
 
@@ -12,20 +12,20 @@
     <title>osctrl-tls :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1663603438" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1663603438" rel="stylesheet">
-    <link href="/css/hybrid.css?1663603438" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1663603438" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1663603438" rel="stylesheet">
-    <link href="/css/auto-complete.css?1663603438" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1663603438" rel="stylesheet">
-    <link href="/css/theme.css?1663603438" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1663603438" rel="stylesheet">
+    <link href="/css/nucleus.css?1705261124" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1705261124" rel="stylesheet">
+    <link href="/css/hybrid.css?1705261124" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1705261124" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1705261124" rel="stylesheet">
+    <link href="/css/auto-complete.css?1705261124" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1705261124" rel="stylesheet">
+    <link href="/css/theme.css?1705261124" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1705261124" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1663603438" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1705261124" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1663603438"></script>
+    <script src="/js/jquery-3.3.1.min.js?1705261124"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1663603438"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1663603438"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1705261124"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1705261124"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1663603438"></script>
+<script type="text/javascript" src="/js/search.js?1705261124"></script>
 
     
   </div>
@@ -1099,33 +1099,33 @@
 <h4 id="enrolling-osquery-nodes">Enrolling osquery nodes</h4>
 <p>As mentioned before, osquery nodes must be enrolled inside of an environment. In order to achieve that, osquery requires an enrolling secret that will be stored in disk. Also, and given that osquery communicates with <strong>osctrl</strong> using TLS, a certificate may also be needed.</p>
 <p>For example, here are the flags to enroll osquery nodes in the <em>dev</em> environment, used as example when deploying <strong>osctrl</strong> locally. The important part are the path for the different requests to arrive and the intervals in secods:</p>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">--host_identifier=uuid
---force=true
---utc=true
---enroll_secret_path=__SECRET_FILE__
---enroll_tls_endpoint=/dev/enroll
---config_plugin=tls
---config_tls_endpoint=/dev/config
---config_tls_refresh=300
---config_tls_max_attempts=5
---logger_plugin=tls
---logger_tls_compress=true
---logger_tls_endpoint=/dev/log
---logger_tls_period=600
---disable_carver=false
---carver_disable_function=false
---carver_start_endpoint=/dev/init
---carver_continue_endpoint=/dev/block
---disable_distributed=false
---distributed_interval=60
---distributed_plugin=tls
---distributed_tls_max_attempts=3
---distributed_tls_read_endpoint=/dev/read
---distributed_tls_write_endpoint=/dev/write
---tls_dump=true
---tls_hostname=osctrl-nginx
---tls_server_certs=__CERT_FILE__
-</code></pre><p>The values of <code>__CERT_FILE__</code> and <code>__SECRET_FILE__</code> will be the local full path for certificate and secret respectively.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">--host_identifier</span><span style="color:#f92672">=</span><span style="color:#e6db74">uuid</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--force</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--utc</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--enroll_secret_path</span><span style="color:#f92672">=</span><span style="color:#e6db74">__SECRET_FILE__</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--enroll_tls_endpoint</span><span style="color:#f92672">=</span><span style="color:#e6db74">/dev/enroll</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--config_plugin</span><span style="color:#f92672">=</span><span style="color:#e6db74">tls</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--config_tls_endpoint</span><span style="color:#f92672">=</span><span style="color:#e6db74">/dev/config</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--config_tls_refresh</span><span style="color:#f92672">=</span><span style="color:#e6db74">300</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--config_tls_max_attempts</span><span style="color:#f92672">=</span><span style="color:#e6db74">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--logger_plugin</span><span style="color:#f92672">=</span><span style="color:#e6db74">tls</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--logger_tls_compress</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--logger_tls_endpoint</span><span style="color:#f92672">=</span><span style="color:#e6db74">/dev/log</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--logger_tls_period</span><span style="color:#f92672">=</span><span style="color:#e6db74">600</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--disable_carver</span><span style="color:#f92672">=</span><span style="color:#e6db74">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--carver_disable_function</span><span style="color:#f92672">=</span><span style="color:#e6db74">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--carver_start_endpoint</span><span style="color:#f92672">=</span><span style="color:#e6db74">/dev/init</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--carver_continue_endpoint</span><span style="color:#f92672">=</span><span style="color:#e6db74">/dev/block</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--disable_distributed</span><span style="color:#f92672">=</span><span style="color:#e6db74">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--distributed_interval</span><span style="color:#f92672">=</span><span style="color:#e6db74">60</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--distributed_plugin</span><span style="color:#f92672">=</span><span style="color:#e6db74">tls</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--distributed_tls_max_attempts</span><span style="color:#f92672">=</span><span style="color:#e6db74">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--distributed_tls_read_endpoint</span><span style="color:#f92672">=</span><span style="color:#e6db74">/dev/read</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--distributed_tls_write_endpoint</span><span style="color:#f92672">=</span><span style="color:#e6db74">/dev/write</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--tls_dump</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--tls_hostname</span><span style="color:#f92672">=</span><span style="color:#e6db74">osctrl-nginx</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">--tls_server_certs</span><span style="color:#f92672">=</span><span style="color:#e6db74">__CERT_FILE__</span>
+</span></span></code></pre></div><p>The values of <code>__CERT_FILE__</code> and <code>__SECRET_FILE__</code> will be the local full path for certificate and secret respectively.</p>
 <h4 id="escaling-osctrl-tls">Escaling osctrl-tls</h4>
 <p>The idea behind making osctrl-tls its own component is all about scalability. In a scenario with many nodes enrolled, the number of requests is going to increase quickly, especially if we lower the intervals.</p>
 <p>Running multiple instances of osctrl-tls will help to scale the service and be reliable for a larger number of nodes.</p>
@@ -1680,20 +1680,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1663603438"></script>
-    <script src="/js/jquery.sticky.js?1663603438"></script>
-    <script src="/js/featherlight.min.js?1663603438"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1663603438"></script>
-    <script src="/js/highlight.pack.js?1663603438"></script>
+    <script src="/js/clipboard.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1705261124"></script>
+    <script src="/js/jquery.sticky.js?1705261124"></script>
+    <script src="/js/featherlight.min.js?1705261124"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1705261124"></script>
+    <script src="/js/highlight.pack.js?1705261124"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1663603438"></script>
-    <script src="/js/learn.js?1663603438"></script>
-    <script src="/js/hugo-learn.js?1663603438"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1705261124"></script>
+    <script src="/js/learn.js?1705261124"></script>
+    <script src="/js/hugo-learn.js?1705261124"></script>
 
-    <link href="/mermaid/mermaid.css?1663603438" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1663603438"></script>
+    <link href="/mermaid/mermaid.css?1705261124" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1705261124"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

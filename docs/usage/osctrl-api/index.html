@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.100.2" />
+    <meta name="generator" content="Hugo 0.120.4">
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos de Prado, JMPSec">
 
@@ -12,20 +12,20 @@
     <title>osctrl-api :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1663603438" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1663603438" rel="stylesheet">
-    <link href="/css/hybrid.css?1663603438" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1663603438" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1663603438" rel="stylesheet">
-    <link href="/css/auto-complete.css?1663603438" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1663603438" rel="stylesheet">
-    <link href="/css/theme.css?1663603438" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1663603438" rel="stylesheet">
+    <link href="/css/nucleus.css?1705261124" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1705261124" rel="stylesheet">
+    <link href="/css/hybrid.css?1705261124" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1705261124" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1705261124" rel="stylesheet">
+    <link href="/css/auto-complete.css?1705261124" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1705261124" rel="stylesheet">
+    <link href="/css/theme.css?1705261124" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1705261124" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1663603438" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1705261124" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1663603438"></script>
+    <script src="/js/jquery-3.3.1.min.js?1705261124"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1663603438"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1663603438"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1705261124"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1705261124"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1663603438"></script>
+<script type="text/javascript" src="/js/search.js?1705261124"></script>
 
     
   </div>
@@ -1075,55 +1075,58 @@
 
 	<p><code>osctrl-api</code> is the API service for <strong>osctrl</strong>.</p>
 <p>Execute <code>./osctrl-api -h</code> to show the main help of the program:</p>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-api -h
-NAME:
-   osctrl-api - API service for osctrl, a fast and efficient osquery management
-
-USAGE:
-   osctrl-api [global options] command [command options] [arguments...]
-
-VERSION:
-   0.3.0
-
-DESCRIPTION:
-   API service for osctrl, a fast and efficient osquery management
-
-COMMANDS:
-   help
-
-GLOBAL OPTIONS:
-   --config, -c                  Provide service configuration via JSON file (default: false) [$SERVICE_CONFIG]
-   --config-file FILE, -C FILE   Load service configuration from FILE (default: &#34;config/api.json&#34;) [$SERVICE_CONFIG_FILE]
-   --listener value, -l value    Listener for the service (default: &#34;0.0.0.0&#34;) [$SERVICE_LISTENER]
-   --port value, -p value        TCP port for the service (default: &#34;9002&#34;) [$SERVICE_PORT]
-   --auth value, -A value        Authentication mechanism for the service (default: &#34;none&#34;) [$SERVICE_AUTH]
-   --host value, -H value        Exposed hostname the service uses (default: &#34;0.0.0.0&#34;) [$SERVICE_HOST]
-   --logging value, -L value     Logging mechanism to handle logs from nodes (default: &#34;none&#34;) [$SERVICE_LOGGER]
-   --redis, -r                   Provide redis configuration via JSON file (default: false) [$REDIS_CONFIG]
-   --redis-file FILE, -R FILE    Load redis configuration from FILE (default: &#34;config/redis.json&#34;) [$REDIS_CONFIG_FILE]
-   --redis-host value            Redis host to be connected to (default: &#34;127.0.0.1&#34;) [$REDIS_HOST]
-   --redis-port value            Redis port to be connected to (default: &#34;6379&#34;) [$REDIS_PORT]
-   --redis-pass value            Password to be used for redis [$REDIS_PASS]
-   --redis-db value              Redis database to be selected after connecting (default: 0) [$REDIS_DB]
-   --db, -d                      Provide DB configuration via JSON file (default: false) [$DB_CONFIG]
-   --db-file FILE, -D FILE       Load DB configuration from FILE (default: &#34;config/db.json&#34;) [$DB_CONFIG_FILE]
-   --db-host value               Backend host to be connected to (default: &#34;127.0.0.1&#34;) [$DB_HOST]
-   --db-port value               Backend port to be connected to (default: &#34;5432&#34;) [$DB_PORT]
-   --db-name value               Database name to be used in the backend (default: &#34;osctrl&#34;) [$DB_NAME]
-   --db-user value               Username to be used for the backend (default: &#34;postgres&#34;) [$DB_USER]
-   --db-pass value               Password to be used for the backend (default: &#34;postgres&#34;) [$DB_PASS]
-   --db-max-idle-conns value     Maximum number of connections in the idle connection pool (default: 20) [$DB_MAX_IDLE_CONNS]
-   --db-max-open-conns value     Maximum number of open connections to the database (default: 100) [$DB_MAX_OPEN_CONNS]
-   --db-conn-max-lifetime value  Maximum amount of time a connection may be reused (default: 30) [$DB_CONN_MAX_LIFETIME]
-   --tls, -t                     Enable TLS termination. It requires certificate and key (default: false) [$TLS_SERVER]
-   --cert FILE, -T FILE          TLS termination certificate from FILE (default: &#34;config/tls.crt&#34;) [$TLS_CERTIFICATE]
-   --key FILE, -K FILE           TLS termination private key from FILE (default: &#34;config/tls.key&#34;) [$TLS_KEY]
-   --jwt, -j                     Provide JWT configuration via JSON file (default: false) [$JWT_CONFIG]
-   --jwt-file FILE               Load JWT configuration from FILE (default: &#34;config/jwt.json&#34;) [$JWT_CONFIG_FILE]
-   --jwt-secret value            Password to be used for the backend [$JWT_SECRET]
-   --jwt-expire value            Maximum amount of hours for the tokens to expire (default: 3) [$JWT_EXPIRE]
-   --version, -v                 print the version (default: false)
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-api -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-api</span> <span style="color:#e6db74">- API service for osctrl, a fast and efficient osquery management</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-api</span> <span style="color:#e6db74">[global options] command [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">VERSION</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">   0.3.4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">DESCRIPTION</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">API</span> <span style="color:#e6db74">service for osctrl, a fast and efficient osquery management</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">COMMANDS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">help</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">GLOBAL</span> <span style="color:#e6db74">OPTIONS:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--config,</span> <span style="color:#e6db74">-c                     Provide service configuration via JSON file (default: false) [$SERVICE_CONFIG]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--config-file</span> <span style="color:#e6db74">FILE, -C FILE      Load service configuration from FILE (default: &#34;config/api.json&#34;) [$SERVICE_CONFIG_FILE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--listener</span> <span style="color:#e6db74">value, -l value       Listener for the service (default: &#34;0.0.0.0&#34;) [$SERVICE_LISTENER]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--port</span> <span style="color:#e6db74">value, -p value           TCP port for the service (default: &#34;9002&#34;) [$SERVICE_PORT]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--auth</span> <span style="color:#e6db74">value, -A value           Authentication mechanism for the service (default: &#34;none&#34;) [$SERVICE_AUTH]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--host</span> <span style="color:#e6db74">value, -H value           Exposed hostname the service uses (default: &#34;0.0.0.0&#34;) [$SERVICE_HOST]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--logging</span> <span style="color:#e6db74">value, -L value        Logging mechanism to handle logs from nodes (default: &#34;none&#34;) [$SERVICE_LOGGER]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--redis,</span> <span style="color:#e6db74">-r                      Provide redis configuration via JSON file (default: false) [$REDIS_CONFIG]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--redis-file</span> <span style="color:#e6db74">FILE, -R FILE       Load redis configuration from FILE (default: &#34;config/redis.json&#34;) [$REDIS_CONFIG_FILE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--redis-connection-string</span> <span style="color:#e6db74">value  Redis connection string, must include schema (&lt;redis|rediss|unix&gt;://&lt;user&gt;:&lt;pass&gt;@&lt;host&gt;:&lt;port&gt;/&lt;db&gt;?&lt;options&gt; [$REDIS_CONNECTION_STRING]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--redis-host</span> <span style="color:#e6db74">value               Redis host to be connected to (default: &#34;127.0.0.1&#34;) [$REDIS_HOST]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--redis-port</span> <span style="color:#e6db74">value               Redis port to be connected to (default: &#34;6379&#34;) [$REDIS_PORT]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--redis-pass</span> <span style="color:#e6db74">value               Password to be used for redis [$REDIS_PASS]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--redis-db</span> <span style="color:#e6db74">value                 Redis database to be selected after connecting (default: 0) [$REDIS_DB]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--redis-conn-retry</span> <span style="color:#e6db74">value         Time in seconds to retry the connection to the cache, if set to 0 the service will stop if the connection fails (default: 7) [$REDIS_CONN_RETRY]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db,</span> <span style="color:#e6db74">-d                         Provide DB configuration via JSON file (default: false) [$DB_CONFIG]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-file</span> <span style="color:#e6db74">FILE, -D FILE          Load DB configuration from FILE (default: &#34;config/db.json&#34;) [$DB_CONFIG_FILE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-host</span> <span style="color:#e6db74">value                  Backend host to be connected to (default: &#34;127.0.0.1&#34;) [$DB_HOST]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-port</span> <span style="color:#e6db74">value                  Backend port to be connected to (default: &#34;5432&#34;) [$DB_PORT]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-name</span> <span style="color:#e6db74">value                  Database name to be used in the backend (default: &#34;osctrl&#34;) [$DB_NAME]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-user</span> <span style="color:#e6db74">value                  Username to be used for the backend (default: &#34;postgres&#34;) [$DB_USER]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-pass</span> <span style="color:#e6db74">value                  Password to be used for the backend (default: &#34;postgres&#34;) [$DB_PASS]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-max-idle-conns</span> <span style="color:#e6db74">value        Maximum number of connections in the idle connection pool (default: 20) [$DB_MAX_IDLE_CONNS]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-max-open-conns</span> <span style="color:#e6db74">value        Maximum number of open connections to the database (default: 100) [$DB_MAX_OPEN_CONNS]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-conn-max-lifetime</span> <span style="color:#e6db74">value     Maximum amount of time a connection may be reused (default: 30) [$DB_CONN_MAX_LIFETIME]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-conn-retry</span> <span style="color:#e6db74">value            Time in seconds to retry the connection to the database, if set to 0 the service will stop if the connection fails (default: 7) [$DB_CONN_RETRY]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--tls,</span> <span style="color:#e6db74">-t                        Enable TLS termination. It requires certificate and key (default: false) [$TLS_SERVER]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--cert</span> <span style="color:#e6db74">FILE, -T FILE             TLS termination certificate from FILE (default: &#34;config/tls.crt&#34;) [$TLS_CERTIFICATE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--key</span> <span style="color:#e6db74">FILE, -K FILE              TLS termination private key from FILE (default: &#34;config/tls.key&#34;) [$TLS_KEY]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--jwt,</span> <span style="color:#e6db74">-j                        Provide JWT configuration via JSON file (default: false) [$JWT_CONFIG]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--jwt-file</span> <span style="color:#e6db74">FILE                  Load JWT configuration from FILE (default: &#34;config/jwt.json&#34;) [$JWT_CONFIG_FILE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--jwt-secret</span> <span style="color:#e6db74">value               Password to be used for the backend [$JWT_SECRET]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--jwt-expire</span> <span style="color:#e6db74">value               Maximum amount of hours for the tokens to expire (default: 3) [$JWT_EXPIRE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--version,</span> <span style="color:#e6db74">-v                    print the version</span>
+</span></span></code></pre></div>
 
 
 
@@ -1679,20 +1682,20 @@ GLOBAL OPTIONS:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1663603438"></script>
-    <script src="/js/jquery.sticky.js?1663603438"></script>
-    <script src="/js/featherlight.min.js?1663603438"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1663603438"></script>
-    <script src="/js/highlight.pack.js?1663603438"></script>
+    <script src="/js/clipboard.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1705261124"></script>
+    <script src="/js/jquery.sticky.js?1705261124"></script>
+    <script src="/js/featherlight.min.js?1705261124"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1705261124"></script>
+    <script src="/js/highlight.pack.js?1705261124"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1663603438"></script>
-    <script src="/js/learn.js?1663603438"></script>
-    <script src="/js/hugo-learn.js?1663603438"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1705261124"></script>
+    <script src="/js/learn.js?1705261124"></script>
+    <script src="/js/hugo-learn.js?1705261124"></script>
 
-    <link href="/mermaid/mermaid.css?1663603438" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1663603438"></script>
+    <link href="/mermaid/mermaid.css?1705261124" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1705261124"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.100.2" />
+    <meta name="generator" content="Hugo 0.120.4">
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos de Prado, JMPSec">
 
@@ -12,20 +12,20 @@
     <title>user :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1663603438" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1663603438" rel="stylesheet">
-    <link href="/css/hybrid.css?1663603438" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1663603438" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1663603438" rel="stylesheet">
-    <link href="/css/auto-complete.css?1663603438" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1663603438" rel="stylesheet">
-    <link href="/css/theme.css?1663603438" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1663603438" rel="stylesheet">
+    <link href="/css/nucleus.css?1705261124" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1705261124" rel="stylesheet">
+    <link href="/css/hybrid.css?1705261124" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1705261124" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1705261124" rel="stylesheet">
+    <link href="/css/auto-complete.css?1705261124" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1705261124" rel="stylesheet">
+    <link href="/css/theme.css?1705261124" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1705261124" rel="stylesheet">
     
-      <link href="/css/theme-osctrl.css?1663603438" rel="stylesheet">
+      <link href="/css/theme-osctrl.css?1705261124" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1663603438"></script>
+    <script src="/js/jquery-3.3.1.min.js?1705261124"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -96,14 +96,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1663603438"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1663603438"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1705261124"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1705261124"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1663603438"></script>
+<script type="text/javascript" src="/js/search.js?1705261124"></script>
 
     
   </div>
@@ -1088,70 +1088,70 @@
 
 
 	<h3 id="user">User</h3>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli user -h
-NAME:
-   osctrl-cli user - Commands for users
-
-USAGE:
-   osctrl-cli user command [command options] [arguments...]
-
-COMMANDS:
-     add, a     Add a new user
-     edit, e    Edit an existing user
-     delete, d  Delete an existing user
-     list, l    List all existing users
-
-OPTIONS:
-   --help, -h  show help
-</code></pre><h4 id="add-user">Add user</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli user add -h
-NAME:
-   osctrl-cli user add - Add a new user
-
-USAGE:
-   osctrl-cli user add [command options] [arguments...]
-
-OPTIONS:
-   --username value, -u value     Username for the new user
-   --password value, -p value     Password for the new user
-   --admin, -a                    Make this user an admin
-   --environment value, -E value  Default environment for the new user
-   --email value, -e value        Email for the new user
-   --fullname value, -n value     Full name for the new user
-</code></pre><h4 id="edit-user">Edit user</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli user edit -h
-NAME:
-   osctrl-cli user edit - Edit an existing user
-
-USAGE:
-   osctrl-cli user edit [command options] [arguments...]
-
-OPTIONS:
-   --username value, -u value     User to be edited
-   --password value, -p value     New password to be used
-   --email value, -e value        Email to be used
-   --fullname value, -n value     Full name to be used
-   --admin, -a                    Make this user an admin
-   --non-admin, -d                Make this user an non-admin
-   --environment value, -E value  Default environment for this user
-</code></pre><h4 id="delete-user">Delete user</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli user delete -h
-NAME:
-   osctrl-cli user delete - Delete an existing user
-
-USAGE:
-   osctrl-cli user delete [command options] [arguments...]
-
-OPTIONS:
-   --username value, -u value  User to be deleted
-</code></pre><h4 id="list-users">List users</h4>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">$ ./osctrl-cli user list -h
-NAME:
-   osctrl-cli user list - List all existing users
-
-USAGE:
-   osctrl-cli user list [arguments...]
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user - Commands for users</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user command [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">COMMANDS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">add,</span> <span style="color:#e6db74">a     Add a new user</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">edit,</span> <span style="color:#e6db74">e    Edit an existing user</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">delete,</span> <span style="color:#e6db74">d  Delete an existing user</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">list,</span> <span style="color:#e6db74">l    List all existing users</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h  show help</span>
+</span></span></code></pre></div><h4 id="add-user">Add user</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user add -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user add - Add a new user</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user add [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--username</span> <span style="color:#e6db74">value, -u value     Username for the new user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--password</span> <span style="color:#e6db74">value, -p value     Password for the new user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--admin,</span> <span style="color:#e6db74">-a                    Make this user an admin</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--environment</span> <span style="color:#e6db74">value, -E value  Default environment for the new user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--email</span> <span style="color:#e6db74">value, -e value        Email for the new user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--fullname</span> <span style="color:#e6db74">value, -n value     Full name for the new user</span>
+</span></span></code></pre></div><h4 id="edit-user">Edit user</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user edit -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user edit - Edit an existing user</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user edit [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--username</span> <span style="color:#e6db74">value, -u value     User to be edited</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--password</span> <span style="color:#e6db74">value, -p value     New password to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--email</span> <span style="color:#e6db74">value, -e value        Email to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--fullname</span> <span style="color:#e6db74">value, -n value     Full name to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--admin,</span> <span style="color:#e6db74">-a                    Make this user an admin</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--non-admin,</span> <span style="color:#e6db74">-d                Make this user an non-admin</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--environment</span> <span style="color:#e6db74">value, -E value  Default environment for this user</span>
+</span></span></code></pre></div><h4 id="delete-user">Delete user</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user delete -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user delete - Delete an existing user</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user delete [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--username</span> <span style="color:#e6db74">value, -u value  User to be deleted</span>
+</span></span></code></pre></div><h4 id="list-users">List users</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user list -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user list - List all existing users</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user list [arguments...]</span>
+</span></span></code></pre></div>
 
 
 
@@ -1708,20 +1708,20 @@ USAGE:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.min.js?1663603438"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1663603438"></script>
-    <script src="/js/jquery.sticky.js?1663603438"></script>
-    <script src="/js/featherlight.min.js?1663603438"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1663603438"></script>
-    <script src="/js/highlight.pack.js?1663603438"></script>
+    <script src="/js/clipboard.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.min.js?1705261124"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1705261124"></script>
+    <script src="/js/jquery.sticky.js?1705261124"></script>
+    <script src="/js/featherlight.min.js?1705261124"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1705261124"></script>
+    <script src="/js/highlight.pack.js?1705261124"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1663603438"></script>
-    <script src="/js/learn.js?1663603438"></script>
-    <script src="/js/hugo-learn.js?1663603438"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1705261124"></script>
+    <script src="/js/learn.js?1705261124"></script>
+    <script src="/js/hugo-learn.js?1705261124"></script>
 
-    <link href="/mermaid/mermaid.css?1663603438" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1663603438"></script>
+    <link href="/mermaid/mermaid.css?1705261124" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1705261124"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
