@@ -18,7 +18,7 @@ USAGE:
    osctrl-admin [global options] command [command options] [arguments...]
 
 VERSION:
-   0.3.4
+   0.3.7
 
 DESCRIPTION:
    Admin service for osctrl, a fast and efficient osquery management
@@ -65,9 +65,10 @@ GLOBAL OPTIONS:
    --jwt-file FILE                  Load JWT configuration from FILE (default: "config/jwt.json") [$JWT_CONFIG_FILE]
    --jwt-secret value               Password to be used for the backend [$JWT_SECRET]
    --jwt-expire value               Maximum amount of hours for the tokens to expire (default: 3) [$JWT_EXPIRE]
-   --osquery-version value          Set osquery version as default to be used (default: "5.10.2") [$OSQUERY_VERSION]
-   --osquery-tables FILE            Load osquery tables schema from FILE (default: "data/5.10.2.json") [$OSQUERY_TABLES]
+   --osquery-version value          Set osquery version as default to be used (default: "5.12.1") [$OSQUERY_VERSION]
+   --osquery-tables FILE            Load osquery tables schema from FILE (default: "data/5.12.1.json") [$OSQUERY_TABLES]
    --logger-file value, -F value    Logger configuration to handle status/results logs from nodes (default: "config/logger.json") [$LOGGER_FILE]
+   --logger-db-same                 Use the same DB configuration for the logger (default: false) [$LOGGER_DB_SAME]
    --static value, -s value         Directory with all the static files needed for the osctrl-admin UI (default: "./static") [$STATIC_FILES]
    --static-offline, -S             Use offline static files (js and css). Default is online files. (default: false) [$STATIC_ONLINE]
    --templates value                Directory with all the templates needed for the osctrl-admin UI (default: "./tmpl_admin") [$STATIC_FILES]

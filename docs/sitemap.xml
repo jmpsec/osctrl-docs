@@ -11,9 +11,6 @@
     <loc>https://osctrl.net/usage/osctrl-tls/</loc>
     <lastmod>2019-08-10T19:03:05+02:00</lastmod>
   </url><url>
-    <loc>https://osctrl.net/deployment/vagrant/</loc>
-    <lastmod>2019-08-09T19:23:48+02:00</lastmod>
-  </url><url>
     <loc>https://osctrl.net/components/osctrl-tls/</loc>
     <lastmod>2019-08-09T16:56:40+02:00</lastmod>
   </url><url>
@@ -73,9 +70,6 @@
   </url><url>
     <loc>https://osctrl.net/usage/osctrl-cli/query/</loc>
     <lastmod>2019-08-17T11:58:17-07:00</lastmod>
-  </url><url>
-    <loc>https://osctrl.net/usage/dockerize.sh/</loc>
-    <lastmod>2019-08-11T13:16:16+02:00</lastmod>
   </url><url>
     <loc>https://osctrl.net/components/backend/</loc>
     <lastmod>2019-08-10T12:51:06+02:00</lastmod>

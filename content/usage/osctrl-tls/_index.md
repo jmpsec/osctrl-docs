@@ -18,7 +18,7 @@ USAGE:
    osctrl-tls [global options] command [command options] [arguments...]
 
 VERSION:
-   0.3.4
+   0.3.7
 
 DESCRIPTION:
    TLS service for osctrl, a fast and efficient osquery management
@@ -60,6 +60,7 @@ GLOBAL OPTIONS:
    --cert FILE, -T FILE             TLS termination certificate from FILE (default: "config/tls.crt") [$TLS_CERTIFICATE]
    --key FILE, -K FILE              TLS termination private key from FILE (default: "config/tls.key") [$TLS_KEY]
    --logger-file value, -F value    Logger configuration to handle status/results logs from nodes (default: "config/logger.json") [$LOGGER_FILE]
+   --logger-db-same                 Use the same DB configuration for the logger (default: false) [$LOGGER_DB_SAME]
    --always-log, -a, --always       Always log status and on-demand query logs from nodes in database (default: false) [$ALWAYS_LOG]
    --carver-type value              Carver to be used to receive files extracted from nodes (default: "db") [$CARVER_TYPE]
    --carver-file value              Carver configuration file to receive files extracted from nodes (default: "config/carver.json") [$CARVER_FILE]

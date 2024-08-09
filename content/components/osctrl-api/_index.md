@@ -15,6 +15,4 @@ pre = ""
 
 The osctrl-api component of **osctrl** provides an API interface to interact with its enrolled nodes and with **osctrl** itself.
 
-The API is documented with Swagger:
-
-[https://app.swaggerhub.com/apis-docs/jmpsec/osctrl-api/](https://app.swaggerhub.com/apis-docs/jmpsec/osctrl-api/)
+You can find the updated [API documentation](/openapi/doc.html) for **osctrl**, generated using [stoplight.io](https://docs.stoplight.io/).
