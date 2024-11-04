@@ -21,6 +21,7 @@ COMMANDS:
    delete, d  Delete an existing tag
    list, l    List all tags
    show, s    Show an existing tag
+   help, h    Shows a list of commands or help for one command
 
 OPTIONS:
    --help, -h  show help
@@ -41,6 +42,7 @@ OPTIONS:
    --color value, -c value        Tag color to be added
    --description value, -d value  Tag description to be added
    --icon value, -i value         Tag icon to be added
+   --help, -h                     show help
 ```
 
 #### Edit tag
@@ -58,6 +60,7 @@ OPTIONS:
    --color value, -c value        Tag color to be edited
    --description value, -d value  Tag description to be edited
    --icon value, -i value         Tag icon to be edited
+   --help, -h                     show help
 ```
 
 #### Delete tag
@@ -72,6 +75,7 @@ USAGE:
 
 OPTIONS:
    --name value, -n value  Tag name to be deleted
+   --help, -h              show help
 ```
 
 #### List tags
@@ -82,7 +86,10 @@ NAME:
    osctrl-cli tag list - List all tags
 
 USAGE:
-   osctrl-cli tag list [arguments...]
+   osctrl-cli tag list [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
 ```
 
 #### Show tag
@@ -97,4 +104,5 @@ USAGE:
 
 OPTIONS:
    --name value, -n value  Tag name to be displayed
+   --help, -h              show help
 ```

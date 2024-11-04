@@ -27,14 +27,10 @@ COMMANDS:
    remove-pack             Remove query pack from the osquery configuration
    add-query-to-pack       Add a new query to the given query pack
    remove-query-from-pack  Remove query from the given query pack
+   node-actions            Node enroll actions for an environment
    delete, d               Delete an existing TLS environment
    show, s                 Show a TLS environment
-   show-flags, w           Show the flags for a TLS environment
-   gen-flags, g            Generate and save the flags for a TLS environment
    list, l                 List all existing TLS environments
-   quick-add, q            Generates one-liner for quick adding nodes to environment
-   flags, f                Generates the flags to run nodes in an environment
-   secret, x               Output the secret to enroll nodes in an environment
    help, h                 Shows a list of commands or help for one command
 
 OPTIONS:
@@ -70,14 +66,18 @@ USAGE:
    osctrl-cli environment update [command options] [arguments...]
 
 OPTIONS:
-   --name value, -n value          Environment name to be updated
-   --debug, -d                     Environment debug capability (default: false)
-   --enroll, -e                    Environment enroll capability (default: false)
-   --hostname value, --host value  Environment host to be updated
-   --logging value, -l value       Logging interval in seconds (default: 0)
-   --config value, -c value        Config interval in seconds (default: 0)
-   --query value, -q value         Query interval in seconds (default: 0)
-   --help, -h                      show help
+   --name value, -n value            Environment name to be updated
+   --debug, -d                       Environment debug capability (default: false)
+   --enroll, -e                      Environment enroll capability (default: false)
+   --hostname value, --host value    Environment host to be updated
+   --logging value, -l value         Logging interval in seconds (default: 0)
+   --config value, -c value          Config interval in seconds (default: 0)
+   --query value, -q value           Query interval in seconds (default: 0)
+   --deb value, --deb-package value  DEB package to be updated
+   --rpm value, --rpm-package value  RPM package to be updated
+   --msi value, --msi-package value  MSI package to be updated
+   --pkg value, --pkg-package value  PKG package to be updated
+   --help, -h                        show help
 ```
 
 #### Add scheduled query to environment
@@ -242,6 +242,255 @@ OPTIONS:
    --help, -h                    show help
 ```
 
+#### Node actions
+
+```properties
+$ ./osctrl-cli environment node-actions -h
+NAME:
+   osctrl-cli environment node-actions - Node enroll actions for an environment
+
+USAGE:
+   osctrl-cli environment node-actions command [command options] [arguments...]
+
+COMMANDS:
+   show-flags, s         Show the enroll flags for a TLS environment
+   new-flags, f          Generate new enroll flags and save them for a TLS environment
+   gen-flags, F          Generate and show the enroll flags for a TLS environment
+   quick-add, q          Generates one-liner for quick enrolling nodes to a TLS environment
+   extend-enroll, f      Extend the existing enroll URL for a TLS environment
+   rotate-enroll, f      Rotate to a new enroll URL for a TLS environment
+   expire-enroll, f      Expire the existing enroll URL for a TLS environment
+   notexpire-enroll, f   Set the existing enroll URL for a TLS environment to NOT expire
+   quick-remove, Q       Generates one-liner for quick removing nodes to a TLS environment
+   extend-remove, f      Extend the existing enroll URL for a TLS environment
+   rotate-remove, f      Rotate to a new enroll URL for a TLS environment
+   expire-remove, f      Expire the existing remove URL for a TLS environment
+   notexpire-remove, f   Set the existing remove URL for a TLS environment to NOT expire
+   secret, x             Output the secret to enroll nodes in an environment
+   certificate, c, cert  Output the certificate to enroll nodes in an environment
+   help, h               Shows a list of commands or help for one command
+
+OPTIONS:
+   --name value, -n value  Environment name to be updated
+   --help, -h              show help
+```
+
+##### Show flags
+
+```properties
+$ ./osctrl-cli environment node-actions show-flags -h
+NAME:
+   osctrl-cli environment node-actions show-flags - Show the enroll flags for a TLS environment
+
+USAGE:
+   osctrl-cli environment node-actions show-flags [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
+```
+
+##### New flags
+
+```properties
+$ ./osctrl-cli environment node-actions new-flags -h
+NAME:
+   osctrl-cli environment node-actions new-flags - Generate new enroll flags and save them for a TLS environment
+
+USAGE:
+   osctrl-cli environment node-actions new-flags [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
+```
+
+##### Generate flags
+
+```properties
+$ ./osctrl-cli environment node-actions gen-flags -h
+NAME:
+   osctrl-cli environment node-actions gen-flags - Generate and show the enroll flags for a TLS environment
+
+USAGE:
+   osctrl-cli environment node-actions gen-flags [command options] [arguments...]
+
+OPTIONS:
+   --certificate value, --crt value  Certificate file path to be used
+   --secret value, -s value          Secret file path to be used
+   --help, -h                        show help
+```
+
+##### Quick add
+
+```properties
+$ ./osctrl-cli environment node-actions quick-add -h
+NAME:
+   osctrl-cli environment node-actions quick-add - Generates one-liner for quick enrolling nodes to a TLS environment
+
+USAGE:
+   osctrl-cli environment node-actions quick-add [command options] [arguments...]
+
+OPTIONS:
+   --target value, -t value  Type of one-liner script (default: "sh")
+   --insecure, -i            Generate insecure one-liner, without HTTPS (default: false)
+   --help, -h                show help
+```
+
+##### Extend enroll
+
+```properties
+$ ./osctrl-cli environment node-actions extend-enroll -h
+NAME:
+   osctrl-cli environment node-actions extend-enroll - Extend the existing enroll URL for a TLS environment
+
+USAGE:
+   osctrl-cli environment node-actions extend-enroll [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
+```
+
+##### Rotate enroll
+
+```properties
+$ ./osctrl-cli environment node-actions rotate-enroll -h
+NAME:
+   osctrl-cli environment node-actions rotate-enroll - Rotate to a new enroll URL for a TLS environment
+
+USAGE:
+   osctrl-cli environment node-actions rotate-enroll [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
+```
+
+##### Expire enroll
+
+```properties
+$ ./osctrl-cli environment node-actions expire-enroll -h
+NAME:
+   osctrl-cli environment node-actions expire-enroll - Expire the existing enroll URL for a TLS environment
+
+USAGE:
+   osctrl-cli environment node-actions expire-enroll [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
+```
+
+##### Not expire enroll
+
+```properties
+$ ./osctrl-cli environment node-actions notexpire-enroll -h
+NAME:
+   osctrl-cli environment node-actions notexpire-enroll - Set the existing enroll URL for a TLS environment to NOT expire
+
+USAGE:
+   osctrl-cli environment node-actions notexpire-enroll [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
+```
+
+##### Quick remove
+
+```properties
+$ ./osctrl-cli environment node-actions quick-remove -h
+NAME:
+   osctrl-cli environment node-actions quick-remove - Generates one-liner for quick removing nodes to a TLS environment
+
+USAGE:
+   osctrl-cli environment node-actions quick-remove [command options] [arguments...]
+
+OPTIONS:
+   --target value, -t value  Type of one-liner script (default: "sh")
+   --insecure, -i            Generate insecure one-liner, without HTTPS (default: false)
+   --help, -h                show help
+```
+
+##### Extend remove
+
+```properties
+$ ./osctrl-cli environment node-actions extend-remove -h
+NAME:
+   osctrl-cli environment node-actions extend-remove - Extend the existing enroll URL for a TLS environment
+
+USAGE:
+   osctrl-cli environment node-actions extend-remove [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
+```
+
+##### Rotate remove
+
+```properties
+$ ./osctrl-cli environment node-actions rotate-remove -h
+NAME:
+   osctrl-cli environment node-actions rotate-remove - Rotate to a new enroll URL for a TLS environment
+
+USAGE:
+   osctrl-cli environment node-actions rotate-remove [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
+```
+
+##### Expire remove
+
+```properties
+$ ./osctrl-cli environment node-actions expire-remove -h
+NAME:
+   osctrl-cli environment node-actions expire-remove - Expire the existing remove URL for a TLS environment
+
+USAGE:
+   osctrl-cli environment node-actions expire-remove [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
+```
+
+##### Not expire remove
+
+```properties
+$ ./osctrl-cli environment node-actions notexpire-remove -h
+NAME:
+   osctrl-cli environment node-actions notexpire-remove - Set the existing remove URL for a TLS environment to NOT expire
+
+USAGE:
+   osctrl-cli environment node-actions notexpire-remove [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
+```
+
+##### Secret
+
+```properties
+$ ./osctrl-cli environment node-actions secret -h
+NAME:
+   osctrl-cli environment node-actions secret - Output the secret to enroll nodes in an environment
+
+USAGE:
+   osctrl-cli environment node-actions secret [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
+```
+
+##### Certificate
+
+```properties
+$ ./osctrl-cli environment node-actions certificate -h
+NAME:
+   osctrl-cli environment node-actions certificate - Output the certificate to enroll nodes in an environment
+
+USAGE:
+   osctrl-cli environment node-actions certificate [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
+```
+
 #### Delete environment
 
 ```properties
@@ -272,36 +521,6 @@ OPTIONS:
    --help, -h              show help
 ```
 
-#### Show environment flags
-
-```properties
-$ ./osctrl-cli environment show-flags -h
-NAME:
-   osctrl-cli environment show-flags - Show the flags for a TLS environment
-
-USAGE:
-   osctrl-cli environment show-flags [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value  Environment name to be displayed
-   --help, -h              show help
-```
-
-#### Re-generate and update environment flags
-
-```properties
-$ ./osctrl-cli environment gen-flags -h
-NAME:
-   osctrl-cli environment gen-flags - Generate and save the flags for a TLS environment
-
-USAGE:
-   osctrl-cli environment gen-flags [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value  Environment name to be displayed
-   --help, -h              show help
-```
-
 #### List environments
 
 ```properties
@@ -314,53 +533,4 @@ USAGE:
 
 OPTIONS:
    --help, -h  show help
-```
-
-#### Quick-add to environment
-
-```properties
-$ ./osctrl-cli environment quick-add -h
-NAME:
-   osctrl-cli environment quick-add - Generates one-liner for quick adding nodes to environment
-
-USAGE:
-   osctrl-cli environment quick-add [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value    Environment name to be used
-   --target value, -t value  Type of one-liner (default: "sh")
-   --insecure, -i            Generate insecure one-liner (default: false)
-   --help, -h                show help
-```
-
-#### Flags
-
-```properties
-$ ./osctrl-cli environment flags -h
-NAME:
-   osctrl-cli environment flags - Generates the flags to run nodes in an environment
-
-USAGE:
-   osctrl-cli environment flags [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value            Environment name to be used
-   --certificate value, --crt value  Certificate path to be used
-   --secret value, -s value          Secret file path to be used
-   --help, -h                        show help
-```
-
-#### Secret
-
-```properties
-$ ./osctrl-cli environment secret -h
-NAME:
-   osctrl-cli environment secret - Output the secret to enroll nodes in an environment
-
-USAGE:
-   osctrl-cli environment secret [command options] [arguments...]
-
-OPTIONS:
-   --name value, -n value  Environment name to be used
-   --help, -h              show help
 ```

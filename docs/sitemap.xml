@@ -77,17 +77,26 @@
     <loc>https://osctrl.net/contributing/</loc>
     <lastmod>2019-07-31T02:26:28-04:00</lastmod>
   </url><url>
-    <loc>https://osctrl.net/usage/osctrl-cli/check/</loc>
-    <lastmod>2019-08-17T15:24:52-07:00</lastmod>
+    <loc>https://osctrl.net/usage/osctrl-cli/check-db/</loc>
+    <lastmod>2024-11-04T12:21:37+01:00</lastmod>
   </url><url>
     <loc>https://osctrl.net/components/metrics/</loc>
     <lastmod>2019-08-10T12:51:10+02:00</lastmod>
   </url><url>
+    <loc>https://osctrl.net/usage/osctrl-cli/check-api/</loc>
+    <lastmod>2024-11-04T12:21:37+01:00</lastmod>
+  </url><url>
     <loc>https://osctrl.net/components/osctrld/</loc>
     <lastmod>2022-08-19T16:56:54+02:00</lastmod>
   </url><url>
+    <loc>https://osctrl.net/usage/osctrl-cli/carve/</loc>
+    <lastmod>2024-11-04T12:21:37+01:00</lastmod>
+  </url><url>
+    <loc>https://osctrl.net/usage/osctrl-cli/login/</loc>
+    <lastmod>2024-11-04T12:21:37+01:00</lastmod>
+  </url><url>
     <loc>https://osctrl.net/</loc>
-    <lastmod>2022-09-01T15:09:46+02:00</lastmod>
+    <lastmod>2024-11-04T12:21:37+01:00</lastmod>
   </url><url>
     <loc>https://osctrl.net/categories/</loc>
   </url><url>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.131.0">
+    <meta name="generator" content="Hugo 0.135.0">
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos, JMP Sec">
 
@@ -12,21 +12,21 @@
     <title>node :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1723239180" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1723239180" rel="stylesheet">
-    <link href="/css/hybrid.css?1723239180" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1723239180" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1723239180" rel="stylesheet">
-    <link href="/css/auto-complete.css?1723239180" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1723239180" rel="stylesheet">
-    <link href="/css/theme.css?1723239180" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1723239180" rel="stylesheet">
+    <link href="/css/nucleus.css?1730719774" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1730719774" rel="stylesheet">
+    <link href="/css/hybrid.css?1730719774" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1730719774" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1730719774" rel="stylesheet">
+    <link href="/css/auto-complete.css?1730719774" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1730719774" rel="stylesheet">
+    <link href="/css/theme.css?1730719774" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1730719774" rel="stylesheet">
     
-    <link href="/css/theme-osctrl.css?1723239180" rel="stylesheet">
+    <link href="/css/theme-osctrl.css?1730719774" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1723239180"></script>
+    <script src="/js/jquery-3.3.1.min.js?1730719774"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -97,14 +97,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1723239180"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1723239180"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1730719774"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1730719774"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1723239180"></script>
+<script type="text/javascript" src="/js/search.js?1730719774"></script>
 
     
   </div>
@@ -846,13 +846,97 @@
  
   
     
-    <li data-nav-id="/usage/osctrl-cli/check/" title="check" class="dd-item 
+    <li data-nav-id="/usage/osctrl-cli/check-db/" title="check-db" class="dd-item 
         
         
         
         ">
-      <a href="/usage/osctrl-cli/check/">
-          check
+      <a href="/usage/osctrl-cli/check-db/">
+          check-db
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/check-api/" title="check-api" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/check-api/">
+          check-api
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/carve/" title="carve" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/carve/">
+          carve
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/login/" title="login" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/login/">
+          login
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1099,8 +1183,11 @@
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">node command [command options] [arguments...]</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">COMMANDS</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">delete,</span> <span style="color:#e6db74">d  Delete and archive an existing node</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">list,</span> <span style="color:#e6db74">l    List enrolled nodes</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">delete,</span> <span style="color:#e6db74">d  Delete and archive an existing node</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">tag,</span> <span style="color:#e6db74">t     Tag an existing node</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">list,</span> <span style="color:#e6db74">l    List enrolled nodes</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">show,</span> <span style="color:#e6db74">s    Show an existing node</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">help,</span> <span style="color:#e6db74">h    Shows a list of commands or help for one command</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h  show help</span>
@@ -1114,6 +1201,21 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--uuid</span> <span style="color:#e6db74">value, -u value  Node UUID to be deleted</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--env</span> <span style="color:#e6db74">value, -e value   Environment to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h              show help</span>
+</span></span></code></pre></div><h4 id="tag-node">Tag node</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli node tag -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">node tag - Tag an existing node</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">node tag [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--uuid</span> <span style="color:#e6db74">value, -u value       Node UUID to be tagged</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--env</span> <span style="color:#e6db74">value, -e value        Environment to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--tag-value</span> <span style="color:#e6db74">value, -T value  Tag value to be used. It will be created if does not exist</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                   show help</span>
 </span></span></code></pre></div><h4 id="list-nodes">List nodes</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli node list -h</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
@@ -1123,8 +1225,23 @@
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">node list [command options] [arguments...]</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--all,</span> <span style="color:#e6db74">-v       Show all nodes</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--inactive,</span> <span style="color:#e6db74">-i  Show inactive nodes</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--active,</span> <span style="color:#e6db74">-a           Show active nodes (default: true)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--all,</span> <span style="color:#e6db74">-A              Show all nodes (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--inactive,</span> <span style="color:#e6db74">-i         Show inactive nodes (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--env</span> <span style="color:#e6db74">value, -e value  Environment to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h             show help</span>
+</span></span></code></pre></div><h4 id="show-node">Show node</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli node show -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">node show - Show an existing node</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">node show [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--uuid</span> <span style="color:#e6db74">value, -u value  Node UUID to be shown</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--env</span> <span style="color:#e6db74">value, -e value   Environment to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h              show help</span>
 </span></span></code></pre></div>
 
 
@@ -1593,6 +1710,54 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1653,19 +1818,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1723239180"></script>
-    <script src="/js/perfect-scrollbar.min.js?1723239180"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1723239180"></script>
-    <script src="/js/jquery.sticky.js?1723239180"></script>
-    <script src="/js/featherlight.min.js?1723239180"></script>
-    <script src="/js/highlight.pack.js?1723239180"></script>
+    <script src="/js/clipboard.min.js?1730719774"></script>
+    <script src="/js/perfect-scrollbar.min.js?1730719774"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1730719774"></script>
+    <script src="/js/jquery.sticky.js?1730719774"></script>
+    <script src="/js/featherlight.min.js?1730719774"></script>
+    <script src="/js/highlight.pack.js?1730719774"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1723239180"></script>
-    <script src="/js/learn.js?1723239180"></script>
-    <script src="/js/hugo-learn.js?1723239180"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1730719774"></script>
+    <script src="/js/learn.js?1730719774"></script>
+    <script src="/js/hugo-learn.js?1730719774"></script>
 
-    <link href="/mermaid/mermaid.css?1723239180" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1723239180"></script>
+    <link href="/mermaid/mermaid.css?1730719774" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1730719774"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

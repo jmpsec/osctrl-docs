@@ -1,6 +1,6 @@
 +++
-title = "check"
-date = 2019-08-17T15:24:52-07:00
+title = "check-db"
+date = 2024-11-04T12:21:37+01:00
 weight = 6
 pre = ""
 +++
@@ -8,15 +8,15 @@ pre = ""
 ### Check
 
 ```properties
-$ ./osctrl-cli check -h
+$ ./osctrl-cli check-db -h
 NAME:
-   osctrl-cli check - Checks DB connection
+   osctrl-cli check-db - Checks DB connection
 
 USAGE:
-   osctrl-cli check [command options] [arguments...]
+   osctrl-cli check-db [command options] [arguments...]
 
 OPTIONS:
-   --help, -h  show help (default: false)
+   --help, -h  show help
 ```
 
 Although this command may appear a bit confusing, it comes in really handy to verify when the backend component is ready to go.

@@ -7,10 +7,10 @@ pre = ""
 
 `osctrl-cli` is the CLI for **osctrl**. Its purpose is to execute actions in **osctrl** without having to access directly the backend or use the admin interface. It can be very handy to automate actions in scripts or similar.
 
-Execute `./osctrl-cli -h` to show the main help of the program:
+Execute `./osctrl-cli help` to show the main help of the program:
 
 ```properties
-$ ./osctrl-cli -h
+$ ./osctrl-cli help
 NAME:
    osctrl-cli - CLI for osctrl
 
@@ -18,7 +18,7 @@ USAGE:
    osctrl-cli [global options] command [command options] [arguments...]
 
 VERSION:
-   0.3.7
+   0.4.1
 
 DESCRIPTION:
    CLI for osctrl, a fast and efficient osquery management

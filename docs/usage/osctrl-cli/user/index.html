@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.131.0">
+    <meta name="generator" content="Hugo 0.135.0">
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos, JMP Sec">
 
@@ -12,21 +12,21 @@
     <title>user :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1723239180" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1723239180" rel="stylesheet">
-    <link href="/css/hybrid.css?1723239180" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1723239180" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1723239180" rel="stylesheet">
-    <link href="/css/auto-complete.css?1723239180" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1723239180" rel="stylesheet">
-    <link href="/css/theme.css?1723239180" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1723239180" rel="stylesheet">
+    <link href="/css/nucleus.css?1730719774" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1730719774" rel="stylesheet">
+    <link href="/css/hybrid.css?1730719774" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1730719774" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1730719774" rel="stylesheet">
+    <link href="/css/auto-complete.css?1730719774" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1730719774" rel="stylesheet">
+    <link href="/css/theme.css?1730719774" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1730719774" rel="stylesheet">
     
-    <link href="/css/theme-osctrl.css?1723239180" rel="stylesheet">
+    <link href="/css/theme-osctrl.css?1730719774" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1723239180"></script>
+    <script src="/js/jquery-3.3.1.min.js?1730719774"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -97,14 +97,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1723239180"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1723239180"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1730719774"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1730719774"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1723239180"></script>
+<script type="text/javascript" src="/js/search.js?1730719774"></script>
 
     
   </div>
@@ -846,13 +846,97 @@
  
   
     
-    <li data-nav-id="/usage/osctrl-cli/check/" title="check" class="dd-item 
+    <li data-nav-id="/usage/osctrl-cli/check-db/" title="check-db" class="dd-item 
         
         
         
         ">
-      <a href="/usage/osctrl-cli/check/">
-          check
+      <a href="/usage/osctrl-cli/check-db/">
+          check-db
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/check-api/" title="check-api" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/check-api/">
+          check-api
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/carve/" title="carve" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/carve/">
+          carve
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/osctrl-cli/login/" title="login" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/usage/osctrl-cli/login/">
+          login
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1099,10 +1183,16 @@
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user command [command options] [arguments...]</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">COMMANDS</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">add,</span> <span style="color:#e6db74">a     Add a new user</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">edit,</span> <span style="color:#e6db74">e    Edit an existing user</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">delete,</span> <span style="color:#e6db74">d  Delete an existing user</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">list,</span> <span style="color:#e6db74">l    List all existing users</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">add,</span> <span style="color:#e6db74">a                         Add a new user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">edit,</span> <span style="color:#e6db74">e                        Edit an existing user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">change-permissions,</span> <span style="color:#e6db74">p, access  Change permission in an environment for an existing user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">reset-permissions,</span> <span style="color:#e6db74">R, reset    Clear and reset permissions for a user in an environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">show-permissions,</span> <span style="color:#e6db74">S, perms     Show permissions for a user in an environment</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">all-permissions,</span> <span style="color:#e6db74">A, all-perms  Show all permissions for an existing user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">delete,</span> <span style="color:#e6db74">d                      Delete an existing user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">show,</span> <span style="color:#e6db74">s                        Show an existing user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">list,</span> <span style="color:#e6db74">l                        List all existing users</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">help,</span> <span style="color:#e6db74">h                        Shows a list of commands or help for one command</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h  show help</span>
@@ -1117,10 +1207,11 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--username</span> <span style="color:#e6db74">value, -u value     Username for the new user</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--password</span> <span style="color:#e6db74">value, -p value     Password for the new user</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--admin,</span> <span style="color:#e6db74">-a                    Make this user an admin</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--environment</span> <span style="color:#e6db74">value, -E value  Default environment for the new user</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--email</span> <span style="color:#e6db74">value, -e value        Email for the new user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--admin,</span> <span style="color:#e6db74">-a                    Make this user an admin (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--environment</span> <span style="color:#e6db74">value, -e value  Default environment for the new user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--email</span> <span style="color:#e6db74">value, -E value        Email for the new user</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--fullname</span> <span style="color:#e6db74">value, -n value     Full name for the new user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                     show help</span>
 </span></span></code></pre></div><h4 id="edit-user">Edit user</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user edit -h</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
@@ -1130,13 +1221,69 @@
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user edit [command options] [arguments...]</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--username</span> <span style="color:#e6db74">value, -u value     User to be edited</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--password</span> <span style="color:#e6db74">value, -p value     New password to be used</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--email</span> <span style="color:#e6db74">value, -e value        Email to be used</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--fullname</span> <span style="color:#e6db74">value, -n value     Full name to be used</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--admin,</span> <span style="color:#e6db74">-a                    Make this user an admin</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--non-admin,</span> <span style="color:#e6db74">-d                Make this user an non-admin</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--environment</span> <span style="color:#e6db74">value, -E value  Default environment for this user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--username</span> <span style="color:#e6db74">value, -u value        User to be edited</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--password</span> <span style="color:#e6db74">value, -p value        New password to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--email</span> <span style="color:#e6db74">value, -E value           Email to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--fullname</span> <span style="color:#e6db74">value, -n value        Full name to be used</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--admin,</span> <span style="color:#e6db74">-a                       Make this user an admin (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--non-admin,</span> <span style="color:#e6db74">-d                   Make this user an non-admin (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--environment</span> <span style="color:#e6db74">value, --env value  Default environment for this user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                        show help</span>
+</span></span></code></pre></div><h4 id="change-permissions">Change permissions</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user change-permissions -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user change-permissions - Change permission in an environment for an existing user</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user change-permissions [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--username</span> <span style="color:#e6db74">value, -u value     User to perform the action</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--environment</span> <span style="color:#e6db74">value, -e value  Environment for this user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--admin,</span> <span style="color:#e6db74">-a                    Grant admin permissions (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--user,</span> <span style="color:#e6db74">-U                     Grant user permissions (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--query,</span> <span style="color:#e6db74">-q                    Grant query permissions (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--carve,</span> <span style="color:#e6db74">-c                    Grant carve permissions (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                     show help</span>
+</span></span></code></pre></div><h4 id="reset-permissions">Reset permissions</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user reset-permissions -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user reset-permissions - Clear and reset permissions for a user in an environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user reset-permissions [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--username</span> <span style="color:#e6db74">value, -u value     User to perform the action</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--environment</span> <span style="color:#e6db74">value, -e value  Environment for this user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--admin,</span> <span style="color:#e6db74">-a                    Grant admin permissions (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--user,</span> <span style="color:#e6db74">-U                     Grant user permissions (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--query,</span> <span style="color:#e6db74">-q                    Grant query permissions (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--carve,</span> <span style="color:#e6db74">-c                    Grant carve permissions (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                     show help</span>
+</span></span></code></pre></div><h4 id="show-permissions">Show permissions</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user show-permissions -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user show-permissions - Show permissions for a user in an environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user show-permissions [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--username</span> <span style="color:#e6db74">value, -u value     User to perform the action</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--environment</span> <span style="color:#e6db74">value, -e value  Environment for this user</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                     show help</span>
+</span></span></code></pre></div><h4 id="all-permissions">All permissions</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user all-permissions -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user all-permissions - Show all permissions for an existing user</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user all-permissions [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--username</span> <span style="color:#e6db74">value, -u value  User to perform the action</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                  show help</span>
 </span></span></code></pre></div><h4 id="delete-user">Delete user</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user delete -h</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
@@ -1147,13 +1294,28 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--username</span> <span style="color:#e6db74">value, -u value  User to be deleted</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                  show help</span>
+</span></span></code></pre></div><h4 id="show-user">Show user</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user show -h</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user show - Show an existing user</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user show [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--username</span> <span style="color:#e6db74">value, -u value  User to be displayed</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                  show help</span>
 </span></span></code></pre></div><h4 id="list-users">List users</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli user list -h</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user list - List all existing users</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user list [arguments...]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">user list [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">OPTIONS</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h  show help</span>
 </span></span></code></pre></div>
 
 
@@ -1619,6 +1781,54 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1679,19 +1889,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1723239180"></script>
-    <script src="/js/perfect-scrollbar.min.js?1723239180"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1723239180"></script>
-    <script src="/js/jquery.sticky.js?1723239180"></script>
-    <script src="/js/featherlight.min.js?1723239180"></script>
-    <script src="/js/highlight.pack.js?1723239180"></script>
+    <script src="/js/clipboard.min.js?1730719774"></script>
+    <script src="/js/perfect-scrollbar.min.js?1730719774"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1730719774"></script>
+    <script src="/js/jquery.sticky.js?1730719774"></script>
+    <script src="/js/featherlight.min.js?1730719774"></script>
+    <script src="/js/highlight.pack.js?1730719774"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1723239180"></script>
-    <script src="/js/learn.js?1723239180"></script>
-    <script src="/js/hugo-learn.js?1723239180"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1730719774"></script>
+    <script src="/js/learn.js?1730719774"></script>
+    <script src="/js/hugo-learn.js?1730719774"></script>
 
-    <link href="/mermaid/mermaid.css?1723239180" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1723239180"></script>
+    <link href="/mermaid/mermaid.css?1730719774" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1730719774"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

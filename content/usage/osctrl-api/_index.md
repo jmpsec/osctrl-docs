@@ -7,10 +7,10 @@ pre = ""
 
 `osctrl-api` is the API service for **osctrl**.
 
-Execute `./osctrl-api -h` to show the main help of the program:
+Execute `./osctrl-api help` to show the main help of the program:
 
 ```properties
-$ ./osctrl-api -h
+$ ./osctrl-api help
 NAME:
    osctrl-api - API service for osctrl, a fast and efficient osquery management
 
@@ -18,7 +18,7 @@ USAGE:
    osctrl-api [global options] command [command options] [arguments...]
 
 VERSION:
-   0.3.7
+   0.4.1
 
 DESCRIPTION:
    API service for osctrl, a fast and efficient osquery management
@@ -49,6 +49,7 @@ GLOBAL OPTIONS:
    --db-name value                  Database name to be used in the backend (default: "osctrl") [$DB_NAME]
    --db-user value                  Username to be used for the backend (default: "postgres") [$DB_USER]
    --db-pass value                  Password to be used for the backend (default: "postgres") [$DB_PASS]
+   --db-sslmode value               SSL native support to encrypt the connection to the backend (default: "disable") [$DB_SSLMODE]
    --db-max-idle-conns value        Maximum number of connections in the idle connection pool (default: 20) [$DB_MAX_IDLE_CONNS]
    --db-max-open-conns value        Maximum number of open connections to the database (default: 100) [$DB_MAX_OPEN_CONNS]
    --db-conn-max-lifetime value     Maximum amount of time a connection may be reused (default: 30) [$DB_CONN_MAX_LIFETIME]

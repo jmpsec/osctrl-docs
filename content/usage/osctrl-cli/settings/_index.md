@@ -16,10 +16,11 @@ USAGE:
    osctrl-cli settings command [command options] [arguments...]
 
 COMMANDS:
-     add, a     Add a new settings value
-     update, u  Update a configuration value
-     delete, d  Delete an existing configuration value
-     show, s    Show all configuration values
+   add, a     Add a new settings value
+   update, u  Update a configuration value
+   delete, d  Delete an existing configuration value
+   show, s    Show all configuration values
+   help, h    Shows a list of commands or help for one command
 
 OPTIONS:
    --help, -h  show help
@@ -41,8 +42,9 @@ OPTIONS:
    --type value, -t value     Value type to be added
    --string value             Value string
    --integer value            Value integer (default: 0)
-   --boolean                  Value boolean
+   --boolean                  Value boolean (default: false)
    --info value, -i value     Setting info
+   --help, -h                 show help
 ```
 
 #### Update setting
@@ -61,9 +63,10 @@ OPTIONS:
    --type value, -t value     Value type to be updated
    --string value             Value string
    --integer value            Value integer (default: 0)
-   --true                     Value boolean true
-   --false                    Value boolean false
+   --true                     Value boolean true (default: false)
+   --false                    Value boolean false (default: false)
    --info value, -i value     Setting info
+   --help, -h                 show help
 ```
 
 #### Delete setting
@@ -79,6 +82,7 @@ USAGE:
 OPTIONS:
    --name value, -n value     Value name to be deleted
    --service value, -s value  Value service to be deleted
+   --help, -h                 show help
 ```
 
 #### Show settings
@@ -89,5 +93,8 @@ NAME:
    osctrl-cli settings show - Show all configuration values
 
 USAGE:
-   osctrl-cli settings show [arguments...]
+   osctrl-cli settings show [command options] [arguments...]
+
+OPTIONS:
+   --help, -h  show help
 ```

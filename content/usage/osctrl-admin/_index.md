@@ -7,10 +7,10 @@ pre = ""
 
 `osctrl-admin` is the Admin service for **osctrl**.
 
-Execute `./osctrl-admin -h` to show the main help of the program:
+Execute `./osctrl-admin help` to show the main help of the program:
 
 ```properties
-$ ./osctrl-admin -h
+$ ./osctrl-admin help
 NAME:
    osctrl-admin - Admin service for osctrl, a fast and efficient osquery management
 
@@ -18,7 +18,7 @@ USAGE:
    osctrl-admin [global options] command [command options] [arguments...]
 
 VERSION:
-   0.3.7
+   0.4.1
 
 DESCRIPTION:
    Admin service for osctrl, a fast and efficient osquery management
@@ -53,6 +53,7 @@ GLOBAL OPTIONS:
    --db-name value                  Database name to be used in the backend (default: "osctrl") [$DB_NAME]
    --db-user value                  Username to be used for the backend (default: "postgres") [$DB_USER]
    --db-pass value                  Password to be used for the backend (default: "postgres") [$DB_PASS]
+   --db-sslmode value               SSL native support to encrypt the connection to the backend (default: "disable") [$DB_SSLMODE]
    --db-max-idle-conns value        Maximum number of connections in the idle connection pool (default: 20) [$DB_MAX_IDLE_CONNS]
    --db-max-open-conns value        Maximum number of open connections to the database (default: 100) [$DB_MAX_OPEN_CONNS]
    --db-conn-max-lifetime value     Maximum amount of time a connection may be reused (default: 30) [$DB_CONN_MAX_LIFETIME]
@@ -65,8 +66,8 @@ GLOBAL OPTIONS:
    --jwt-file FILE                  Load JWT configuration from FILE (default: "config/jwt.json") [$JWT_CONFIG_FILE]
    --jwt-secret value               Password to be used for the backend [$JWT_SECRET]
    --jwt-expire value               Maximum amount of hours for the tokens to expire (default: 3) [$JWT_EXPIRE]
-   --osquery-version value          Set osquery version as default to be used (default: "5.12.1") [$OSQUERY_VERSION]
-   --osquery-tables FILE            Load osquery tables schema from FILE (default: "data/5.12.1.json") [$OSQUERY_TABLES]
+   --osquery-version value          Set osquery version as default to be used (default: "5.13.1") [$OSQUERY_VERSION]
+   --osquery-tables FILE            Load osquery tables schema from FILE (default: "data/5.13.1.json") [$OSQUERY_TABLES]
    --logger-file value, -F value    Logger configuration to handle status/results logs from nodes (default: "config/logger.json") [$LOGGER_FILE]
    --logger-db-same                 Use the same DB configuration for the logger (default: false) [$LOGGER_DB_SAME]
    --static value, -s value         Directory with all the static files needed for the osctrl-admin UI (default: "./static") [$STATIC_FILES]
