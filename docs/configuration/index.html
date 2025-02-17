@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Hugo 0.143.1">
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos, JMP Sec">
 
@@ -12,21 +12,21 @@
     <title>Configuration :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1730719774" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1730719774" rel="stylesheet">
-    <link href="/css/hybrid.css?1730719774" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1730719774" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1730719774" rel="stylesheet">
-    <link href="/css/auto-complete.css?1730719774" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1730719774" rel="stylesheet">
-    <link href="/css/theme.css?1730719774" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1730719774" rel="stylesheet">
+    <link href="/css/nucleus.css?1739788602" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1739788602" rel="stylesheet">
+    <link href="/css/hybrid.css?1739788602" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1739788602" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1739788602" rel="stylesheet">
+    <link href="/css/auto-complete.css?1739788602" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1739788602" rel="stylesheet">
+    <link href="/css/theme.css?1739788602" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1739788602" rel="stylesheet">
     
-    <link href="/css/theme-osctrl.css?1730719774" rel="stylesheet">
+    <link href="/css/theme-osctrl.css?1739788602" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1730719774"></script>
+    <script src="/js/jquery-3.3.1.min.js?1739788602"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -70,13 +70,13 @@
 
   </head>
   <body class="" data-url="/configuration/">
-    <nav id="sidebar" class="showVisitedLinks">
-
-
-
+    <nav
+  id="sidebar"
+  class="showVisitedLinks"
+>
+   
   <div id="header-wrapper">
-    <div id="header">
-      <a id="logo" href="/">
+    <div id="header"><a id="logo" href="/">
   <h1 style="margin:0; padding:0">
     <img src="/logo.png" style="width: 65%" alt="osctrl"/>
   </h1>
@@ -88,993 +88,659 @@
     <img alt="Release" src="https://img.shields.io/github/release/jmpsec/osctrl.svg?style=flat-square">
   </a>
 </center>
-
-    </div>
-    
-        <div class="searchbox">
+</div>
+     <div class="searchbox">
     <label for="search-by"><i class="fas fa-search"></i></label>
     <input data-search-input id="search-by" type="search" placeholder="Search...">
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1730719774"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1730719774"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1739788602"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1739788602"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1730719774"></script>
-
-    
+<script type="text/javascript" src="/js/search.js?1739788602"></script>
+ 
   </div>
 
-    <div class="highlightable">
+  <div class="highlightable">
     <ul class="topics">
-
+               
+<li
+  data-nav-id="/components/"
+  title="Components"
+  class="dd-item
         
-          
-          
-
-
-
-
- 
-  
+        
+        
+        "
+>
+  <a href="/components/">
+    <b>1. </b>Components 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/components/" title="Components" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/components/">
-          <b>1. </b>Components
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
+  </a>
+   
+  <ul>
           
             
-          
-          
-          
+<li
+  data-nav-id="/components/osctrl-tls/"
+  title="osctrl-tls"
+  class="dd-item
         
-          
-            
-            
-
-
-
-
- 
-  
+        
+        
+        "
+>
+  <a href="/components/osctrl-tls/">
+    osctrl-tls 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/components/osctrl-tls/" title="osctrl-tls" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/components/osctrl-tls/">
-          osctrl-tls
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/components/osctrl-api/" title="osctrl-api" class="dd-item 
+            
+<li
+  data-nav-id="/components/osctrl-api/"
+  title="osctrl-api"
+  class="dd-item
         
         
         
-        ">
-      <a href="/components/osctrl-api/">
-          osctrl-api
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+        "
+>
+  <a href="/components/osctrl-api/">
+    osctrl-api 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/components/osctrl-admin/" title="osctrl-admin" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/components/osctrl-admin/">
-          osctrl-admin
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/components/osctrl-cli/" title="osctrl-cli" class="dd-item 
+            
+<li
+  data-nav-id="/components/osctrl-admin/"
+  title="osctrl-admin"
+  class="dd-item
         
         
         
-        ">
-      <a href="/components/osctrl-cli/">
-          osctrl-cli
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+        "
+>
+  <a href="/components/osctrl-admin/">
+    osctrl-admin 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/components/nginx/" title="nginx" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/components/nginx/">
-          nginx
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/components/backend/" title="Backend" class="dd-item 
+            
+<li
+  data-nav-id="/components/osctrl-cli/"
+  title="osctrl-cli"
+  class="dd-item
         
         
         
-        ">
-      <a href="/components/backend/">
-          Backend
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+        "
+>
+  <a href="/components/osctrl-cli/">
+    osctrl-cli 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/components/metrics/" title="Metrics" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/components/metrics/">
-          Metrics
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/components/osctrld/" title="osctrld" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/components/osctrld/">
-          osctrld
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
             
-          
+<li
+  data-nav-id="/components/nginx/"
+  title="nginx"
+  class="dd-item
         
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
+        
+        
+        "
+>
+  <a href="/components/nginx/">
+    nginx 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/deployment/" title="Deployment" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/deployment/">
-          <b>2. </b>Deployment
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/deployment/docker/" title="Using Docker" class="dd-item 
+            
+<li
+  data-nav-id="/components/backend/"
+  title="Backend"
+  class="dd-item
         
         
         
-        ">
-      <a href="/deployment/docker/">
-          Using Docker
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+        "
+>
+  <a href="/components/backend/">
+    Backend 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/deployment/natively/" title="Using provision.sh" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/deployment/natively/">
-          Using provision.sh
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/configuration/" title="Configuration" class="dd-item 
+            
+<li
+  data-nav-id="/components/metrics/"
+  title="Metrics"
+  class="dd-item
+        
+        
+        
+        "
+>
+  <a href="/components/metrics/">
+    Metrics 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/components/osctrld/"
+  title="osctrld"
+  class="dd-item
+        
+        
+        
+        "
+>
+  <a href="/components/osctrld/">
+    osctrld 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+           
+<li
+  data-nav-id="/deployment/"
+  title="Deployment"
+  class="dd-item
+        
+        
+        
+        "
+>
+  <a href="/deployment/">
+    <b>2. </b>Deployment 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/deployment/docker/"
+  title="Using Docker"
+  class="dd-item
+        
+        
+        
+        "
+>
+  <a href="/deployment/docker/">
+    Using Docker 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/deployment/natively/"
+  title="Using provision.sh"
+  class="dd-item
+        
+        
+        
+        "
+>
+  <a href="/deployment/natively/">
+    Using provision.sh 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+           
+<li
+  data-nav-id="/configuration/"
+  title="Configuration"
+  class="dd-item
         
         active
         
-        ">
-      <a href="/configuration/">
-          <b>3. </b>Configuration
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
+        "
+>
+  <a href="/configuration/">
+    <b>3. </b>Configuration 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/usage/" title="Usage" class="dd-item 
+  </a>
+   
+</li>
+           
+<li
+  data-nav-id="/usage/"
+  title="Usage"
+  class="dd-item
         
         
         
-        ">
-      <a href="/usage/">
-          <b>4. </b>Usage
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
+        "
+>
+  <a href="/usage/">
+    <b>4. </b>Usage 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/usage/osctrld/" title="osctrld" class="dd-item 
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/usage/osctrld/"
+  title="osctrld"
+  class="dd-item
         
         
         
-        ">
-      <a href="/usage/osctrld/">
-          osctrld
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+        "
+>
+  <a href="/usage/osctrld/">
+    osctrld 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/usage/osctrl-tls/" title="osctrl-tls" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/usage/osctrl-tls/">
-          osctrl-tls
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/usage/osctrl-api/" title="osctrl-api" class="dd-item 
+            
+<li
+  data-nav-id="/usage/osctrl-tls/"
+  title="osctrl-tls"
+  class="dd-item
         
         
         
-        ">
-      <a href="/usage/osctrl-api/">
-          osctrl-api
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+        "
+>
+  <a href="/usage/osctrl-tls/">
+    osctrl-tls 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/usage/osctrl-admin/" title="osctrl-admin" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/usage/osctrl-admin/">
-          osctrl-admin
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/usage/osctrl-cli/" title="osctrl-cli" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/usage/osctrl-cli/">
-          osctrl-cli
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
             
-          
-          
-          
+<li
+  data-nav-id="/usage/osctrl-api/"
+  title="osctrl-api"
+  class="dd-item
         
-          
-            
-            
-
-
-
-
- 
-  
+        
+        
+        "
+>
+  <a href="/usage/osctrl-api/">
+    osctrl-api 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/usage/osctrl-cli/user/" title="user" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/usage/osctrl-cli/user/">
-          user
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/usage/osctrl-cli/environment/" title="environment" class="dd-item 
+            
+<li
+  data-nav-id="/usage/osctrl-admin/"
+  title="osctrl-admin"
+  class="dd-item
         
         
         
-        ">
-      <a href="/usage/osctrl-cli/environment/">
-          environment
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+        "
+>
+  <a href="/usage/osctrl-admin/">
+    osctrl-admin 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/usage/osctrl-cli/tag/" title="tag" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/usage/osctrl-cli/tag/">
-          tag
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/usage/osctrl-cli/settings/" title="settings" class="dd-item 
+            
+<li
+  data-nav-id="/usage/osctrl-cli/"
+  title="osctrl-cli"
+  class="dd-item
         
         
         
-        ">
-      <a href="/usage/osctrl-cli/settings/">
-          settings
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+        "
+>
+  <a href="/usage/osctrl-cli/">
+    osctrl-cli 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/usage/osctrl-cli/node/" title="node" class="dd-item 
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/usage/osctrl-cli/user/"
+  title="user"
+  class="dd-item
         
         
         
-        ">
-      <a href="/usage/osctrl-cli/node/">
-          node
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+        "
+>
+  <a href="/usage/osctrl-cli/user/">
+    user 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/usage/osctrl-cli/query/" title="query" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/usage/osctrl-cli/query/">
-          query
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/usage/osctrl-cli/check-db/" title="check-db" class="dd-item 
+            
+<li
+  data-nav-id="/usage/osctrl-cli/environment/"
+  title="environment"
+  class="dd-item
         
         
         
-        ">
-      <a href="/usage/osctrl-cli/check-db/">
-          check-db
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+        "
+>
+  <a href="/usage/osctrl-cli/environment/">
+    environment 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/usage/osctrl-cli/check-api/" title="check-api" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/usage/osctrl-cli/check-api/">
-          check-api
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/usage/osctrl-cli/carve/" title="carve" class="dd-item 
+            
+<li
+  data-nav-id="/usage/osctrl-cli/tag/"
+  title="tag"
+  class="dd-item
         
         
         
-        ">
-      <a href="/usage/osctrl-cli/carve/">
-          carve
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+        "
+>
+  <a href="/usage/osctrl-cli/tag/">
+    tag 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/usage/osctrl-cli/login/" title="login" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/usage/osctrl-cli/login/">
-          login
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
+  </a>
+   
+</li>
     
-    <li data-nav-id="/usage/provision.sh/" title="provision.sh" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/usage/provision.sh/">
-          provision.sh
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
             
-          
+<li
+  data-nav-id="/usage/osctrl-cli/settings/"
+  title="settings"
+  class="dd-item
         
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
+        
+        
+        "
+>
+  <a href="/usage/osctrl-cli/settings/">
+    settings 
+    <i class="fas fa-check read-icon"></i>
     
-    <li data-nav-id="/contributing/" title="Contributing" class="dd-item 
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/usage/osctrl-cli/node/"
+  title="node"
+  class="dd-item
         
         
         
-        ">
-      <a href="/contributing/">
-          <b>5. </b>Contributing
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
+        "
+>
+  <a href="/usage/osctrl-cli/node/">
+    node 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/usage/osctrl-cli/query/"
+  title="query"
+  class="dd-item
+        
+        
+        
+        "
+>
+  <a href="/usage/osctrl-cli/query/">
+    query 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/usage/osctrl-cli/check-db/"
+  title="check-db"
+  class="dd-item
+        
+        
+        
+        "
+>
+  <a href="/usage/osctrl-cli/check-db/">
+    check-db 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/usage/osctrl-cli/check-api/"
+  title="check-api"
+  class="dd-item
+        
+        
+        
+        "
+>
+  <a href="/usage/osctrl-cli/check-api/">
+    check-api 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/usage/osctrl-cli/carve/"
+  title="carve"
+  class="dd-item
+        
+        
+        
+        "
+>
+  <a href="/usage/osctrl-cli/carve/">
+    carve 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/usage/osctrl-cli/login/"
+  title="login"
+  class="dd-item
+        
+        
+        
+        "
+>
+  <a href="/usage/osctrl-cli/login/">
+    login 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
   
- 
-
-          
-         
+</li>
+    
+            
+<li
+  data-nav-id="/usage/provision.sh/"
+  title="provision.sh"
+  class="dd-item
+        
+        
+        
+        "
+>
+  <a href="/usage/provision.sh/">
+    provision.sh 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+           
+<li
+  data-nav-id="/contributing/"
+  title="Contributing"
+  class="dd-item
+        
+        
+        
+        "
+>
+  <a href="/contributing/">
+    <b>5. </b>Contributing 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
     </ul>
 
-    
-    
-      <section id="shortcuts">
-        <h3>More</h3>
-        <ul>
-          
-              <li> 
-                  <a class="padding" href="https://github.com/jmpsec/osctrl"><i class='fab fa-github'></i> Github repo - osctrl</a>
-              </li>
-          
-              <li> 
-                  <a class="padding" href="https://osctrl.net/"><center><a class="github-button" href="https://github.com/jmpsec/osctrl" data-icon="octicon-star" data-show-count="true" aria-label="Star jmpsec/osctrl on GitHub">Star</a> <a class="github-button" href="https://github.com/jmpsec/osctrl/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork jmpsec/osctrl on GitHub">Fork</a><center></a>
-              </li>
-          
-              <li> 
-                  <a class="padding" href="https://github.com/jmpsec/osctrl/blob/master/LICENSE"><br/><img alt="Software License" src="https://img.shields.io/badge/license-MIT-green?style=flat-square&fuckgithubcache=1"></a>
-              </li>
-          
-              <li> 
-                  <a class="padding" href="https://github.com/jmpsec/osctrl/actions"><img alt="Github Actions" src="https://github.com/jmpsec/osctrl/actions/workflows/build_and_test_main_merge.yml/badge.svg"></a>
-              </li>
-          
-              <li> 
-                  <a class="padding" href="https://goreportcard.com/report/github.com/jmpsec/osctrl"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/jmpsec/osctrl?style=flat-square&fuckgithubcache=1"></a>
-              </li>
-          
-        </ul>
-      </section>
-    
-
-    
-    <section id="prefooter">
-      <hr/>
+     
+    <section id="shortcuts">
+      <h3>
+        More
+      </h3>
       <ul>
-      
-      
-      
-        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
-      
+        
+        <li>
+          <a class="padding" href="https://github.com/jmpsec/osctrl"
+            ><i class='fab fa-github'></i> Github repo - osctrl</a
+          >
+        </li>
+        
+        <li>
+          <a class="padding" href="https://osctrl.net/"
+            ><center><a class="github-button" href="https://github.com/jmpsec/osctrl" data-icon="octicon-star" data-show-count="true" aria-label="Star jmpsec/osctrl on GitHub">Star</a> <a class="github-button" href="https://github.com/jmpsec/osctrl/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork jmpsec/osctrl on GitHub">Fork</a><center></a
+          >
+        </li>
+        
+        <li>
+          <a class="padding" href="https://github.com/jmpsec/osctrl/blob/master/LICENSE"
+            ><br/><img alt="Software License" src="https://img.shields.io/badge/license-MIT-green?style=flat-square&fuckgithubcache=1"></a
+          >
+        </li>
+        
+        <li>
+          <a class="padding" href="https://github.com/jmpsec/osctrl/actions"
+            ><img alt="Github Actions" src="https://github.com/jmpsec/osctrl/actions/workflows/build_and_test_main_merge.yml/badge.svg"></a
+          >
+        </li>
+        
+        <li>
+          <a class="padding" href="https://goreportcard.com/report/github.com/jmpsec/osctrl"
+            ><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/jmpsec/osctrl?style=flat-square&fuckgithubcache=1"></a
+          >
+        </li>
+        
+      </ul>
+    </section>
+     
+    <section id="prefooter">
+      <hr />
+      <ul>
+         
+        <li>
+          <a class="padding" href="#" data-clear-history-toggle=""
+            ><i class="fas fa-history fa-fw"></i> Clear History</a
+          >
+        </li>
+        
       </ul>
     </section>
     
-    <section id="footer">
-      <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <section id="footer"><script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <center>
   <a href="https://jmpsec.com" target="_blank">
     <img class="jmpsec" src="/jmpsec.png" alt="JMP Security"/>
   </a>
 </center>
-
-    </section>
+</section>
   </div>
 </nav>
 
@@ -1814,19 +1480,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1730719774"></script>
-    <script src="/js/perfect-scrollbar.min.js?1730719774"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1730719774"></script>
-    <script src="/js/jquery.sticky.js?1730719774"></script>
-    <script src="/js/featherlight.min.js?1730719774"></script>
-    <script src="/js/highlight.pack.js?1730719774"></script>
+    <script src="/js/clipboard.min.js?1739788602"></script>
+    <script src="/js/perfect-scrollbar.min.js?1739788602"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1739788602"></script>
+    <script src="/js/jquery.sticky.js?1739788602"></script>
+    <script src="/js/featherlight.min.js?1739788602"></script>
+    <script src="/js/highlight.pack.js?1739788602"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1730719774"></script>
-    <script src="/js/learn.js?1730719774"></script>
-    <script src="/js/hugo-learn.js?1730719774"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1739788602"></script>
+    <script src="/js/learn.js?1739788602"></script>
+    <script src="/js/hugo-learn.js?1739788602"></script>
 
-    <link href="/mermaid/mermaid.css?1730719774" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1730719774"></script>
+    <link href="/mermaid/mermaid.css?1739788602" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1739788602"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

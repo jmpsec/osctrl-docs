@@ -16,12 +16,13 @@ USAGE:
    osctrl-cli tag command [command options] [arguments...]
 
 COMMANDS:
-   add, a     Add a new tag
-   edit, e    Edit values for an existing tag
-   delete, d  Delete an existing tag
-   list, l    List all tags
-   show, s    Show an existing tag
-   help, h    Shows a list of commands or help for one command
+   add, a       Add a new tag
+   edit, e      Edit values for an existing tag
+   delete, d    Delete an existing tag
+   list, l      List all tags by environment
+   list-all, L  List all tags in osctrl
+   show, s      Show an existing tag
+   help, h      Shows a list of commands or help for one command
 
 OPTIONS:
    --help, -h  show help
@@ -38,11 +39,13 @@ USAGE:
    osctrl-cli tag add [command options] [arguments...]
 
 OPTIONS:
-   --name value, -n value         Tage name to be added
-   --color value, -c value        Tag color to be added
-   --description value, -d value  Tag description to be added
-   --icon value, -i value         Tag icon to be added
-   --help, -h                     show help
+   --name value, -n value                    Tage name to be used
+   --env-uuid value, -e value                Environment UUID to be used
+   --icon value, -i value                    Fontawesome icon to be used (default: "fas fa-tag")
+   --color value, -c value                   HTML color to be used. If not provided it will be randomly generated
+   --description value, -d value             Tag description to be used
+   --tag-type value, -t value, --type value  Tag type to be used. It can be 'env', 'uuid', 'platform', 'localname' and 'custom' (default: "custom")
+   --help, -h                                show help
 ```
 
 #### Edit tag
@@ -56,11 +59,13 @@ USAGE:
    osctrl-cli tag edit [command options] [arguments...]
 
 OPTIONS:
-   --name value, -n value         Tage name to be edited
-   --color value, -c value        Tag color to be edited
-   --description value, -d value  Tag description to be edited
-   --icon value, -i value         Tag icon to be edited
-   --help, -h                     show help
+   --name value, -n value                    Tage name to be used
+   --env-uuid value, -e value                Environment UUID to be used
+   --icon value, -i value                    Fontawesome icon to be used
+   --color value, -c value                   HTML color to be used. If not provided it will be randomly generated
+   --description value, -d value             Tag description to be used
+   --tag-type value, -t value, --type value  Tag type to be used. It can be 'env', 'uuid', 'platform', 'localname' and 'custom'
+   --help, -h                                show help
 ```
 
 #### Delete tag
@@ -74,8 +79,9 @@ USAGE:
    osctrl-cli tag delete [command options] [arguments...]
 
 OPTIONS:
-   --name value, -n value  Tag name to be deleted
-   --help, -h              show help
+   --name value, -n value      Tag name to be deleted
+   --env-uuid value, -e value  Environment UUID to be used
+   --help, -h                  show help
 ```
 
 #### List tags
@@ -83,10 +89,25 @@ OPTIONS:
 ```properties
 $ ./osctrl-cli tag list -h
 NAME:
-   osctrl-cli tag list - List all tags
+   osctrl-cli tag list - List all tags by environment
 
 USAGE:
    osctrl-cli tag list [command options] [arguments...]
+
+OPTIONS:
+   --env-uuid value, -e value  Environment UUID to be used
+   --help, -h                  show help
+```
+
+#### List all tags
+
+```properties
+$ ./osctrl-cli tag list-all -h
+NAME:
+   osctrl-cli tag list-all - List all tags in osctrl
+
+USAGE:
+   osctrl-cli tag list-all [command options] [arguments...]
 
 OPTIONS:
    --help, -h  show help
@@ -103,6 +124,7 @@ USAGE:
    osctrl-cli tag show [command options] [arguments...]
 
 OPTIONS:
-   --name value, -n value  Tag name to be displayed
-   --help, -h              show help
+   --name value, -n value      Tag name to be displayed
+   --env-uuid value, -e value  Environment UUID to be used
+   --help, -h                  show help
 ```
