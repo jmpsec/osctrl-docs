@@ -8,12 +8,12 @@ pre = ""
 ### Query
 
 ```properties
-$ ./osctrl-cli query -h
+$ ./bin/osctrl-cli query -h
 NAME:
    osctrl-cli query - Commands for queries
 
 USAGE:
-   osctrl-cli query command [command options] [arguments...]
+   osctrl-cli query [command options]
 
 COMMANDS:
    complete, c  Mark an on-demand query as completed
@@ -24,7 +24,7 @@ COMMANDS:
    help, h      Shows a list of commands or help for one command
 
 OPTIONS:
-   --help, -h  show help
+   --help, -h  Show help (default: false)
 ```
 
 #### Complete query

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.143.1">
+    <meta name="generator" content="Hugo 0.149.0">
     <meta name="description" content="Documentation for osctrl: Fast and efficient osquery management">
 <meta name="author" content="Javier Marcos, JMP Sec">
 
@@ -12,21 +12,21 @@
     <title>osctrl-cli :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1739788602" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1739788602" rel="stylesheet">
-    <link href="/css/hybrid.css?1739788602" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1739788602" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1739788602" rel="stylesheet">
-    <link href="/css/auto-complete.css?1739788602" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1739788602" rel="stylesheet">
-    <link href="/css/theme.css?1739788602" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1739788602" rel="stylesheet">
+    <link href="/css/nucleus.css?1756843054" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1756843054" rel="stylesheet">
+    <link href="/css/hybrid.css?1756843054" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1756843054" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1756843054" rel="stylesheet">
+    <link href="/css/auto-complete.css?1756843054" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1756843054" rel="stylesheet">
+    <link href="/css/theme.css?1756843054" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1756843054" rel="stylesheet">
     
-    <link href="/css/theme-osctrl.css?1739788602" rel="stylesheet">
+    <link href="/css/theme-osctrl.css?1756843054" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1739788602"></script>
+    <script src="/js/jquery-3.3.1.min.js?1756843054"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -95,14 +95,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1739788602"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1739788602"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1756843054"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1756843054"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1739788602"></script>
+<script type="text/javascript" src="/js/search.js?1756843054"></script>
  
   </div>
 
@@ -828,15 +828,15 @@
 
 	<p><code>osctrl-cli</code> is the CLI for <strong>osctrl</strong>. Its purpose is to execute actions in <strong>osctrl</strong> without having to access directly the backend or use the admin interface. It can be very handy to automate actions in scripts or similar.</p>
 <p>Execute <code>./osctrl-cli help</code> to show the main help of the program:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./osctrl-cli help</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#e6db74">./bin/osctrl-cli help</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">NAME</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">- CLI for osctrl</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">USAGE</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">[global options] command [command options] [arguments...]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">osctrl-cli</span> <span style="color:#e6db74">[global options] command [command options]</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">VERSION</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">   0.4.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">   0.4.6</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">DESCRIPTION</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">CLI</span> <span style="color:#e6db74">for osctrl, a fast and efficient osquery management</span>
@@ -870,10 +870,11 @@
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-max-open-conns</span> <span style="color:#e6db74">value        Maximum number of open connections to the database (default: 100) [$DB_MAX_OPEN_CONNS]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--db-conn-max-lifetime</span> <span style="color:#e6db74">value     Maximum amount of time a connection may be reused (default: 30) [$DB_CONN_MAX_LIFETIME]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--insecure,</span> <span style="color:#e6db74">-i                   Allow insecure server connections when using SSL (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--verbose,</span> <span style="color:#e6db74">-V                    Increase output verbosity for debugging (default: false)</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--output-format</span> <span style="color:#e6db74">value, -o value  Format to be used for data output (default: &#34;pretty&#34;) [$OUTPUT_FORMAT]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--silent,</span> <span style="color:#e6db74">-s                     Silent mode (default: false)</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                       show help</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--version,</span> <span style="color:#e6db74">-v                    print the version</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--help,</span> <span style="color:#e6db74">-h                       Show help (default: false)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--version,</span> <span style="color:#e6db74">-v                    Print version information (default: false)</span>
 </span></span></code></pre></div><p>Each command has its own help and it is displayed appending <code>-h</code> to them. Each subcommand has its own help as well.</p>
 
 
@@ -1447,19 +1448,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1739788602"></script>
-    <script src="/js/perfect-scrollbar.min.js?1739788602"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1739788602"></script>
-    <script src="/js/jquery.sticky.js?1739788602"></script>
-    <script src="/js/featherlight.min.js?1739788602"></script>
-    <script src="/js/highlight.pack.js?1739788602"></script>
+    <script src="/js/clipboard.min.js?1756843054"></script>
+    <script src="/js/perfect-scrollbar.min.js?1756843054"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1756843054"></script>
+    <script src="/js/jquery.sticky.js?1756843054"></script>
+    <script src="/js/featherlight.min.js?1756843054"></script>
+    <script src="/js/highlight.pack.js?1756843054"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1739788602"></script>
-    <script src="/js/learn.js?1739788602"></script>
-    <script src="/js/hugo-learn.js?1739788602"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1756843054"></script>
+    <script src="/js/learn.js?1756843054"></script>
+    <script src="/js/hugo-learn.js?1756843054"></script>
 
-    <link href="/mermaid/mermaid.css?1739788602" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1739788602"></script>
+    <link href="/mermaid/mermaid.css?1756843054" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1756843054"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

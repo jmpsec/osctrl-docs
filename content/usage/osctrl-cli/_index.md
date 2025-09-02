@@ -10,15 +10,15 @@ pre = ""
 Execute `./osctrl-cli help` to show the main help of the program:
 
 ```properties
-$ ./osctrl-cli help
+$ ./bin/osctrl-cli help
 NAME:
    osctrl-cli - CLI for osctrl
 
 USAGE:
-   osctrl-cli [global options] command [command options] [arguments...]
+   osctrl-cli [global options] command [command options]
 
 VERSION:
-   0.4.1
+   0.4.6
 
 DESCRIPTION:
    CLI for osctrl, a fast and efficient osquery management
@@ -52,10 +52,11 @@ GLOBAL OPTIONS:
    --db-max-open-conns value        Maximum number of open connections to the database (default: 100) [$DB_MAX_OPEN_CONNS]
    --db-conn-max-lifetime value     Maximum amount of time a connection may be reused (default: 30) [$DB_CONN_MAX_LIFETIME]
    --insecure, -i                   Allow insecure server connections when using SSL (default: false)
+   --verbose, -V                    Increase output verbosity for debugging (default: false)
    --output-format value, -o value  Format to be used for data output (default: "pretty") [$OUTPUT_FORMAT]
    --silent, -s                     Silent mode (default: false)
-   --help, -h                       show help
-   --version, -v                    print the version
+   --help, -h                       Show help (default: false)
+   --version, -v                    Print version information (default: false)
 ```
 
 Each command has its own help and it is displayed appending `-h` to them. Each subcommand has its own help as well.

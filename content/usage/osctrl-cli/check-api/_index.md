@@ -8,15 +8,15 @@ pre = ""
 ### Check
 
 ```properties
-$ ./osctrl-cli check-api -h
+$ ./bin/osctrl-cli check-api -h
 NAME:
    osctrl-cli check-api - Checks API token
 
 USAGE:
-   osctrl-cli check-api [command options] [arguments...]
+   osctrl-cli check-api [command options]
 
 OPTIONS:
-   --help, -h  show help
+   --help, -h  Show help (default: false)
 ```
 
 Although this command may appear a bit confusing, it comes in really handy to verify when the `osctrl-api` component is ready to go and the validity of a token.
