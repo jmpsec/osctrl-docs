@@ -1,7 +1,7 @@
 +++
 title = "environment"
 date = 2019-08-17T11:57:57-07:00
-weight = 2
+weight = 5
 pre = ""
 +++
 

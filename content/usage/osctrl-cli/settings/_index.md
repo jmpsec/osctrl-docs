@@ -1,7 +1,7 @@
 +++
 title = "settings"
 date = 2019-08-17T11:58:09-07:00
-weight = 3
+weight = 9
 pre = ""
 +++
 
