@@ -12,21 +12,21 @@
     <title>Configuration :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1766846599" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1766846599" rel="stylesheet">
-    <link href="/css/hybrid.css?1766846599" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1766846599" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1766846599" rel="stylesheet">
-    <link href="/css/auto-complete.css?1766846599" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1766846599" rel="stylesheet">
-    <link href="/css/theme.css?1766846599" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1766846599" rel="stylesheet">
+    <link href="/css/nucleus.css?1766850329" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1766850329" rel="stylesheet">
+    <link href="/css/hybrid.css?1766850329" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1766850329" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1766850329" rel="stylesheet">
+    <link href="/css/auto-complete.css?1766850329" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1766850329" rel="stylesheet">
+    <link href="/css/theme.css?1766850329" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1766850329" rel="stylesheet">
     
-    <link href="/css/theme-osctrl.css?1766846599" rel="stylesheet">
+    <link href="/css/theme-osctrl.css?1766850329" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1766846599"></script>
+    <script src="/js/jquery-3.3.1.min.js?1766850329"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -95,14 +95,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1766846599"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1766846599"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1766850329"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1766850329"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1766846599"></script>
+<script type="text/javascript" src="/js/search.js?1766850329"></script>
  
   </div>
 
@@ -868,25 +868,21 @@
 <p>Each osctrl binary includes built-in commands to help you create and validate configuration files:</p>
 <h4 id="generate-configuration">Generate Configuration</h4>
 <p>To generate a valid YAML configuration file with default values:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./osctrl-tls config-generate
-</span></span><span style="display:flex;"><span>./osctrl-admin config-generate
-</span></span><span style="display:flex;"><span>./osctrl-api config-generate
-</span></span></code></pre></div><p>This will output a complete configuration template to stdout with all available options and their default values. You can redirect this output to create your configuration file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./osctrl-tls config-generate &gt; tls.yaml
-</span></span><span style="display:flex;"><span>./osctrl-admin config-generate &gt; admin.yaml
-</span></span><span style="display:flex;"><span>./osctrl-api config-generate &gt; api.yaml
-</span></span></code></pre></div><p>The generated configuration includes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./osctrl-tls config-generate -f tls.yaml
+</span></span><span style="display:flex;"><span>./osctrl-admin config-generate -f admin.yaml
+</span></span><span style="display:flex;"><span>./osctrl-api config-generate -f api.yaml
+</span></span></code></pre></div><p>This will create configuration files (<code>tls.yaml</code>, <code>admin.yaml</code>, <code>api.yaml</code>) populated with all required fields and default settings. If not using <code>-f</code>, the file will be created in <code>config/&lt;service&gt;.yml</code> by default.</p>
+<p>The generated configuration includes:</p>
 <ul>
 <li>All required configuration sections</li>
 <li>Default values for each setting</li>
-<li>Comments explaining each field</li>
 <li>Service-specific options relevant to each binary</li>
 </ul>
 <h4 id="verify-configuration">Verify Configuration</h4>
 <p>To validate an existing configuration file before starting the service:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./osctrl-tls config-verify --config-file tls.yaml
-</span></span><span style="display:flex;"><span>./osctrl-admin config-verify --config-file admin.yaml
-</span></span><span style="display:flex;"><span>./osctrl-api config-verify --config-file api.yaml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./osctrl-tls config-verify --file tls.yaml
+</span></span><span style="display:flex;"><span>./osctrl-admin config-verify --file admin.yaml
+</span></span><span style="display:flex;"><span>./osctrl-api config-verify --file api.yaml
 </span></span></code></pre></div><p>The verification process checks:</p>
 <ul>
 <li>YAML syntax validity</li>
@@ -1832,19 +1828,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1766846599"></script>
-    <script src="/js/perfect-scrollbar.min.js?1766846599"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1766846599"></script>
-    <script src="/js/jquery.sticky.js?1766846599"></script>
-    <script src="/js/featherlight.min.js?1766846599"></script>
-    <script src="/js/highlight.pack.js?1766846599"></script>
+    <script src="/js/clipboard.min.js?1766850329"></script>
+    <script src="/js/perfect-scrollbar.min.js?1766850329"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1766850329"></script>
+    <script src="/js/jquery.sticky.js?1766850329"></script>
+    <script src="/js/featherlight.min.js?1766850329"></script>
+    <script src="/js/highlight.pack.js?1766850329"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1766846599"></script>
-    <script src="/js/learn.js?1766846599"></script>
-    <script src="/js/hugo-learn.js?1766846599"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1766850329"></script>
+    <script src="/js/learn.js?1766850329"></script>
+    <script src="/js/hugo-learn.js?1766850329"></script>
 
-    <link href="/mermaid/mermaid.css?1766846599" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1766846599"></script>
+    <link href="/mermaid/mermaid.css?1766850329" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1766850329"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

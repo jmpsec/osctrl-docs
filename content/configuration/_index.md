@@ -30,24 +30,17 @@ Each osctrl binary includes built-in commands to help you create and validate co
 To generate a valid YAML configuration file with default values:
 
 ```bash
-./osctrl-tls config-generate
-./osctrl-admin config-generate
-./osctrl-api config-generate
+./osctrl-tls config-generate -f tls.yaml
+./osctrl-admin config-generate -f admin.yaml
+./osctrl-api config-generate -f api.yaml
 ```
 
-This will output a complete configuration template to stdout with all available options and their default values. You can redirect this output to create your configuration file:
-
-```bash
-./osctrl-tls config-generate > tls.yaml
-./osctrl-admin config-generate > admin.yaml
-./osctrl-api config-generate > api.yaml
-```
+This will create configuration files (`tls.yaml`, `admin.yaml`, `api.yaml`) populated with all required fields and default settings. If not using `-f`, the file will be created in `config/<service>.yml` by default.
 
 The generated configuration includes:
 
 * All required configuration sections
 * Default values for each setting
-* Comments explaining each field
 * Service-specific options relevant to each binary
 
 #### Verify Configuration
@@ -55,9 +48,9 @@ The generated configuration includes:
 To validate an existing configuration file before starting the service:
 
 ```bash
-./osctrl-tls config-verify --config-file tls.yaml
-./osctrl-admin config-verify --config-file admin.yaml
-./osctrl-api config-verify --config-file api.yaml
+./osctrl-tls config-verify --file tls.yaml
+./osctrl-admin config-verify --file admin.yaml
+./osctrl-api config-verify --file api.yaml
 ```
 
 The verification process checks:
