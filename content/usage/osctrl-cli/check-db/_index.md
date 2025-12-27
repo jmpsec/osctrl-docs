@@ -5,7 +5,7 @@ weight = 6
 pre = ""
 +++
 
-### Check
+### Check DB
 
 ```properties
 $ ./osctrl-cli check-db -h

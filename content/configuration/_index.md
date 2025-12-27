@@ -5,101 +5,514 @@ weight = 3
 pre = "<b>3. </b>"
 +++
 
-Each [component](/components/) of **osctrl** requires a separate configuration in order to operate properly. During deployment, each configuration will be generated using templates and some helper functions that are part of the provisioning tools.
-
-### service.json
-
-The configuration of the service applies both to [osctrl-tls](/components/osctrl-tls/) and [osctrl-admin](/components/osctrl-admin/) and it is expected to be named by default `tls.json` and `admin.json` respectively. However those default values can be modified, and a different filename may be specified, using the right parameter.
-
-The format of those files follows the [template](https://github.com/jmpsec/osctrl/blob/master/deploy/service.json):
-
-```json
-{
-  "_SERVICE_NAME": {
-    "listener": "_LISTENER",
-    "port": "_SERVICE_PORT",
-    "host": "_SERVICE_HOST",
-    "auth": "_SERVICE_AUTH",
-    "logger": "_SERVICE_LOGGING",
-    "carver": "_SERVICE_CARVER"
-  }
-}
-```
-
-All the fields that start with an underscore, will be filled in with a value. Here are the values that can go on each:
-
-* `_SERVICE_NAME`: To identify the service that is file is configuring. It can be `tls` or `admin`,
-* `_LISTENER`: Local listener for the service. Usually `127.0.0.1`, but sometimes in docker it could be `0.0.0.0`,
-* `_SERVICE_PORT`: Local port for the listener. By default is `9000` for [osctrl-tls](/components/osctrl-tls/) and `9001` for [osctrl-admin](/components/osctrl-admin/),
-* `_SERVICE_HOST`: Host or domain that this service will be accesible from,
-* `_SERVICE_AUTH`: Type of authentication that will service will implement. Values can be:
-  * `none` - No authentication
-  * `json` - Users provided in the same JSON configuration file
-  * `db` - Users stored and retrieved from backend
-  * `saml` - Authentication will be provided using SAML. It requires its own `saml.json` configuration file
-  * `headers` - Authentication will be provided verifying headers, using a middleware approach
-* `_SERVICE_LOGGING`: Type of logging that each service will implement. Values can be:
-  * `none` - No logging, data will be discarded
-  * `stdout` - Logs will go to the stdout of the service
-  * `db` - Logs will be store in the backend
-  * `graylog` - Logs will be sent to [Graylog](https://www.graylog.org/). It requires its own `graylog.json` configuration file
-  * `splunk` - Logs will be sent to [Splunk](https://www.splunk.com/). It requires its own `splunk.json` configuration file
-  * `s3` - Logs will be sent to [AWS S3](https://aws.amazon.com/s3/). It requires its own `carver.json` configuration file
-* `_SERVICE_CARVER`: Type of carver that each service will implment. Values can be:
-  * `db` - Carves will be store in the backend
-  * `s3` - Carves will be sent to [AWS S3](https://aws.amazon.com/s3/). It requires its own `carver.json` configuration file
+Each [component](/components/) of **osctrl** requires configuration in order to operate properly. **As of [PR #754](https://github.com/jmpsec/osctrl/pull/754), osctrl uses a single YAML configuration file per service**, consolidating all settings into one place.
 
 {{% notice warning %}}
-Each service will only allow some types! For [osctrl-tls](/components/osctrl-tls/), the allowed types for logging are `graylog`, `db` and `splunk` while only `none` is allowed for auth. For [osctrl-admin](/components/osctrl-admin/), the only allowed type for logging is `db`  while for logging are `db`, `saml`, `headers` and `json`.
+**BREAKING CHANGE**: The previous JSON-based configuration system with multiple separate files (`service.json`, `db.json`, `redis.json`, `jwt.json`, `saml.json`, etc.) has been replaced with a single YAML file per service. If you are upgrading from an older version, you will need to migrate your configuration to the new YAML format.
 {{% /notice %}}
 
-If you want to use the helper functions that are part of the provisioning process, first you have to import the [lib.sh](https://github.com/jmpsec/osctrl/blob/master/deploy/lib.sh), like so:
+## Single YAML Configuration
+
+All osctrl services ([osctrl-tls](/components/osctrl-tls/), [osctrl-admin](/components/osctrl-admin/), [osctrl-api](/components/osctrl-api/)) now use a unified YAML configuration file that includes all necessary settings in one place. The default filenames are:
+
+* `tls.yaml` for [osctrl-tls](/components/osctrl-tls/)
+* `admin.yaml` for [osctrl-admin](/components/osctrl-admin/)
+* `api.yaml` for [osctrl-api](/components/osctrl-api/)
+
+You can specify a different configuration file using the `--config-file` or `-C` flag.
+
+### Generating and Validating Configuration
+
+Each osctrl binary includes built-in commands to help you create and validate configuration files:
+
+#### Generate Configuration
+
+To generate a valid YAML configuration file with default values:
 
 ```bash
-$ source deploy/lib.sh
+./osctrl-tls config-generate
+./osctrl-admin config-generate
+./osctrl-api config-generate
 ```
 
-And now just call the function `configuration_service` with the correct parameters, for example:
+This will output a complete configuration template to stdout with all available options and their default values. You can redirect this output to create your configuration file:
 
 ```bash
-$ configuration_service "deploy/service.json" "admin.json" "localhost|9001" "admin" "0.0.0.0" "db" "db"
+./osctrl-tls config-generate > tls.yaml
+./osctrl-admin config-generate > admin.yaml
+./osctrl-api config-generate > api.yaml
 ```
 
-For other examples you can see how this is done during the deployment process, for the [admin](https://github.com/jmpsec/osctrl/blob/master/deploy/provision.sh#L517) and the [tls](https://github.com/jmpsec/osctrl/blob/master/deploy/provision.sh#L499) components.
+The generated configuration includes:
 
-### Backend access
+* All required configuration sections
+* Default values for each setting
+* Comments explaining each field
+* Service-specific options relevant to each binary
 
-The access to the backend service applies to [osctrl-tls](/components/osctrl-tls/), [osctrl-admin](/components/osctrl-admin/) and [osctrl-cli](/components/osctrl-cli/) considering that they all access the data stored in the backend component.
+#### Verify Configuration
 
-Similar to the service configuration, there is a [template](https://github.com/jmpsec/osctrl/blob/master/deploy/db.json):
+To validate an existing configuration file before starting the service:
 
-```json
-{
-  "db": {
-    "host": "_DB_HOST",
-    "port": "_DB_PORT",
-    "name": "_DB_NAME",
-    "username": "_DB_USERNAME",
-    "password": "_DB_PASSWORD",
-    "max_idle_conns": 20,
-    "max_open_conns": 100,
-    "conn_max_lifetime": 30
-  }
-}
+```bash
+./osctrl-tls config-verify --config-file tls.yaml
+./osctrl-admin config-verify --config-file admin.yaml
+./osctrl-api config-verify --config-file api.yaml
 ```
 
-### nginx
+The verification process checks:
 
-TLS termination using nginx.
+* YAML syntax validity
+* Required fields are present
+* Configuration values are within valid ranges
+* Authentication method compatibility
+* Logger and carver type validity
+* Database and Redis connection parameters
 
-### Metrics
+If the configuration is valid, the command will exit with status code 0. If there are errors, detailed error messages will be displayed indicating what needs to be fixed.
 
-Metrics using [InfluxDB](https://www.influxdata.com/products/influxdb-overview/) + [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/) + [Grafana](https://grafana.com/).
-
-### Logging
-
-Loggity logs.
-
-{{% notice info %}}
-Logging is implemented using [plugins](https://github.com/javuto/osctrl/tree/master/plugins) and each plugin will require its own configuration.
+{{% notice tip %}}
+It's recommended to run `config-verify` on your configuration files before deploying to production to catch configuration errors early.
 {{% /notice %}}
+
+### Configuration Structure
+
+The YAML configuration file contains the following main sections:
+
+#### Service Configuration
+
+Basic service settings including network listener, ports, authentication, and logging:
+
+```yaml
+service:
+  listener: "0.0.0.0"               # Network interface to bind to
+  port: "9000"                      # TCP port for the service
+  host: "tls.example.com"           # Public hostname
+  auth: "none"                      # Authentication method
+  logLevel: "info"                  # Logging level: debug, info, warn, error
+  logFormat: "json"                 # Log format: json, console
+  auditLog: false                   # Enable audit logging for sensitive actions
+```
+
+**Authentication types** (`auth`):
+
+* `none` - No authentication
+* `db` - Users stored and retrieved from backend database
+* `saml` - SAML-based authentication
+* `headers` - Header-based authentication (middleware approach)
+* `jwt` - JWT token-based authentication
+
+#### Database Configuration
+
+Backend database connection settings:
+
+```yaml
+db:
+  type: "postgres"                  # Database type: postgres, mysql, sqlite
+  host: "127.0.0.1"
+  port: "5432"
+  name: "osctrl"
+  username: "postgres"
+  password: "postgres"
+  sslmode: "disable"                # SSL mode for database connection
+  maxIdleConns: 20                  # Maximum idle connections
+  maxOpenConns: 100                 # Maximum open connections
+  connMaxLifetime: 30               # Connection max lifetime (minutes)
+  connRetry: 5                      # Connection retry timeout (seconds, 0=no retry)
+  filePath: "./osctrl.db"           # For SQLite only
+```
+
+#### Redis Configuration
+
+Cache configuration for session management and performance:
+
+```yaml
+redis:
+  host: "127.0.0.1"
+  port: "6379"
+  password: ""
+  db: 0
+  connectionString: ""              # Optional: full connection string
+  connRetry: 5                      # Connection retry timeout (seconds)
+```
+
+#### Logger Configuration
+
+Logging destination and settings:
+
+```yaml
+logger:
+  type: "db"                        # Logger type: db, splunk, graylog, s3, file, kinesis, kafka, logstash, elastic
+  loggerDBSame: true                # Use same DB config as main DB for logging
+  alwaysLog: false                  # Always log to DB regardless of other loggers
+
+  # Database logger settings (if type: db and loggerDBSame: false)
+  db:
+    type: "postgres"
+    host: "127.0.0.1"
+    # ... (same structure as main db config)
+
+  # S3 logger settings (if type: s3)
+  s3:
+    bucket: "osctrl-logs"
+    region: "us-east-1"
+    accessKey: "your-access-key"
+    secretAccessKey: "your-secret-key"
+
+  # Splunk logger settings (if type: splunk)
+  splunk:
+    url: "https://splunk.example.com:8088/services/collector"
+    token: "your-hec-token"
+    host: "osctrl"
+    index: "osquery"
+
+  # Graylog logger settings (if type: graylog)
+  graylog:
+    url: "http://graylog.example.com:12201/gelf"
+    host: "osctrl"
+    queries: "osquery_queries"
+    status: "osquery_status"
+    results: "osquery_results"
+
+  # File logger settings (if type: file)
+  local:
+    filePath: "/var/log/osctrl/osctrl.log"
+    maxSize: 25                     # Max file size in MB before rotation
+    maxBackups: 5                   # Number of old log files to retain
+    maxAge: 10                      # Max days to retain old log files
+    compress: true                  # Compress rotated files with gzip
+```
+
+**Logger types**:
+
+* `db` - Store logs in the backend database
+* `splunk` - Send logs to Splunk HEC
+* `graylog` - Send logs to Graylog GELF endpoint
+* `s3` - Upload logs to AWS S3
+* `file` - Write logs to local file with rotation
+* `kinesis` - Send logs to AWS Kinesis
+* `kafka` - Send logs to Kafka topics
+* `logstash` - Send logs to Logstash
+* `elastic` - Send logs directly to Elasticsearch
+
+#### Carver Configuration
+
+File carving storage settings:
+
+```yaml
+carver:
+  type: "db"                        # Carver type: db, s3, local
+
+  # S3 carver settings (if type: s3)
+  s3:
+    bucket: "osctrl-carves"
+    region: "us-east-1"
+    accessKey: "your-access-key"
+    secretAccessKey: "your-secret-key"
+
+  # Local carver settings (if type: local)
+  local:
+    carvesDir: "/var/osctrl/carves" # Directory to store carved files
+```
+
+**Carver types**:
+
+* `db` - Store carved files in the database
+* `s3` - Upload carved files to AWS S3
+* `local` - Store carved files in local directory
+
+#### TLS Configuration
+
+TLS termination settings:
+
+```yaml
+tls:
+  termination: true                 # Enable TLS termination
+  certificateFile: "/path/to/cert.pem"
+  keyFile: "/path/to/key.pem"
+```
+
+#### Osquery Configuration
+
+Osquery-specific settings for TLS service:
+
+```yaml
+osquery:
+  version: "5.12.1"                 # Osquery version
+  tablesFile: "data/5.12.1.json"   # Path to osquery tables JSON
+  logger: true                      # Enable remote TLS logger endpoint
+  config: true                      # Enable remote TLS config endpoint
+  query: true                       # Enable remote TLS query endpoints
+  carve: true                       # Enable remote TLS carver endpoints
+```
+
+#### Metrics Configuration
+
+Prometheus metrics endpoint settings (TLS service only):
+
+```yaml
+metrics:
+  enabled: false                    # Enable Prometheus metrics
+  listener: "0.0.0.0"
+  port: "9090"
+```
+
+#### Admin UI Configuration
+
+Admin service-specific settings:
+
+```yaml
+admin:
+  sessionKey: "your-session-key"    # Secret key for session cookies
+  staticDir: "/path/to/static"      # Static files directory
+  staticOffline: false              # Use offline static files
+  templatesDir: "/path/to/templates"
+  backgroundImage: "/path/to/background.svg"
+  brandingImage: "/path/to/brand.png"
+```
+
+#### JWT Configuration
+
+JWT authentication settings:
+
+```yaml
+jwt:
+  jwtSecret: "your-jwt-secret"      # Secret for signing JWT tokens
+  hoursToExpire: 3                  # Token expiration time in hours
+```
+
+#### SAML Configuration
+
+SAML authentication settings (Admin service):
+
+```yaml
+saml:
+  certPath: "/path/to/saml-cert.pem"
+  keyPath: "/path/to/saml-key.pem"
+  metadataUrl: "https://idp.example.com/metadata"
+  rootUrl: "https://admin.example.com"
+  loginUrl: "https://admin.example.com/login"
+  logoutUrl: "https://admin.example.com/logout"
+  jitProvision: true                # Just-in-time user provisioning
+  spInitiated: false                # Service Provider initiated flow
+```
+
+#### Osctrld Configuration
+
+Settings for osctrld daemon endpoints:
+
+```yaml
+osctrld:
+  enabled: false                    # Enable osctrld endpoints
+```
+
+#### Batch Writer Configuration
+
+Database batch writer settings for TLS service:
+
+```yaml
+batchWriter:
+  writerBatchSize: 50               # Events before flushing
+  writerTimeout: 60s                # Max wait time before flush
+  writerBufferSize: 2000            # Event channel buffer size
+```
+
+#### Debug Configuration
+
+HTTP request debugging:
+
+```yaml
+debug:
+  enableHTTP: false                 # Enable HTTP request debugging
+  httpFile: "debug-http.log"        # File to dump HTTP requests
+  showBody: false                   # Include request body in dumps
+```
+
+### Example Configuration Files
+
+#### osctrl-tls (tls.yaml)
+
+```yaml
+service:
+  listener: "0.0.0.0"
+  port: "9000"
+  host: "tls.example.com"
+  auth: "none"
+  logLevel: "info"
+  logFormat: "json"
+
+db:
+  type: "postgres"
+  host: "127.0.0.1"
+  port: "5432"
+  name: "osctrl"
+  username: "postgres"
+  password: "postgres"
+  sslmode: "disable"
+  maxIdleConns: 20
+  maxOpenConns: 100
+  connMaxLifetime: 30
+  connRetry: 5
+
+redis:
+  host: "127.0.0.1"
+  port: "6379"
+  password: ""
+  db: 0
+  connRetry: 5
+
+logger:
+  type: "db"
+  loggerDBSame: true
+  alwaysLog: false
+
+carver:
+  type: "db"
+
+tls:
+  termination: false
+
+osquery:
+  version: "5.12.1"
+  tablesFile: "data/5.12.1.json"
+  logger: true
+  config: true
+  query: true
+  carve: true
+
+metrics:
+  enabled: true
+  listener: "0.0.0.0"
+  port: "9090"
+
+osctrld:
+  enabled: false
+
+batchWriter:
+  writerBatchSize: 50
+  writerTimeout: 60s
+  writerBufferSize: 2000
+
+debug:
+  enableHTTP: false
+  httpFile: "debug-http-tls.log"
+  showBody: false
+```
+
+#### osctrl-admin (admin.yaml)
+
+```yaml
+service:
+  listener: "0.0.0.0"
+  port: "9001"
+  host: "admin.example.com"
+  auth: "db"
+  logLevel: "info"
+  logFormat: "json"
+  auditLog: true
+
+db:
+  type: "postgres"
+  host: "127.0.0.1"
+  port: "5432"
+  name: "osctrl"
+  username: "postgres"
+  password: "postgres"
+  sslmode: "disable"
+  maxIdleConns: 20
+  maxOpenConns: 100
+  connMaxLifetime: 30
+  connRetry: 5
+
+redis:
+  host: "127.0.0.1"
+  port: "6379"
+  password: ""
+  db: 0
+  connRetry: 5
+
+logger:
+  type: "db"
+  loggerDBSame: true
+
+carver:
+  type: "local"
+  local:
+    carvesDir: "/var/osctrl/carves"
+
+tls:
+  termination: false
+
+osquery:
+  version: "5.12.1"
+  tablesFile: "data/5.12.1.json"
+
+jwt:
+  jwtSecret: "change-this-secret"
+  hoursToExpire: 3
+
+admin:
+  sessionKey: "change-this-session-key"
+  staticDir: "static"
+  staticOffline: false
+  templatesDir: "tmpl_admin"
+  backgroundImage: "static/img/circuit.svg"
+  brandingImage: "static/img/brand.png"
+
+debug:
+  enableHTTP: false
+  httpFile: "debug-http-admin.log"
+  showBody: false
+```
+
+### Command-Line Flags
+
+All configuration values can be overridden using command-line flags. Use `--help` or `-h` to see all available flags for each service:
+
+```bash
+$ ./osctrl-tls --help
+$ ./osctrl-admin --help
+$ ./osctrl-api --help
+```
+
+Common flags:
+
+* `--config` or `-c`: Enable configuration from YAML file
+* `--config-file` or `-C`: Path to YAML configuration file
+* `--db-host`: Database host
+* `--db-port`: Database port
+* `--redis-host`: Redis host
+* `--listener` or `-l`: Service listener
+* `--port` or `-p`: Service port
+
+### Environment Variables
+
+Configuration values can also be set using environment variables. Each flag has a corresponding environment variable (see `--help` output for details).
+
+Example:
+
+```bash
+export SERVICE_PORT="9000"
+export DB_HOST="postgres.example.com"
+export REDIS_HOST="redis.example.com"
+```
+
+### Migration from JSON to YAML
+
+If you're upgrading from the old JSON-based configuration, you'll need to consolidate your separate JSON files into a single YAML file:
+
+**Old (JSON)**:
+
+- `tls.json` - Service settings
+- `db.json` - Database settings
+- `redis.json` - Redis settings
+- `jwt.json` - JWT settings
+- `saml.json` - SAML settings
+- `logger_tls.json` - Logger settings
+- `carver_tls.json` - Carver settings
+
+**New (YAML)**:
+
+- `tls.yaml` - All settings in one file
+
+All configuration is now organized into sections within a single YAML file, making it easier to manage and version control your osctrl deployment configuration.

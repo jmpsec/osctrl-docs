@@ -5,7 +5,7 @@ weight = 7
 pre = ""
 +++
 
-### Check
+### Check API
 
 ```properties
 $ ./bin/osctrl-cli check-api -h
