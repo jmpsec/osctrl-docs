@@ -10,7 +10,7 @@ pre = ""
 Execute `./osctrld -h` to show the main help of the program:
 
 ```properties
-$ ./bin/osctrld -h
+$ ./osctrld -h
 NAME:
    osctrld - Daemon for osctrl, the fast and efficient osquery management
 

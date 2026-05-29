@@ -12,21 +12,21 @@
     <title>osctrl-api :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1766934124" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1766934124" rel="stylesheet">
-    <link href="/css/hybrid.css?1766934124" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1766934124" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1766934124" rel="stylesheet">
-    <link href="/css/auto-complete.css?1766934124" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1766934124" rel="stylesheet">
-    <link href="/css/theme.css?1766934124" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1766934124" rel="stylesheet">
+    <link href="/css/nucleus.css?1780081095" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1780081095" rel="stylesheet">
+    <link href="/css/hybrid.css?1780081095" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1780081095" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1780081095" rel="stylesheet">
+    <link href="/css/auto-complete.css?1780081095" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1780081095" rel="stylesheet">
+    <link href="/css/theme.css?1780081095" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1780081095" rel="stylesheet">
     
-    <link href="/css/theme-osctrl.css?1766934124" rel="stylesheet">
+    <link href="/css/theme-osctrl.css?1780081095" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1766934124"></script>
+    <script src="/js/jquery-3.3.1.min.js?1780081095"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -95,14 +95,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1766934124"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1766934124"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1780081095"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1780081095"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1766934124"></script>
+<script type="text/javascript" src="/js/search.js?1780081095"></script>
  
   </div>
 
@@ -867,10 +867,11 @@
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--listener</span> <span style="color:#e6db74">string, -l string      Listener for the service (default: &#34;127.0.0.1&#34;) [$SERVICE_LISTENER]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--port</span> <span style="color:#e6db74">int, -p int                TCP port for the service (default: 9000) [$SERVICE_PORT]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--host</span> <span style="color:#e6db74">string, -H string          Exposed hostname the service uses (default: &#34;osctrl.net&#34;) [$SERVICE_HOST]</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--auth</span> <span style="color:#e6db74">string, -A string          Authentication mechanism for the service (default: &#34;none&#34;) [$SERVICE_AUTH]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--log-level</span> <span style="color:#e6db74">string                Log level for the service (default: &#34;info&#34;) [$SERVICE_LOG_LEVEL]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--log-format</span> <span style="color:#e6db74">string               Log format for the service (default: &#34;json&#34;) [$SERVICE_LOG_FORMAT]</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--audit-log,</span> <span style="color:#e6db74">--audit              Enable audit log for the service. Logs all sensitive actions [$AUDIT_LOG]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--audit-log,</span> <span style="color:#e6db74">--audit              Enable audit log for the service. Logs sensitive actions (logins, env mutations, query/carve runs, etc.). Disable only for local dev — production deployments MUST keep this on so SoC tooling has a stream to alert on. [$AUDIT_LOG]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--trusted-proxies</span> <span style="color:#e6db74">string          Comma-separated CIDR list whose X-Real-IP / X-Forwarded-For headers will be honored. Empty (default) ignores forwarding headers and uses RemoteAddr verbatim — prevents header-spoofed rate-limit bypass and audit-log poisoning. [$SERVICE_TRUSTED_PROXIES]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--auth</span> <span style="color:#e6db74">none, -A none              Authentication mechanism for the service (jwt|none — none requires OSCTRL_INSECURE_NO_AUTH=1) (default: &#34;jwt&#34;) [$SERVICE_AUTH]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--logger</span> <span style="color:#e6db74">string, -L string        Logger mechanism to handle status/result logs from nodes (default: &#34;db&#34;) [$SERVICE_LOGGER]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--logger-db-same</span>                  <span style="color:#e6db74">Use the same DB configuration for the logger [$LOGGER_DB_SAME]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--always-log,</span> <span style="color:#e6db74">-a, --always        Always log status and on-demand query logs from nodes in database [$ALWAYS_LOG]</span>
@@ -897,12 +898,33 @@
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--key</span> <span style="color:#e6db74">FILE, -K FILE               TLS termination private key from FILE (default: &#34;./config/tls.key&#34;) [$TLS_KEY]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--jwt-secret</span> <span style="color:#e6db74">string               Password to be used for the backend [$JWT_SECRET]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--jwt-expire</span> <span style="color:#e6db74">int                  Maximum amount of hours for the tokens to expire (default: 3) [$JWT_EXPIRE]</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--osquery-version</span> <span style="color:#e6db74">string          Version of osquery to be used (default: &#34;5.20.0&#34;) [$OSQUERY_VERSION]</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--osquery-tables-file</span> <span style="color:#e6db74">string      File with the osquery tables to be used (default: &#34;./data/5.20.0.json&#34;) [$OSQUERY_TABLES]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--oidc-enabled</span>                    <span style="color:#e6db74">Enable the federated-login surface on osctrl-api (osctrl-admin uses --auth=oidc instead and ignores this flag) [$OIDC_ENABLED]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--oidc-issuer-url</span> <span style="color:#e6db74">string          OIDC issuer URL (the realm root, /.well-known/openid-configuration is appended automatically) [$OIDC_ISSUER_URL]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--oidc-client-id</span> <span style="color:#e6db74">string           OIDC client ID registered with the IdP [$OIDC_CLIENT_ID]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--oidc-client-secret</span> <span style="color:#e6db74">string       OIDC client secret [$OIDC_CLIENT_SECRET]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--oidc-redirect-url</span> <span style="color:#e6db74">string        OIDC redirect URL — must match the IdP client config and end with /oidc/callback [$OIDC_REDIRECT_URL]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--oidc-scopes</span> <span style="color:#e6db74">string              OIDC scopes as a comma-separated list (defaults to &#34;openid,profile,email&#34;) [$OIDC_SCOPES]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--oidc-username-claim</span> <span style="color:#e6db74">string      ID-token claim used as the osctrl username (preferred_username, email, sub) [$OIDC_USERNAME_CLAIM]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--oidc-groups-claim</span> <span style="color:#e6db74">string        ID-token claim that contains group memberships (default: groups) [$OIDC_GROUPS_CLAIM]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--oidc-required-groups</span> <span style="color:#e6db74">string     Comma-separated list of groups — user must belong to at least one to log in [$OIDC_REQUIRED_GROUPS]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--oidc-jit-provision</span>              <span style="color:#e6db74">Auto-create osctrl users on first OIDC login (as non-admin) [$OIDC_JIT_PROVISION]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--oidc-use-pkce</span>                   <span style="color:#e6db74">Enable PKCE (S256) for the OIDC Authorization Code flow [$OIDC_USE_PKCE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--saml-enabled</span>                    <span style="color:#e6db74">Enable the SAML 2.0 federated-login surface on osctrl-api (osctrl-admin uses --auth=saml instead and ignores this flag) [$SAML_ENABLED]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--saml-idp-metadata-url</span> <span style="color:#e6db74">string    URL to the IdP&#39;s SAML metadata document — fetched once at startup, signing certs + SSO endpoint discovered from it [$SAML_IDP_METADATA_URL]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--saml-entity-id</span> <span style="color:#e6db74">string           SP entity ID — what the IdP knows us by (conventionally the metadata URL) [$SAML_ENTITY_ID]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--saml-acs-url</span> <span style="color:#e6db74">string             Assertion Consumer Service URL — where the IdP POSTs SAMLResponse (must end with /api/v1/auth/saml/acs) [$SAML_ACS_URL]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--saml-jit-provision</span>              <span style="color:#e6db74">Auto-create osctrl users on first SAML login (as non-admin) [$SAML_JIT_PROVISION]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--saml-username-attribute</span> <span style="color:#e6db74">string  SAML attribute (Name or FriendlyName) whose value becomes the osctrl username; empty = use NameID verbatim [$SAML_USERNAME_ATTRIBUTE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--saml-signing-cert</span> <span style="color:#e6db74">string        Path to PEM cert used to sign outbound AuthnRequests (paired with --saml-signing-key); empty disables AuthnRequest signing [$SAML_SIGNING_CERT]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--saml-signing-key</span> <span style="color:#e6db74">string         Path to PEM RSA private key used to sign outbound AuthnRequests (paired with --saml-signing-cert) [$SAML_SIGNING_KEY]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--saml-force-authn</span>                <span style="color:#e6db74">Force re-authentication at the IdP on every SAML login (defaults true; SLO substitute since v1 has no SAML SLO) [$SAML_FORCE_AUTHN]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--osquery-version</span> <span style="color:#e6db74">string          Version of osquery to be used (default: &#34;5.23.0&#34;) [$OSQUERY_VERSION]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--osquery-tables-file</span> <span style="color:#e6db74">string      File with the osquery tables to be used (default: &#34;./data/5.23.0.json&#34;) [$OSQUERY_TABLES]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--osquery-logger</span>                  <span style="color:#e6db74">Enable remote tls logger for osquery [$OSQUERY_LOGGER]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--osquery-config</span>                  <span style="color:#e6db74">Enable remote tls config for osquery [$OSQUERY_CONFIG]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--osquery-query</span>                   <span style="color:#e6db74">Enable remote tls queries for osquery [$OSQUERY_QUERY]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--osquery-carve</span>                   <span style="color:#e6db74">Enable remote tls carver for osquery [$OSQUERY_CARVE]</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--read-only-configuration</span>         <span style="color:#e6db74">Disable configuration changes via admin or api services [$OSQUERY_READ_ONLY]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--carver-type</span> <span style="color:#e6db74">string              Carver to be used to receive files extracted from nodes (default: &#34;db&#34;) [$CARVER_TYPE]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--carver-s3-bucket</span> <span style="color:#e6db74">string         S3 bucket to be used as configuration for carves [$CARVER_S3_BUCKET]</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">--carver-s3-region</span> <span style="color:#e6db74">string         S3 region to be used as configuration for carves [$CARVER_S3_REGION]</span>
@@ -1502,19 +1524,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1766934124"></script>
-    <script src="/js/perfect-scrollbar.min.js?1766934124"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1766934124"></script>
-    <script src="/js/jquery.sticky.js?1766934124"></script>
-    <script src="/js/featherlight.min.js?1766934124"></script>
-    <script src="/js/highlight.pack.js?1766934124"></script>
+    <script src="/js/clipboard.min.js?1780081095"></script>
+    <script src="/js/perfect-scrollbar.min.js?1780081095"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1780081095"></script>
+    <script src="/js/jquery.sticky.js?1780081095"></script>
+    <script src="/js/featherlight.min.js?1780081095"></script>
+    <script src="/js/highlight.pack.js?1780081095"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1766934124"></script>
-    <script src="/js/learn.js?1766934124"></script>
-    <script src="/js/hugo-learn.js?1766934124"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1780081095"></script>
+    <script src="/js/learn.js?1780081095"></script>
+    <script src="/js/hugo-learn.js?1780081095"></script>
 
-    <link href="/mermaid/mermaid.css?1766934124" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1766934124"></script>
+    <link href="/mermaid/mermaid.css?1780081095" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1780081095"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
