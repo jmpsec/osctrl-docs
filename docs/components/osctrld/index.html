@@ -12,21 +12,21 @@
     <title>osctrld :: osctrl: Fast and efficient osquery management</title>
 
     
-    <link href="/css/nucleus.css?1780081095" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1780081095" rel="stylesheet">
-    <link href="/css/hybrid.css?1780081095" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1780081095" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1780081095" rel="stylesheet">
-    <link href="/css/auto-complete.css?1780081095" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1780081095" rel="stylesheet">
-    <link href="/css/theme.css?1780081095" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1780081095" rel="stylesheet">
+    <link href="/css/nucleus.css?1780848306" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1780848306" rel="stylesheet">
+    <link href="/css/hybrid.css?1780848306" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1780848306" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1780848306" rel="stylesheet">
+    <link href="/css/auto-complete.css?1780848306" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1780848306" rel="stylesheet">
+    <link href="/css/theme.css?1780848306" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1780848306" rel="stylesheet">
     
-    <link href="/css/theme-osctrl.css?1780081095" rel="stylesheet">
+    <link href="/css/theme-osctrl.css?1780848306" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1780081095"></script>
+    <script src="/js/jquery-3.3.1.min.js?1780848306"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -95,14 +95,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1780081095"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1780081095"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1780848306"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1780848306"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/osctrl.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1780081095"></script>
+<script type="text/javascript" src="/js/search.js?1780848306"></script>
  
   </div>
 
@@ -848,8 +848,19 @@
   <img src="/osctrld.png" style="width:75%; margin: 0;"/>
 </p>
 <hr>
-<p>The osctrld component is the CLI for <strong>osctrl</strong>. Its purpose is to execute actions in <strong>osctrl</strong> without having to access directly the backend or use the admin interface. It can be very handy to automate actions in scripts or similar.</p>
-<p>For a comprehensive list of all the commands and options, take a look at the <a href="/usage/osctrld/">usage of osctrld</a>.</p>
+<p>The <code>osctrld</code> functionality in <strong>osctrl</strong> is the bootstrap and maintenance surface used to prepare osquery installations with environment-specific flags, certificates, scripts and packages.</p>
+<p>In current upstream <strong>osctrl</strong>, <code>osctrld</code> is no longer documented as a standalone binary. Instead, the osctrld functionality lives behind dedicated endpoints exposed by <code>osctrl-tls</code> when <code>osctrld.enabled: true</code> or <code>--enable-osctrld</code> is set.</p>
+<p>Those endpoints are intended to help bootstrap and manage osquery installations without having to talk directly to the admin or API services. They currently cover:</p>
+<ul>
+<li>Retrieving generated osquery flags,</li>
+<li>Retrieving the environment certificate,</li>
+<li>Verifying the full osquery enrollment payload,</li>
+<li>Generating install and remove scripts for Linux, macOS and Windows,</li>
+<li>Serving expiring quick-enroll / quick-remove links,</li>
+<li>Serving install packages for <code>deb</code>, <code>rpm</code>, <code>pkg</code> and <code>msi</code>.</li>
+</ul>
+<p>The endpoints are mounted inside <code>osctrl-tls</code>, use the environment UUID in the path, and validate either the environment secret or the time-bounded secret path generated for the environment.</p>
+<p>For the current endpoint layout and request examples, take a look at the <a href="/usage/osctrld/">usage of osctrld</a>.</p>
 
 
 
@@ -1435,19 +1446,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1780081095"></script>
-    <script src="/js/perfect-scrollbar.min.js?1780081095"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1780081095"></script>
-    <script src="/js/jquery.sticky.js?1780081095"></script>
-    <script src="/js/featherlight.min.js?1780081095"></script>
-    <script src="/js/highlight.pack.js?1780081095"></script>
+    <script src="/js/clipboard.min.js?1780848306"></script>
+    <script src="/js/perfect-scrollbar.min.js?1780848306"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1780848306"></script>
+    <script src="/js/jquery.sticky.js?1780848306"></script>
+    <script src="/js/featherlight.min.js?1780848306"></script>
+    <script src="/js/highlight.pack.js?1780848306"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1780081095"></script>
-    <script src="/js/learn.js?1780081095"></script>
-    <script src="/js/hugo-learn.js?1780081095"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1780848306"></script>
+    <script src="/js/learn.js?1780848306"></script>
+    <script src="/js/hugo-learn.js?1780848306"></script>
 
-    <link href="/mermaid/mermaid.css?1780081095" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1780081095"></script>
+    <link href="/mermaid/mermaid.css?1780848306" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1780848306"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -5,44 +5,158 @@ weight = 1
 pre = ""
 +++
 
-`osctrld` is the daemon service for enrolled osquery nodes in **osctrl**.
+`osctrld` is no longer described upstream as a standalone daemon binary. In current **osctrl** development, the osctrld functionality is exposed by `osctrl-tls` when `osctrld.enabled: true` in YAML or `--enable-osctrld` is passed on startup.
 
-Execute `./osctrld -h` to show the main help of the program:
+That means the old `./osctrld -h` flow documented here is stale. The current source mounts the osctrld endpoints inside `osctrl-tls` and keeps the feature focused on bootstrapping and maintaining osquery installations.
+
+## Enabling osctrld endpoints
+
+```yaml
+osctrld:
+  enabled: true
+```
+
+Or with flags on `osctrl-tls`:
 
 ```properties
-$ ./osctrld -h
-NAME:
-   osctrld - Daemon for osctrl, the fast and efficient osquery management
-
-USAGE:
-   osctrld [global options] command [command options] [arguments...]
-
-VERSION:
-   1.0.0
-
-DESCRIPTION:
-   Daemon for osctrl, the fast and efficient osquery management, to manage secret, flags and osquery deployment
-
-COMMANDS:
-   enroll   Enroll a new node in osctrl, using new secret and flag files
-   remove   Remove enrolled node from osctrl, clearing secret and flag files
-   verify   Verify flags, cert and secret for an enrolled node in osctrl
-   flags    Retrieve flags for osquery from osctrl and write them locally
-   cert     Retrieve server certificate for osquery from osctrl and write it locally
-   help, h  Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --certificate FILE, -C FILE                                    Use FILE as certificate for osquery, if needed. Default depends on OS [$OSQUERY_CERTIFICATE]
-   --configuration value, -c value, --conf value, --config value  Configuration file for osctrld to load all necessary values [$OSCTRL_CONFIG]
-   --environment value, -e value, --env value                     Environment in osctrl to enrolled nodes to [$OSCTRL_ENV]
-   --flagfile FILE, -F FILE                                       Use FILE as flagfile for osquery. Default depends on OS [$OSQUERY_FLAGFILE]
-   --force, -f                                                    Overwrite existing files for flags, certificate and secret (default: false) [$OSCTRL_FORCE]
-   --help, -h                                                     show help (default: false)
-   --insecure, -i                                                 Ignore TLS warnings, often used with self-signed certificates (default: false) [$OSCTRL_INSECURE]
-   --osctrl-url value, -U value                                   Base URL for the osctrl server [$OSCTRL_URL]
-   --osquery-path FILE, --osquery FILE, -o FILE                   Use FILE as path for osquery installation, if needed. Default depends on OS [$OSQUERY_PATH]
-   --secret value, -s value                                       Enroll secret to authenticate against osctrl server [$OSCTRL_SECRET]
-   --secret-file FILE, -S FILE                                    Use FILE as secret file for osquery. Default depends on OS [$OSQUERY_SECRET]
-   --verbose, -V                                                  Enable verbose informational messages (default: false) [$OSCTRL_VERBOSE]
-   --version, -v                                                  print the version (default: false)
+--enable-osctrld
 ```
+
+## Current endpoints
+
+All osctrld routes are mounted under `osctrl-tls` and expect the environment UUID in the path.
+
+### Retrieve generated flags
+
+Route:
+
+```properties
+POST /{env_uuid}/osctrld-flags
+```
+
+Request body:
+
+```json
+{
+  "secret": "environment-secret",
+  "secretFile": "/etc/osquery/osquery.secret",
+  "certFile": "/etc/osquery/osquery-server.crt"
+}
+```
+
+Response:
+
+Plain-text osquery flags generated for that environment.
+
+### Retrieve environment certificate
+
+Route:
+
+```properties
+POST /{env_uuid}/osctrld-cert
+```
+
+Request body:
+
+```json
+{
+  "secret": "environment-secret"
+}
+```
+
+Response:
+
+Plain-text PEM certificate stored in the environment.
+
+### Verify the full payload
+
+Route:
+
+```properties
+POST /{env_uuid}/osctrld-verify
+```
+
+Request body:
+
+```json
+{
+  "secret": "environment-secret",
+  "secretFile": "/etc/osquery/osquery.secret",
+  "certFile": "/etc/osquery/osquery-server.crt"
+}
+```
+
+Response:
+
+```json
+{
+  "flags": "...",
+  "certificate": "-----BEGIN CERTIFICATE-----...",
+  "osquery_version": "5.23.0"
+}
+```
+
+### Generate install or remove scripts
+
+Route:
+
+```properties
+POST /{env_uuid}/{action}/{platform}/osctrld-script
+```
+
+Supported values:
+
+* `action`: `enroll` or `remove`
+* `platform`: `linux`, `darwin` or `windows`
+
+Request body:
+
+```json
+{
+  "secret": "environment-secret"
+}
+```
+
+Response:
+
+Plain-text shell or PowerShell script, depending on platform.
+
+## Quick links and packages
+
+`osctrl-tls` also exposes quick links that are validated with the environment secret path instead of the long-lived environment secret.
+
+### Quick enroll / remove script distribution
+
+Route:
+
+```properties
+GET /{env_uuid}/{secret_path}/{script}
+```
+
+Notes:
+
+* `script` must start with `enroll` or `remove`.
+* The secret path must match the environment and must not be expired.
+
+### Package download
+
+Route:
+
+```properties
+GET /{env_uuid}/{secret_path}/package/{package}
+```
+
+Supported package values:
+
+* `deb`
+* `rpm`
+* `pkg`
+* `msi`
+
+If the environment package value is an `http` URL, `osctrl-tls` redirects to it. Otherwise it serves the local package file from the configured enroll package directory.
+
+## Notes
+
+* These endpoints are implemented inside `cmd/tls/main.go` and `cmd/tls/handlers/post.go` in the current upstream `develop` branch.
+* The default osctrld route names are `osctrld-flags`, `osctrld-cert`, `osctrld-verify` and `osctrld-script`.
+* The quick-link routes coexist with the standard osquery TLS routes such as `/{env}/enroll`, `/{env}/config`, `/{env}/log`, `/{env}/read`, `/{env}/write`, `/{env}/init` and `/{env}/block`.

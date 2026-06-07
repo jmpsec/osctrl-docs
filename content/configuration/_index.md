@@ -292,7 +292,7 @@ saml:
 
 #### Osctrld Configuration
 
-Settings for osctrld daemon endpoints:
+Settings for the osctrld endpoints exposed by `osctrl-tls`:
 
 ```yaml
 osctrld:
